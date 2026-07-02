@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b37ekclsv0nik"]
+
+[ext_resource type="PackedScene" uid="uid://cv6jxoy8wbj6d" path="res://assets/godotman.glb" id="1_a202f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pakj4"]
+
+[node name="Node3D" type="Node3D" unique_id=381225604]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1075664719]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=225037326]
+shape = SubResource("SphereShape3D_pakj4")
+
+[node name="godotman" parent="CharacterBody3D" unique_id=1640510798 instance=ExtResource("1_a202f")]
