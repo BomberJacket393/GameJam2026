@@ -28,6 +28,7 @@ texture = ExtResource("3_7ulut")
 shape = SubResource("CircleShape2D_3lwp1")
 
 [node name="test_enemy" type="Node2D" parent="." unique_id=1660847194 groups=["enemies"]]
+visible = false
 position = Vector2(-188, -204)
 script = ExtResource("4_7ulut")
 
@@ -43,6 +44,7 @@ autostart = true
 zoom = Vector2(0.3, 0.3)
 
 [node name="test_enemy2" type="Node2D" parent="." unique_id=599637415 groups=["enemies"]]
+visible = false
 position = Vector2(-188, -204)
 script = ExtResource("6_d8265")
 
