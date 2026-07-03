@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://ciwtclgggpq6q" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x1.png" id="1_105hx"]
 [ext_resource type="Texture2D" uid="uid://dlkib2jtnjvrv" path="res://assets/TARGET_PLACEHOLDER.png" id="2_1mwrl"]
-[ext_resource type="PackedScene" uid="uid://donsp73885d7w" path="res://scenes/enemy.tscn" id="2_djf0h"]
 [ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://scenes/gun_turret.tscn" id="4_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://vdwq5jrhbn21" path="res://scenes/enemy_spawner.tscn" id="4_a1sf3"]
 [ext_resource type="PackedScene" uid="uid://despmow4iiyij" path="res://scenes/cursor.tscn" id="5_326sm"]
 [ext_resource type="Script" uid="uid://b0he8ju4tp7gr" path="res://scenes/camera_control.gd" id="6_ifku7"]
 [ext_resource type="Script" uid="uid://xi0hbmtyq4hk" path="res://round_handler.gd" id="7_1ij2e"]
+[ext_resource type="Texture2D" uid="uid://0cryijl6djjm" path="res://assets/CONTROLS.png" id="8_1ij2e"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_djf0h"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -301,21 +301,6 @@ tile_map_data = PackedByteArray("AAACAP//AABCAAIAAAABAP//AABCAAIAAAAAAP//AABCAAI
 tile_set = SubResource("TileSet_pakj4")
 navigation_enabled = false
 
-[node name="enemy2" parent="." unique_id=433856685 node_paths=PackedStringArray("target") instance=ExtResource("2_djf0h")]
-position = Vector2(-29, 4)
-target = NodePath("../target")
-
-[node name="enemy4" parent="." unique_id=1197601723 node_paths=PackedStringArray("target") instance=ExtResource("2_djf0h")]
-position = Vector2(-54, 27)
-target = NodePath("../target")
-
-[node name="enemy3" parent="." unique_id=1504371269 node_paths=PackedStringArray("target") instance=ExtResource("2_djf0h")]
-position = Vector2(-12, 34)
-target = NodePath("../target")
-
-[node name="enemy" parent="." unique_id=1874266949 node_paths=PackedStringArray("target") instance=ExtResource("2_djf0h")]
-target = NodePath("../target")
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1969501896]
 navigation_polygon = SubResource("NavigationPolygon_pakj4")
 
@@ -360,3 +345,7 @@ roundHandler = NodePath("..")
 
 [node name="gunTurret" parent="." unique_id=38451917 instance=ExtResource("4_1mwrl")]
 position = Vector2(-122, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=872959216]
+position = Vector2(-7, 156)
+texture = ExtResource("8_1ij2e")
