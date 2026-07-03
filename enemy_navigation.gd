@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var agent : NavigationAgent2D = $navBrain
-@export var nav_nodes : Array[Node2D]
 @export var hitbox : Area2D
 var current_node : int = 0
 
