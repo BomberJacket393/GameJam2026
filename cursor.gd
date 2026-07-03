@@ -15,6 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	mousePos = get_global_mouse_position()
+	position = mousePos
 	mousePosGridSnap.x = (int(mousePos.x)/gridSize) * gridSize	
 	mousePosGridSnap.y = (int(mousePos.y)/gridSize) * gridSize	
 		
