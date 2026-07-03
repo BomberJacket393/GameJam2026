@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://do7fcqa186sc8"]
 
 [ext_resource type="PackedScene" uid="uid://despmow4iiyij" path="res://scenes/cursor.tscn" id="1_bsh2x"]
+[ext_resource type="Texture2D" uid="uid://0wfacl5es35" path="res://assets/TOWER_BASE_PLACEHOLDER.png" id="2_6hw37"]
 
 [node name="Node2D" type="Node2D" unique_id=313285781]
 
 [node name="cursor" parent="." unique_id=1836918564 instance=ExtResource("1_bsh2x")]
+mousePos = Vector2(0, 0)
+mousePosGridSnap = Vector2(0, 0)
 gridSize = 64
+
+[node name="ghostTurretBox2" type="Sprite2D" parent="cursor" unique_id=919746261]
+modulate = Color(1, 1, 1, 0.27058825)
+self_modulate = Color(1, 0, 0, 0.88235295)
+texture = ExtResource("2_6hw37")

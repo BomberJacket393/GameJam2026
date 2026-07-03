@@ -327,7 +327,8 @@ texture = ExtResource("2_1mwrl")
 position = Vector2(108, -117)
 
 [node name="cursor" parent="." unique_id=1836918564 instance=ExtResource("5_326sm")]
-gridSize = 64
+mousePos = null
+mousePosGridSnap = null
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2072218267]
 zoom = Vector2(2, 2)

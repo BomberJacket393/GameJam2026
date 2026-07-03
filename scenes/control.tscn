@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b4w281c0g3po"]
 
-[ext_resource type="Script" uid="uid://1qnyvre7pkri" path="res://control.gd" id="1_ee4bf"]
-[ext_resource type="Script" uid="uid://c7qju2aplm2s1" path="res://final_round.gd" id="2_62e2m"]
-[ext_resource type="PackedScene" uid="uid://b37ekclsv0nik" path="res://main.tscn" id="2_fj5cn"]
+[ext_resource type="Script" uid="uid://1qnyvre7pkri" path="res://scripts/control.gd" id="1_ee4bf"]
+[ext_resource type="Script" uid="uid://c7qju2aplm2s1" path="res://scripts/final_round.gd" id="2_62e2m"]
+[ext_resource type="PackedScene" uid="uid://d3caq4vm4nxgp" path="res://scenes/enemy_test_scene.tscn" id="2_lpubu"]
 [ext_resource type="Texture2D" uid="uid://b6b4ump6v5571" path="res://assets/background.webp" id="3_fj5cn"]
 [ext_resource type="Texture2D" uid="uid://cniunlmjcf1hc" path="res://assets/wave.svg" id="3_kbped"]
 [ext_resource type="FontFile" uid="uid://dbxhtj8jig3au" path="res://assets/Jersey25-Regular.ttf" id="5_fj5cn"]
@@ -55,7 +55,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ee4bf")
-mainScene = ExtResource("2_fj5cn")
+mainScene = ExtResource("2_lpubu")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=741744274]
 layout_mode = 0
@@ -83,6 +83,7 @@ texture = ExtResource("3_fj5cn")
 expand_mode = 1
 
 [node name="Waves" type="TextureRect" parent="MarginContainer" unique_id=495221916]
+visible = false
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 0
@@ -111,7 +112,7 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_fj5cn")
 theme_override_font_sizes/font_size = 74
-text = "Protect the datacenter..."
+text = "Protect The Datacenter..."
 horizontal_alignment = 1
 script = ExtResource("2_62e2m")
 
