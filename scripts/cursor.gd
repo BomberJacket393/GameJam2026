@@ -42,8 +42,6 @@ func _isTouchingTurret():
 		if area.is_in_group("turret_base_group"):
 			_touchingTurret = true
 			print("IS_TOUCHING_TURRET")
-		else:
-			print("NOT_TOUCHING_TURRET")
 		break
 	return _touchingTurret
 			

@@ -10,7 +10,7 @@ radius = 500.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pakj4"]
 size = Vector2(32, 32)
 
-[node name="towerBase" type="Node2D" unique_id=38451917 groups=["turret_base_group"]]
+[node name="towerBase" type="Node2D" unique_id=38451917]
 
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
 texture = ExtResource("1_86fkw")
