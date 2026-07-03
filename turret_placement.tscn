@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://do7fcqa186sc8"]
+
+[ext_resource type="PackedScene" uid="uid://despmow4iiyij" path="res://scenes/cursor.tscn" id="1_bsh2x"]
+
+[node name="Node2D" type="Node2D" unique_id=313285781]
+
+[node name="cursor" parent="." unique_id=1836918564 instance=ExtResource("1_bsh2x")]
+gridSize = 64

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://despmow4iiyij"]
+
+[ext_resource type="Script" uid="uid://bi5tmlmini7gb" path="res://cursor.gd" id="1_5l68f"]
+[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://tower_base.tscn" id="2_e4vdg"]
+[ext_resource type="Texture2D" uid="uid://88lgf4myfd13" path="res://assets/cursor.png" id="3_ndevg"]
+
+[node name="cursor" type="Node2D" unique_id=1836918564]
+script = ExtResource("1_5l68f")
+gridSize = 32
+currentTurret = ExtResource("2_e4vdg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=572555043]
+visible = false
+position = Vector2(9, 14)
+texture = ExtResource("3_ndevg")
