@@ -19,7 +19,7 @@ texture = ExtResource("1_pe7gp")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_bxw35")
-rotationSpeed = 20.0
+rotationSpeed = 40.0
 
 [node name="gunTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("pivot")]
 script = ExtResource("1_brovr")
