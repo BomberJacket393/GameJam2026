@@ -1,16 +1,36 @@
 [gd_scene format=3 uid="uid://donsp73885d7w"]
 
-[ext_resource type="Script" uid="uid://dux83md71msmr" path="res://enemy_navigation.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://dhunrmcu0llqp" path="res://assets/ENEMY_PLACEHOLDER.png" id="2_qi2p4"]
+[ext_resource type="Script" uid="uid://dux83md71msmr" path="res://scripts/enemy_navigation.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://7wbvve80vfhu" path="res://assets/enemy_run1.png" id="2_c4w8v"]
+[ext_resource type="Texture2D" uid="uid://iunkcfx67tfr" path="res://assets/enemy_run2.png" id="3_xwavj"]
+[ext_resource type="Texture2D" uid="uid://cpjum0siad441" path="res://assets/enemy_run3.png" id="4_nenq2"]
+[ext_resource type="Texture2D" uid="uid://cqhafinun0r5m" path="res://assets/enemy_run4.png" id="5_md484"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pakj4"]
 
-[node name="enemy" type="Node2D" unique_id=433856685 node_paths=PackedStringArray("hitbox") groups=["enemies"]]
-script = ExtResource("1_4gyqm")
-hitbox = NodePath("Area2D")
+[sub_resource type="SpriteFrames" id="SpriteFrames_7p1mj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c4w8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xwavj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nenq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_md484")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=473138859]
-texture = ExtResource("2_qi2p4")
+[node name="enemy" type="Node2D" unique_id=433856685 node_paths=PackedStringArray("hitbox") groups=["enemies"]]
+script = ExtResource("1_md0e3")
+hitbox = NodePath("Area2D")
 
 [node name="navBrain" type="NavigationAgent2D" parent="." unique_id=483045622]
 path_postprocessing = 1
@@ -22,4 +42,8 @@ metadata/nav_node_id = 0
 position = Vector2(-1, -7)
 shape = SubResource("CircleShape2D_pakj4")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1603393148]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2020690350]
+sprite_frames = SubResource("SpriteFrames_7p1mj")
+autoplay = "default"
+frame_progress = 0.10367114
+speed_scale = 1.3

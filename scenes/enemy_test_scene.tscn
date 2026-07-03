@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ciwtclgggpq6q" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x1.png" id="1_105hx"]
 [ext_resource type="Texture2D" uid="uid://dlkib2jtnjvrv" path="res://assets/TARGET_PLACEHOLDER.png" id="2_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://donsp73885d7w" path="res://scenes/enemy.tscn" id="2_djf0h"]
-[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://tower_base.tscn" id="4_1mwrl"]
+[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://scenes/tower_base.tscn" id="4_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://despmow4iiyij" path="res://scenes/cursor.tscn" id="5_326sm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_djf0h"]
@@ -324,7 +324,10 @@ texture = ExtResource("2_1mwrl")
 [node name="enemySpawner" type="Node2D" parent="." unique_id=1434503857]
 
 [node name="towerBase" parent="." unique_id=38451917 instance=ExtResource("4_1mwrl")]
-position = Vector2(118, -93)
+position = Vector2(108, -117)
 
 [node name="cursor" parent="." unique_id=1836918564 instance=ExtResource("5_326sm")]
 gridSize = 64
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2072218267]
+zoom = Vector2(2, 2)

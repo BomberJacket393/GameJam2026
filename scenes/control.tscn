@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b4w281c0g3po"]
 
 [ext_resource type="FontFile" uid="uid://bndy8rb3wocsh" path="res://assets/GeistPixel-Regular-VariableFont_ELSH.ttf" id="1_0fbet"]
-[ext_resource type="Script" uid="uid://1qnyvre7pkri" path="res://control.gd" id="1_ee4bf"]
-[ext_resource type="Script" uid="uid://c7qju2aplm2s1" path="res://final_round.gd" id="2_62e2m"]
+[ext_resource type="Script" uid="uid://1qnyvre7pkri" path="res://scripts/control.gd" id="1_ee4bf"]
+[ext_resource type="Script" uid="uid://c7qju2aplm2s1" path="res://scripts/final_round.gd" id="2_62e2m"]
 [ext_resource type="Texture2D" uid="uid://c1m1s8sv3xuxo" path="res://assets/0add447a-e5c6-468e-9489-0c067fca1482.jpg" id="2_kbped"]
 [ext_resource type="Texture2D" uid="uid://cniunlmjcf1hc" path="res://assets/wave.svg" id="3_kbped"]
 

@@ -23,6 +23,9 @@ func _process(delta: float) -> void:
 		var curLoc = global_transform.origin
 		nextLoc = agent.get_next_path_position()
 		var newVel = (nextLoc - curLoc).normalized()  * SPEED
+		if newVel.x > 0:
+			scale.x = 1
+		else: scale.x = -1
 		velocity = newVel
 	else:
 		velocity = Vector2.ZERO
