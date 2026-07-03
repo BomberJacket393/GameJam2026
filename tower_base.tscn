@@ -24,5 +24,40 @@ texture = ExtResource("3_7ulut")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=438295061]
 shape = SubResource("CircleShape2D_3lwp1")
 
+<<<<<<< HEAD
 [node name="Camera2D" type="Camera2D" parent="." unique_id=573841125]
 zoom = Vector2(0.3, 0.3)
+=======
+[node name="test_enemy" type="Node2D" parent="." unique_id=1660847194 groups=["enemies"]]
+visible = false
+position = Vector2(-188, -204)
+script = ExtResource("4_7ulut")
+
+[node name="Sprite2D" type="Sprite2D" parent="test_enemy" unique_id=1245447109]
+position = Vector2(-7, 10)
+texture = ExtResource("4_r4bnf")
+
+[node name="Timer" type="Timer" parent="test_enemy" unique_id=544223820]
+wait_time = 3.0
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=573841125]
+zoom = Vector2(0.3, 0.3)
+
+[node name="test_enemy2" type="Node2D" parent="." unique_id=599637415 groups=["enemies"]]
+visible = false
+position = Vector2(-188, -204)
+script = ExtResource("6_d8265")
+
+[node name="Sprite2D" type="Sprite2D" parent="test_enemy2" unique_id=1205974053]
+modulate = Color(1, 0.44368404, 0.37509546, 1)
+position = Vector2(-7, 10)
+texture = ExtResource("4_r4bnf")
+
+[node name="Timer" type="Timer" parent="test_enemy2" unique_id=1194175942]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="test_enemy/Timer" to="test_enemy" method="_on_timer_timeout"]
+[connection signal="timeout" from="test_enemy2/Timer" to="test_enemy2" method="_on_timer_timeout"]
+>>>>>>> ea2ba503e520678f654df2c006c44ec70af6de2e

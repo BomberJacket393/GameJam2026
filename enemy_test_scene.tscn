@@ -297,7 +297,7 @@ tile_map_data = PackedByteArray("AAACAP//AABCAAIAAAABAP//AABCAAIAAAAAAP//AABCAAI
 tile_set = SubResource("TileSet_pakj4")
 navigation_enabled = false
 
-[node name="enemy2" parent="." unique_id=433856685 node_paths=PackedStringArray("target") instance=ExtResource("2_djf0h")]
+[node name="enemy2" parent="." unique_id=433856685 node_paths=PackedStringArray("target") groups=["enemies"] instance=ExtResource("2_djf0h")]
 position = Vector2(-29, 4)
 target = NodePath("../target")
 
@@ -323,4 +323,8 @@ texture = ExtResource("2_1mwrl")
 [node name="enemySpawner" type="Node2D" parent="." unique_id=1434503857]
 
 [node name="towerBase" parent="." unique_id=38451917 instance=ExtResource("4_1mwrl")]
+<<<<<<< HEAD
 position = Vector2(93, 47)
+=======
+position = Vector2(-2, -114)
+>>>>>>> ea2ba503e520678f654df2c006c44ec70af6de2e
