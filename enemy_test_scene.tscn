@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ciwtclgggpq6q" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x1.png" id="1_105hx"]
 [ext_resource type="Texture2D" uid="uid://dlkib2jtnjvrv" path="res://assets/TARGET_PLACEHOLDER.png" id="2_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://donsp73885d7w" path="res://enemy.tscn" id="2_djf0h"]
+[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://tower_base.tscn" id="4_1mwrl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_djf0h"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -320,3 +321,6 @@ scale = Vector2(0.484375, 0.421875)
 texture = ExtResource("2_1mwrl")
 
 [node name="enemySpawner" type="Node2D" parent="." unique_id=1434503857]
+
+[node name="towerBase" parent="." unique_id=38451917 instance=ExtResource("4_1mwrl")]
+position = Vector2(93, 47)
