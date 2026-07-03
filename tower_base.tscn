@@ -10,14 +10,16 @@
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
 texture = ExtResource("1_dkqws")
 
-[node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
+[node name="Pivot" type="Node2D" parent="." unique_id=1011809619 node_paths=PackedStringArray("testTarget")]
 script = ExtResource("2_r4bnf")
+rotationSpeed = 10.0
+testTarget = NodePath("../test_enemy")
 
 [node name="TowerPlaceholder" type="Sprite2D" parent="Pivot" unique_id=1056221128]
 texture = ExtResource("3_7ulut")
 
 [node name="test_enemy" type="Node2D" parent="." unique_id=1660847194]
-position = Vector2(141, -6)
+position = Vector2(22, 225)
 
 [node name="Sprite2D" type="Sprite2D" parent="test_enemy" unique_id=1245447109]
 position = Vector2(134, 6)
