@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deyvvuvgagsl5"
-path.s3tc="res://.godot/imported/godotman_gradient_map_new.jpg-1468c208e56ce8e0394e06dd6de84699.s3tc.ctex"
+uid="uid://dhunrmcu0llqp"
+path="res://.godot/imported/ENEMY_PLACEHOLDER.png-af9106e6f9b2b9866f3cb0a5f27212ea.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
-generator_parameters={
-"md5": "41a162da5e29229b14694938aad3d2a5"
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/godotman_gradient_map_new.jpg"
-dest_files=["res://.godot/imported/godotman_gradient_map_new.jpg-1468c208e56ce8e0394e06dd6de84699.s3tc.ctex"]
+source_file="res://assets/ENEMY_PLACEHOLDER.png"
+dest_files=["res://.godot/imported/ENEMY_PLACEHOLDER.png-af9106e6f9b2b9866f3cb0a5f27212ea.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -27,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -41,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
