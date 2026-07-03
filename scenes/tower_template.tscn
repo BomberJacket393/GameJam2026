@@ -1,8 +1,7 @@
-[gd_scene format=3 uid="uid://bip7aobwn8sw6"]
+[gd_scene format=3 uid="uid://dke7ndxa141sl"]
 
-[ext_resource type="Texture2D" uid="uid://0wfacl5es35" path="res://assets/TOWER_BASE_PLACEHOLDER.png" id="1_86fkw"]
-[ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_r4bnf"]
-[ext_resource type="Texture2D" uid="uid://djrbruikcciki" path="res://assets/TOWER_PLACEHOLDER.png" id="3_7ulut"]
+[ext_resource type="Texture2D" uid="uid://0wfacl5es35" path="res://assets/TOWER_BASE_PLACEHOLDER.png" id="1_fqc1q"]
+[ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_er0qm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
 radius = 500.0
@@ -13,14 +12,17 @@ size = Vector2(32, 32)
 [node name="towerBase" type="Node2D" unique_id=38451917]
 
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
-texture = ExtResource("1_86fkw")
+texture = ExtResource("1_fqc1q")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
-script = ExtResource("2_r4bnf")
+script = ExtResource("2_er0qm")
 rotationSpeed = 20.0
 
-[node name="TowerPlaceholder" type="Sprite2D" parent="Pivot" unique_id=1056221128]
-texture = ExtResource("3_7ulut")
+[node name="weaponTemplate" type="Node2D" parent="Pivot" unique_id=1337379642]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/weaponTemplate" unique_id=71197828]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot/weaponTemplate" unique_id=929694099]
 
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
 collision_layer = 2

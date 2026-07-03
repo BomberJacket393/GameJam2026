@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ciwtclgggpq6q" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x1.png" id="1_105hx"]
 [ext_resource type="Texture2D" uid="uid://dlkib2jtnjvrv" path="res://assets/TARGET_PLACEHOLDER.png" id="2_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://donsp73885d7w" path="res://scenes/enemy.tscn" id="2_djf0h"]
-[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://scenes/tower_base.tscn" id="4_1mwrl"]
+[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://scenes/gun_turret.tscn" id="4_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://vdwq5jrhbn21" path="res://scenes/enemy_spawner.tscn" id="4_a1sf3"]
 [ext_resource type="PackedScene" uid="uid://despmow4iiyij" path="res://scenes/cursor.tscn" id="5_326sm"]
 [ext_resource type="Script" uid="uid://b0he8ju4tp7gr" path="res://scenes/camera_control.gd" id="6_ifku7"]
@@ -324,9 +324,6 @@ position = Vector2(-74, 97)
 scale = Vector2(0.484375, 0.421875)
 texture = ExtResource("2_1mwrl")
 
-[node name="towerBase" parent="." unique_id=38451917 instance=ExtResource("4_1mwrl")]
-position = Vector2(108, -117)
-
 [node name="cursor" parent="." unique_id=1836918564 instance=ExtResource("5_326sm")]
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1197400698]
@@ -338,8 +335,11 @@ zoom = Vector2(2, 2)
 
 [node name="roundHandler" type="Node2D" parent="." unique_id=350209330 node_paths=PackedStringArray("enemyTarget")]
 script = ExtResource("7_1ij2e")
-enemiesPerRound = Array[int]([30, 0])
+enemiesPerRound = Array[int]([30, 90])
 enemyTarget = NodePath("../target")
+timeBetweenBatchesFactor = 1.0
+intermissionTime = 5
+enemySpeedFactor = 1.0
 
 [node name="enemySpawner2" parent="roundHandler" unique_id=466052996 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
 position = Vector2(-832, -193)
@@ -348,3 +348,6 @@ roundHandler = NodePath("..")
 [node name="enemySpawner" parent="roundHandler" unique_id=986775256 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
 position = Vector2(-832, 252)
 roundHandler = NodePath("..")
+
+[node name="gunTurret" parent="." unique_id=38451917 instance=ExtResource("4_1mwrl")]
+position = Vector2(-122, 114)

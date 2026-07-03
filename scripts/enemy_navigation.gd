@@ -3,10 +3,11 @@ extends Node2D
 @onready var agent : NavigationAgent2D = $navBrain
 @export var hitbox : Area2D
 var current_node : int = 0
-
+var health : int = 10
 var velocity : Vector2
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-var SPEED = 100
+var speed = 100
 @export var target : Node2D
 var nextLoc : Vector2 = Vector2.ZERO
 
@@ -22,13 +23,20 @@ func _process(delta: float) -> void:
 	if position.distance_to(target.position) > 10:
 		var curLoc = global_transform.origin
 		nextLoc = agent.get_next_path_position()
-		var newVel = (nextLoc - curLoc).normalized()  * SPEED
+		var newVel = (nextLoc - curLoc).normalized()  * speed
 		if newVel.x > 0:
 			scale.x = 1
 		else: scale.x = -1
 		velocity = newVel
 	else:
 		velocity = Vector2.ZERO
+	##Destroy when less than 0 health
+	if health <= 0:
+		enemyDeath()
+
+func enemyDeath():
+	audio_stream_player_2d.play()
+	queue_free()
 
 func _physics_process(delta: float) -> void:
 	position += velocity * delta
@@ -36,5 +44,7 @@ func _physics_process(delta: float) -> void:
 func updateTargetPosition(target):
 	agent.set_target_position(target.position)
 	
+func takeDamage(damage):
+	health -= damage
 	
 	

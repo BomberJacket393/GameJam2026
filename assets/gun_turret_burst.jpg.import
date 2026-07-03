@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1m1s8sv3xuxo"
-path="res://.godot/imported/0add447a-e5c6-468e-9489-0c067fca1482.jpg-d37799c53a52b68234fca25bbe23a554.ctex"
+path="res://.godot/imported/gun_turret_burst.jpg-70ffda54ef87c79dcb653fdd3e265ecd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/0add447a-e5c6-468e-9489-0c067fca1482.jpg"
-dest_files=["res://.godot/imported/0add447a-e5c6-468e-9489-0c067fca1482.jpg-d37799c53a52b68234fca25bbe23a554.ctex"]
+source_file="res://assets/gun_turret_burst.jpg"
+dest_files=["res://.godot/imported/gun_turret_burst.jpg-70ffda54ef87c79dcb653fdd3e265ecd.ctex"]
 
 [params]
 
