@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dlkib2jtnjvrv" path="res://assets/TARGET_PLACEHOLDER.png" id="2_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://donsp73885d7w" path="res://enemy.tscn" id="2_djf0h"]
 [ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://tower_base.tscn" id="4_1mwrl"]
+[ext_resource type="PackedScene" uid="uid://despmow4iiyij" path="res://cursor.tscn" id="5_326sm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_djf0h"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -297,7 +298,7 @@ tile_map_data = PackedByteArray("AAACAP//AABCAAIAAAABAP//AABCAAIAAAAAAP//AABCAAI
 tile_set = SubResource("TileSet_pakj4")
 navigation_enabled = false
 
-[node name="enemy2" parent="." unique_id=433856685 node_paths=PackedStringArray("target") groups=["enemies"] instance=ExtResource("2_djf0h")]
+[node name="enemy2" parent="." unique_id=433856685 node_paths=PackedStringArray("target") instance=ExtResource("2_djf0h")]
 position = Vector2(-29, 4)
 target = NodePath("../target")
 
@@ -323,4 +324,7 @@ texture = ExtResource("2_1mwrl")
 [node name="enemySpawner" type="Node2D" parent="." unique_id=1434503857]
 
 [node name="towerBase" parent="." unique_id=38451917 instance=ExtResource("4_1mwrl")]
-position = Vector2(93, 47)
+position = Vector2(118, -93)
+
+[node name="cursor" parent="." unique_id=1836918564 instance=ExtResource("5_326sm")]
+gridSize = 64

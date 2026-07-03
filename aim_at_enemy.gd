@@ -14,14 +14,15 @@ func _process(delta: float) -> void:
 
 func _find_target():
 	var enemies = get_tree().get_nodes_in_group("enemies")
-	var nearest_enemy = enemies[0]
-	for enemy in enemies:
-		if enemy.global_position.distance_to(self.global_position) < nearest_enemy.global_position.distance_to(self.global_position):
-			nearest_enemy = enemy
-	if nearest_enemy.global_position.distance_to(self.global_position) <= range:
-		return nearest_enemy
-	else:
-		return null
+	if enemies.size() != 0:
+		var nearest_enemy = enemies[0]
+		for enemy in enemies:
+			if enemy.global_position.distance_to(self.global_position) < nearest_enemy.global_position.distance_to(self.global_position):
+				nearest_enemy = enemy
+		if nearest_enemy.global_position.distance_to(self.global_position) <= range:
+			return nearest_enemy
+		else:
+			return null
 
 func _aim_at_target(target : Vector2, delta : float):
 	var targetAngle = get_angle_to(target)

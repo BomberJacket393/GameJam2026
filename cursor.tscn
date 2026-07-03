@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://despmow4iiyij"]
+
+[ext_resource type="Script" uid="uid://bi5tmlmini7gb" path="res://cursor.gd" id="1_5l68f"]
+[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://tower_base.tscn" id="2_e4vdg"]
+
+[node name="cursor" type="Node2D" unique_id=1836918564]
+script = ExtResource("1_5l68f")
+gridSize = 32
+currentTurret = ExtResource("2_e4vdg")

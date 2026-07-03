@@ -1,19 +1,28 @@
 [gd_scene format=3 uid="uid://bip7aobwn8sw6"]
+
 [ext_resource type="Texture2D" uid="uid://mwpo6rfr2cvq" path="res://assets/TOWER_BASE_PLACEHOLDERpng.png" id="1_dkqws"]
 [ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://aim_at_enemy.gd" id="2_r4bnf"]
 [ext_resource type="Texture2D" uid="uid://djrbruikcciki" path="res://assets/TOWER_PLACEHOLDER.png" id="3_7ulut"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
 radius = 500.0
+
 [node name="towerBase" type="Node2D" unique_id=38451917]
+
+[node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
+texture = ExtResource("1_dkqws")
+
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_r4bnf")
 rotationSpeed = 20.0
-[node name="baseSprite" type="Sprite2D" parent="Pivot" unique_id=433948373]
-texture = ExtResource("1_dkqws")
+
 [node name="TowerPlaceholder" type="Sprite2D" parent="Pivot" unique_id=1056221128]
 texture = ExtResource("3_7ulut")
+
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=438295061]
 shape = SubResource("CircleShape2D_3lwp1")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=573841125]
 zoom = Vector2(0.3, 0.3)
