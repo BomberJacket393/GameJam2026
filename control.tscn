@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://b4w281c0g3po"]
 
 [ext_resource type="FontFile" uid="uid://bndy8rb3wocsh" path="res://assets/GeistPixel-Regular-VariableFont_ELSH.ttf" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://1qnyvre7pkri" path="res://control.gd" id="1_ee4bf"]
+[ext_resource type="Script" uid="uid://c7qju2aplm2s1" path="res://final_round.gd" id="2_62e2m"]
+[ext_resource type="Texture2D" uid="uid://c1m1s8sv3xuxo" path="res://assets/0add447a-e5c6-468e-9489-0c067fca1482.jpg" id="2_kbped"]
 
 [node name="Control" type="Control" unique_id=141449785]
 layout_mode = 3
@@ -11,6 +14,7 @@ offset_right = -4.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ee4bf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=741744274]
 layout_mode = 0
@@ -32,6 +36,11 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=2124124607]
+layout_mode = 2
+texture = ExtResource("2_kbped")
+expand_mode = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=290727745]
 layout_mode = 2
 
@@ -39,7 +48,16 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.5137255, 0.7372549, 0.6627451, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_0fbet")
 theme_override_font_sizes/font_size = 64
 text = "Protect the datacenter"
+script = ExtResource("2_62e2m")
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2139003392]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 100)
+text = "Start"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
