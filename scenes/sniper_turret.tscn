@@ -15,6 +15,7 @@ size = Vector2(32, 32)
 [node name="sniperTurret" type="Node2D" unique_id=38451917]
 
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_285in")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
@@ -35,6 +36,7 @@ volume_db = 5.807
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/sniperTurretWeapon" unique_id=929694099]
 z_index = 1
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_285in")
 
 [node name="RayCast2D" type="RayCast2D" parent="Pivot/sniperTurretWeapon" unique_id=1905366289]

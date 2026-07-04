@@ -16,6 +16,7 @@ size = Vector2(32, 32)
 [node name="mortarWeapon" type="Node2D" unique_id=38451917]
 
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_rxqqj")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
@@ -36,12 +37,14 @@ volume_db = 5.807
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/mortarTurretWeapon" unique_id=929694099]
 z_index = 1
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_rxqqj")
 
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=438295061]
+position = Vector2(264, 137)
 shape = SubResource("CircleShape2D_3lwp1")
 
 [node name="TurretArea" type="Area2D" parent="." unique_id=1687569964 groups=["turret_base_group"]]
