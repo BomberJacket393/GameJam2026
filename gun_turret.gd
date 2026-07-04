@@ -6,6 +6,7 @@ var bulletsLeftInBurst : int
 var burstDelay : float
 var burstTimer : float
 var inBurst : bool
+@export var TURRET_PRICE : int
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 ##---This code relates only to the gun turret, the contents of this script
