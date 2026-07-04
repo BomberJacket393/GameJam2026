@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d134two2h00v5"]
 
-[ext_resource type="Texture2D" uid="uid://mwpo6rfr2cvq" path="res://assets/TOWER_BASE_PLACEHOLDERpng.png" id="1_dkqws"]
-[ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://aim_at_enemy.gd" id="2_r4bnf"]
+[ext_resource type="Texture2D" uid="uid://0wfacl5es35" path="res://assets/TOWER_BASE_PLACEHOLDER.png" id="1_dkqws"]
+[ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_r4bnf"]
 [ext_resource type="Texture2D" uid="uid://djrbruikcciki" path="res://assets/TOWER_PLACEHOLDER.png" id="3_7ulut"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]

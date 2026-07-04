@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dmp1v14m4fymt"]
 
-[ext_resource type="Texture2D" uid="uid://0wfacl5es35" path="res://assets/TOWER_BASE_PLACEHOLDER.png" id="1_285in"]
+[ext_resource type="Texture2D" uid="uid://cmuihvin73qxx" path="res://assets/turrets/tower_base.png" id="1_285in"]
 [ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_55c5c"]
 [ext_resource type="Script" uid="uid://130pwksne3sl" path="res://scenes/sniper_turrent_weapon.gd" id="3_285in"]
 [ext_resource type="AudioStream" uid="uid://q6gjtsgirxl" path="res://assets/SNIPER_SOUND.mp3" id="4_55c5c"]
-[ext_resource type="Texture2D" uid="uid://co7hufgya7bfu" path="res://assets/SNIPER_PLACEHOLDER.png" id="5_kd664"]
+[ext_resource type="Texture2D" uid="uid://bnt7s0oluvihj" path="res://assets/turrets/gunner_1.png" id="5_285in"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
 radius = 500.0
@@ -37,7 +37,7 @@ volume_db = 5.807
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/sniperTurretWeapon" unique_id=929694099]
 z_index = 1
-texture = ExtResource("5_kd664")
+texture = ExtResource("5_285in")
 
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
 collision_layer = 2
