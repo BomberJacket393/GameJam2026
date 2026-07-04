@@ -60,11 +60,11 @@ enemySpeedFactor = 1.0
 batchReleaseDelayFactor = 1.0
 
 [node name="enemySpawner4" parent="roundHandler" unique_id=986775256 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
-position = Vector2(-575, 1)
+position = Vector2(-242, 162)
 roundHandler = NodePath("..")
 
 [node name="enemySpawner3" parent="roundHandler" unique_id=1896803921 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
-position = Vector2(-513, 237)
+position = Vector2(-529, 239)
 roundHandler = NodePath("..")
 
 [node name="enemySpawner2" parent="roundHandler" unique_id=466052996 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
