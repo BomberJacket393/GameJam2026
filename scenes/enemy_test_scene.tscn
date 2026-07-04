@@ -361,17 +361,6 @@ roundHandler = NodePath("..")
 position = Vector2(-7, 156)
 texture = ExtResource("8_1ij2e")
 
-[node name="Turrets" type="Marker2D" parent="." unique_id=484306546]
-
-[node name="sniperTurret" parent="Turrets" unique_id=38451917 instance=ExtResource("5_2j4nw")]
-position = Vector2(-192, 64)
-
-[node name="gunTurret" parent="Turrets" unique_id=801813350 instance=ExtResource("4_1mwrl")]
-position = Vector2(-256, 64)
-
-[node name="mortarWeapon" parent="Turrets" unique_id=56658122 instance=ExtResource("6_yswyb")]
-position = Vector2(-320, 64)
-
 [node name="waterHandler" type="Node2D" parent="." unique_id=792585787 node_paths=PackedStringArray("waterLabel")]
 position = Vector2(-272, 124)
 script = ExtResource("11_w4tvi")
