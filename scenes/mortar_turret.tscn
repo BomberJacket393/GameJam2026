@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://c26gkm6g2xvrd"]
 
-[ext_resource type="Texture2D" uid="uid://0wfacl5es35" path="res://assets/TOWER_BASE_PLACEHOLDER.png" id="1_6co73"]
+[ext_resource type="Texture2D" uid="uid://cmuihvin73qxx" path="res://assets/turrets/tower_base.png" id="1_rxqqj"]
 [ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_rxqqj"]
 [ext_resource type="Script" uid="uid://3pdarxrrtgdg" path="res://scenes/mortar_turret_weapon.gd" id="3_6co73"]
 [ext_resource type="AudioStream" uid="uid://tjcxr25g5fqj" path="res://assets/MORTAR_SOUND_PLACEHOLDER.mp3" id="4_6co73"]
 [ext_resource type="PackedScene" uid="uid://bl6f1675vmx43" path="res://scenes/mortar_shell.tscn" id="4_rxqqj"]
-[ext_resource type="Texture2D" uid="uid://bxd8uts57sxng" path="res://assets/MORTAR_PLACEHOLDER.png" id="5_rxqqj"]
+[ext_resource type="Texture2D" uid="uid://c70owc1qss8fw" path="res://assets/turrets/missile_1.png" id="6_rxqqj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
 radius = 300.0
@@ -16,7 +16,7 @@ size = Vector2(32, 32)
 [node name="mortarWeapon" type="Node2D" unique_id=38451917]
 
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
-texture = ExtResource("1_6co73")
+texture = ExtResource("1_rxqqj")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_rxqqj")
@@ -36,7 +36,7 @@ volume_db = 5.807
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/mortarTurretWeapon" unique_id=929694099]
 z_index = 1
-texture = ExtResource("5_rxqqj")
+texture = ExtResource("6_rxqqj")
 
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
 collision_layer = 2

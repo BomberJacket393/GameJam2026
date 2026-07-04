@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dke7ndxa141sl"]
 
-[ext_resource type="Texture2D" uid="uid://0wfacl5es35" path="res://assets/TOWER_BASE_PLACEHOLDER.png" id="1_fqc1q"]
+[ext_resource type="Texture2D" uid="uid://cmuihvin73qxx" path="res://assets/turrets/tower_base.png" id="1_dt7e8"]
 [ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_er0qm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
@@ -12,7 +12,7 @@ size = Vector2(32, 32)
 [node name="towerBase" type="Node2D" unique_id=38451917]
 
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
-texture = ExtResource("1_fqc1q")
+texture = ExtResource("1_dt7e8")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_er0qm")
