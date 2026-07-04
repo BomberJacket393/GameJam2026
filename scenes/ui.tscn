@@ -39,6 +39,17 @@ script = ExtResource("1_wm3ai")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=555316495]
 
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1158115079]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1004751130]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Attention" type="Control" parent="CanvasLayer" unique_id=1097019297]
 layout_mode = 3
 anchors_preset = 0

@@ -8,7 +8,7 @@ var sectors = []
 var gridCollapseImminent = false
 var gridCollapse : bool = false
 
-@export var currentTurret : PackedScene = null
+@export var currentTurret = null
 @export var cursor : Node2D
 
 # Called when the node enters the scene tree for the first time.
@@ -29,7 +29,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if cursor != null:
-		currentTurret = cursor.currentTurret
+		currentTurret = cursor.currentTurretIndex
 	var idlePower = getIdlePowerDrain()
 	if not gridCollapse:
 		availablePower -= idlePower * delta

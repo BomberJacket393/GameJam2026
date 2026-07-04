@@ -1,4 +1,5 @@
 extends Control
+var array = ["gunTurret", "sniperTurret", "mortarTurret", "rocketTurret"]
 func _ready():
 	Engine.time_scale = 0
 	$CanvasLayer/TutorialHint.show()
@@ -9,6 +10,7 @@ func _process(delta):
 	$CanvasLayer/Attention/TextureRect/ProgressBar.value = PD.availablePower
 	$CanvasLayer/Attention/TextureRect/ProgressBar.max_value = PD.maxPower
 	$CanvasLayer/Attention/Label.text = str(round(PD.availablePower)) + " Threads available"
+	$CanvasLayer/Control/Label.text = array[PD.currentTurret]
 func _on_texture_button_button_down():
 	$CanvasLayer/TutorialHint.hide()
 	$CanvasLayer/TutorialHint2.show()
