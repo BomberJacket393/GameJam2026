@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://0cryijl6djjm" path="res://assets/CONTROLS.png" id="8_1ij2e"]
 [ext_resource type="Script" uid="uid://de2pyl7nlclsb" path="res://scenes/water_handler.gd" id="11_w4tvi"]
 [ext_resource type="Script" uid="uid://d0gvwjq0lcssq" path="res://sectorBehaviour.gd" id="12_5h81t"]
+[ext_resource type="Script" uid="uid://cb6cbiq2d6thd" path="res://scenes/sectorManager.gd" id="12_cog33"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_djf0h"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -387,7 +388,9 @@ texture = ExtResource("1_105hx")
 28:4/0 = 0
 29:4/0 = 0
 64:4/0 = 0
+64:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 65:4/0 = 0
+65:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:5/0 = 0
 8:5/0 = 0
 9:5/0 = 0
@@ -397,7 +400,9 @@ texture = ExtResource("1_105hx")
 28:5/0 = 0
 29:5/0 = 0
 64:5/0 = 0
+64:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 65:5/0 = 0
+65:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:6/0 = 0
 19:6/0 = 0
 24:6/0 = 0
@@ -638,6 +643,7 @@ water = 500
 waterLabel = NodePath("../Marker2D/Camera2D/waterLabel")
 
 [node name="Sectors" type="Node2D" parent="." unique_id=1640678200]
+script = ExtResource("12_cog33")
 
 [node name="SectorA1" type="TileMapLayer" parent="Sectors" unique_id=236835902 groups=["sector"]]
 z_index = -1
@@ -662,8 +668,8 @@ script = ExtResource("12_5h81t")
 sectorId = "A2"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sectors/SectorA2" unique_id=1186759054]
-offset_left = -364.0
-offset_top = 68.0
-offset_right = -228.0
-offset_bottom = 164.0
-text = "A1"
+offset_left = -549.0
+offset_top = -13.0
+offset_right = -413.0
+offset_bottom = 83.0
+text = "A2"

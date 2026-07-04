@@ -2,6 +2,8 @@ extends Node2D
 
 @export var sectorId = "A1"
 var sectorSquares : Array[Node2D]
+var turretsInSector : Array[Node2D]
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,3 +14,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func assignTurret(turret):
+	turretsInSector.append(turret)

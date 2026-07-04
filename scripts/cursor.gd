@@ -59,6 +59,9 @@ func placeTurret():
 	var turretInstance = turrets[currentTurretIndex].instantiate()
 	turretInstance.position = mousePosGridSnap
 	get_tree().current_scene.add_child(turretInstance)
+	var sector = _getCurrentSector()
+	print(sector.name)
+	sector.assignTurret(turretInstance)
 	
 func _isTouchingTurret():
 	_touchingTurret = false
@@ -81,4 +84,12 @@ func _isInSector():
 			_inSector = true
 			break
 	return _inSector
+	
+func _getCurrentSector():
+	var touchedAreas = cursorArea.get_overlapping_bodies()
+	for area in touchedAreas:
+		if area.is_in_group("sector"):
+			return area
+	
+
 			
