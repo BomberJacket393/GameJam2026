@@ -4,11 +4,12 @@ var associatedSector
 var cursor : Area2D
 
 @export var halLight : Sprite2D
-@export var gridCollapseColor : Color
+@export var gridCollapsePoweredOnColor : Color
+@export var gridCollapsePoweredOffColor : Color
 @export var poweredDownColor : Color
 @export var poweredOnColor : Color
 var isBeingHovered : bool
-var powerOn : bool = false
+var powerOn : bool = true
 
 @onready var hitbox: Area2D = $Area2D
 
@@ -22,13 +23,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	isBeingHovered = checkCursorContact()
+	if isBeingHovered:
+		if Input.is_action_just_pressed("lmb"):
+			togglePower()
 	if not associatedSector.powerManager.isGridCollapsed():
-		isBeingHovered = checkCursorContact()
-		if isBeingHovered:
-			if Input.is_action_just_pressed("lmb"):
-				togglePower()
+		if powerOn:
+			halLight.self_modulate = poweredOnColor
+		else:
+			halLight.self_modulate = poweredDownColor
 	else:
-		halLight.self_modulate = gridCollapseColor
+		if powerOn:
+			halLight.self_modulate = gridCollapsePoweredOnColor
+		else:
+			halLight.self_modulate = gridCollapsePoweredOffColor
 
 func checkCursorContact():
 	var touchedAreas = hitbox.get_overlapping_areas()
@@ -40,8 +48,4 @@ func checkCursorContact():
 func togglePower():
 	powerOn = not powerOn
 	associatedSector.isPowered = powerOn
-	if powerOn:
-		halLight.self_modulate = poweredOnColor
-	else:
-		halLight.self_modulate = poweredDownColor
 	

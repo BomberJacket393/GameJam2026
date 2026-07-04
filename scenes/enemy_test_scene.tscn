@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://d0gvwjq0lcssq" path="res://sectorBehaviour.gd" id="12_5h81t"]
 [ext_resource type="Script" uid="uid://cb6cbiq2d6thd" path="res://scenes/sectorManager.gd" id="12_cog33"]
 [ext_resource type="PackedScene" uid="uid://t41uvk4gco1i" path="res://halButton.tscn" id="17_y3xbn"]
+[ext_resource type="PackedScene" uid="uid://dwrqho55a0m42" path="res://masterHalButton.tscn" id="18_f6m30"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_djf0h"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -654,6 +655,7 @@ script = ExtResource("11_w4tvi")
 [node name="Sectors" type="Node2D" parent="." unique_id=1640678200]
 script = ExtResource("12_cog33")
 availablePower = 90.0
+powerPerSecond = 6.0
 
 [node name="SectorA1" type="TileMapLayer" parent="Sectors" unique_id=236835902 groups=["sector"]]
 z_index = -1
@@ -689,3 +691,7 @@ text = "A2"
 
 [node name="halButton2" parent="Sectors/SectorA2" unique_id=255293657 instance=ExtResource("17_y3xbn")]
 position = Vector2(-562, -149)
+
+[node name="rebootButton" parent="Sectors" unique_id=298682728 instance=ExtResource("18_f6m30")]
+position = Vector2(-69, 189)
+poweredOnColor = Color(0, 0.6862745, 0, 1)

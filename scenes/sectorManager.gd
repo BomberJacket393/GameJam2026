@@ -4,8 +4,6 @@ extends Node2D
 @export var availablePower : float = 50.0
 @export var powerPerSecond : float = 3.0
 var sectors = []
-var powerGridRebootTime = 1.5
-var powerGridRebootTimer = 1.5
 ##Idle turret consumption greater than power production
 var gridCollapseImminent = false
 var gridCollapse : bool = false
@@ -23,31 +21,25 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var idlePower = getIdlePowerDrain()
 	if not gridCollapse:
-		if maxPower > availablePower:
-			availablePower+=powerPerSecond*delta
-			if availablePower>maxPower:
-				availablePower = maxPower
+		availablePower -= idlePower * delta
 		if availablePower<0:
 			doGridCollapse()
 		print("idle power drain: "+str(idlePower))
 		print(str(maxPower)+" "+str(availablePower))
-		availablePower -= idlePower * delta
-	else:
-		powerGridRebootTimer -= delta
-		if powerGridRebootTimer < 0 and canReboot():
-			gridCollapse = false
-			SoundManager.playSfx(preload("res://assets/GRID_ONLINE.mp3"), Vector2.ZERO, 0)
+	if maxPower > availablePower:
+		availablePower+=powerPerSecond*delta
+		if availablePower>maxPower:
+			availablePower = maxPower
 			
-		print("GRID_COLLAPSE")
+func reboot():
+	gridCollapse = false
+	SoundManager.playSfx(preload("res://assets/GRID_ONLINE.mp3"), Vector2.ZERO, 0)	
 
-func canReboot():
-	return getIdlePowerDrain() < powerPerSecond
-	
+
 func doGridCollapse():
 	gridCollapse = true
 	SoundManager.playSfx(preload("res://assets/GRID_COLLAPSE.mp3"), Vector2.ZERO, 20)
 	availablePower = 0	
-	powerGridRebootTimer = powerGridRebootTime
 
 func getIdlePowerDrain():
 	var idlePower = 0
