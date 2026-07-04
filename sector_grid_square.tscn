@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dq5a7cyjq2lxt"]
+
+[ext_resource type="Texture2D" uid="uid://0wfacl5es35" path="res://assets/TOWER_BASE_PLACEHOLDER.png" id="1_td8hf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pakj4"]
+size = Vector2(16, 16)
+
+[node name="sectorGridSquare" type="Node2D" unique_id=235192105]
+modulate = Color(0, 0, 1, 0.34901962)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2131445368]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_td8hf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=691436054 groups=["sector_section"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=196253968]
+shape = SubResource("RectangleShape2D_pakj4")

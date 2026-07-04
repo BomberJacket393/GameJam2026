@@ -11,6 +11,7 @@ var _current_target : Node2D
 var actionTimer : float
 @export var damagePerHit : int
 var selfCanFire : bool = false
+var isPowered : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,3 +34,7 @@ func setTarget():
 ##Handling fire in subclass allows for projectiles and raycast while reusing main code
 func doAction():
 	push_error("doAction() must be overridden in subclass")
+	
+##called when a sector is powered down
+func setPower(powerOn):
+	isPowered = powerOn

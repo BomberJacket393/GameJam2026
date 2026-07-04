@@ -39,6 +39,7 @@ enemies=""
 navigation_polygon_source_geometry_group=""
 turret_base_group=""
 spawners=""
+sector=""
 
 [input]
 
