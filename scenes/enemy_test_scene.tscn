@@ -611,8 +611,6 @@ intermissionTime = 5
 enemySpeedFactor = 1.0
 batchReleaseDelayFactor = 1.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="roundHandler" unique_id=740561325]
-
 [node name="enemySpawner4" parent="roundHandler" unique_id=986775256 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
 position = Vector2(-932, -63)
 roundHandler = NodePath("..")
