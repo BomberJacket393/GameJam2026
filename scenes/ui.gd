@@ -5,6 +5,11 @@ func _ready():
 	$CanvasLayer/TutorialHint2.hide()
 	$CanvasLayer/TutorialHint3.hide()
 	$AudioStreamPlayer2D.play()
+func _process(delta):
+	$CanvasLayer/Attention/TextureRect/ProgressBar.value = PD.availablePower
+	$CanvasLayer/Attention/TextureRect/ProgressBar.max_value = PD.maxPower
+	$CanvasLayer/Attention/Label.text = str(round(PD.availablePower)) + " Threads available"
+	
 func _on_texture_button_button_down():
 	$CanvasLayer/TutorialHint.hide()
 	$CanvasLayer/TutorialHint2.show()

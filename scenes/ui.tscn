@@ -74,42 +74,7 @@ theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Attention"
 
-[node name="Attention" type="Control" parent="CanvasLayer/Attention" unique_id=1107420093]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Attention/Attention" unique_id=1543769327]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_nt7q6")
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Attention/Attention/TextureRect" unique_id=1322532909]
-custom_minimum_size = Vector2(345, 25)
-custom_maximum_size = Vector2(345, 25)
-layout_mode = 0
-offset_left = 45.714287
-offset_top = 111.428566
-offset_right = 390.7143
-offset_bottom = 136.42856
-theme_override_styles/background = SubResource("StyleBoxFlat_le3q8")
-theme_override_styles/fill = SubResource("StyleBoxFlat_6mrgi")
-value = 50.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="CanvasLayer/Attention/Attention/TextureRect" unique_id=1979867197]
-layout_mode = 0
-offset_left = 22.857143
-offset_top = 25.714285
-offset_right = 143.85715
-offset_bottom = 63.714287
-theme_override_fonts/font = ExtResource("2_gdt2y")
-theme_override_font_sizes/font_size = 28
-text = "Attention"
-
-[node name="Label" type="Label" parent="CanvasLayer/Attention/Attention" unique_id=591653011]
+[node name="Label" type="Label" parent="CanvasLayer/Attention" unique_id=591653011]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 49.0
