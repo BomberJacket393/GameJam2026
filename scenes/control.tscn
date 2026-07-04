@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1qnyvre7pkri" path="res://scripts/control.gd" id="1_ee4bf"]
 [ext_resource type="Script" uid="uid://c7qju2aplm2s1" path="res://scripts/final_round.gd" id="2_62e2m"]
-[ext_resource type="PackedScene" uid="uid://d3caq4vm4nxgp" path="res://scenes/enemy_test_scene.tscn" id="2_lpubu"]
+[ext_resource type="PackedScene" uid="uid://d3caq4vm4nxgp" path="res://enemy_test_scene.tscn" id="2_lpubu"]
 [ext_resource type="Texture2D" uid="uid://b6b4ump6v5571" path="res://assets/background.webp" id="3_fj5cn"]
 [ext_resource type="Texture2D" uid="uid://cniunlmjcf1hc" path="res://assets/wave.svg" id="3_kbped"]
 [ext_resource type="FontFile" uid="uid://dbxhtj8jig3au" path="res://assets/Jersey25-Regular.ttf" id="5_fj5cn"]
@@ -112,7 +112,7 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_fj5cn")
 theme_override_font_sizes/font_size = 74
-text = "Protect The Datacenter..."
+text = "Defend The Datacenter..."
 horizontal_alignment = 1
 script = ExtResource("2_62e2m")
 
