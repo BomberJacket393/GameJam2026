@@ -17,6 +17,8 @@ var powerOn : bool = false
 func _ready() -> void:
 	associatedSector = get_parent()
 	cursor = get_tree().get_nodes_in_group("cursor")[0].get_node("Area2D")
+	modulate = poweredOnColor
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
