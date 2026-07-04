@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name sectorBehaviour
+
 @export var sectorId = "A1"
 var sectorSquares : Array[Node2D]
 var turretsInSector : Array[Node2D]

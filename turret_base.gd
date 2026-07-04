@@ -14,6 +14,7 @@ var selfCanFire : bool = false
 @export var idlePowerDrain : int
 @export var powerPerShot : int
 var associatedSector : Node2D
+var POWER_OUTAGE_DIM_MODULATE = Color(0.3, 0.3, 0.3)
 
 signal fired(power)
 
@@ -25,16 +26,25 @@ func setAssociatedSector(sector):
 	associatedSector = sector
 
 func _process(delta: float) -> void:
-	setTarget()
-	if canDoAction():
-		doAction()
-		actionTimer = actionDelay
-	if actionTimer > 0:
-		actionTimer -= delta
+	pivot.setCanTurn(canSelfTurn())	
+	if canSelfTurn():
+		if modulate != Color(1,1,1):
+			modulate = Color(1,1,1)
+		setTarget()
+		if canDoAction():
+			doAction()
+			actionTimer = actionDelay
+		if actionTimer > 0:
+			actionTimer -= delta	
+	else:
+		if modulate != POWER_OUTAGE_DIM_MODULATE:
+			modulate = POWER_OUTAGE_DIM_MODULATE
+			
+
 	
 func canDoAction():
 	var gunReady = _current_target != null and actionTimer <= 0
-	var sectorPerm = associatedSector.getAvailablePower() > 0 and associatedSector.isPowered
+	var sectorPerm = associatedSector.getAvailablePower() > powerPerShot and associatedSector.isPowered
 	return gunReady and sectorPerm
 
 func setTarget():
@@ -43,6 +53,8 @@ func setTarget():
 ##Handling fire in subclass allows for projectiles and raycast while reusing main code
 func doAction():
 	fired.emit(powerPerShot)
-	pass
+	
+func canSelfTurn():
+	return associatedSector.isPowered and not associatedSector.powerManager.isGridCollapsed()
 	
 	

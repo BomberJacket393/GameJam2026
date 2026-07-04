@@ -4,6 +4,12 @@ extends Node2D
 @export var availablePower : float = 50.0
 @export var powerPerSecond : float = 3.0
 var sectors = []
+var powerGridRebootTime = 1.5
+var powerGridRebootTimer = 1.5
+##Idle turret consumption greater than power production
+var gridCollapseImminent = false
+var gridCollapse : bool = false
+var gridCollapseSfx : FileAccess
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,22 +21,46 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if maxPower > availablePower:
-		availablePower+=powerPerSecond*delta
-		if availablePower>maxPower:
-			availablePower = maxPower
-	if availablePower<0:
-		availablePower = 0
+	var idlePower = getIdlePowerDrain()
+	if not gridCollapse:
+		if maxPower > availablePower:
+			availablePower+=powerPerSecond*delta
+			if availablePower>maxPower:
+				availablePower = maxPower
+		if availablePower<0:
+			doGridCollapse()
+		print("idle power drain: "+str(idlePower))
+		print(str(maxPower)+" "+str(availablePower))
+		availablePower -= idlePower * delta
+	else:
+		powerGridRebootTimer -= delta
+		if powerGridRebootTimer < 0 and canReboot():
+			gridCollapse = false
+			SoundManager.playSfx(preload("res://assets/GRID_ONLINE.mp3"), Vector2.ZERO, 0)
+			
+		print("GRID_COLLAPSE")
+
+func canReboot():
+	return getIdlePowerDrain() < powerPerSecond
+	
+func doGridCollapse():
+	gridCollapse = true
+	SoundManager.playSfx(preload("res://assets/GRID_COLLAPSE.mp3"), Vector2.ZERO, 20)
+	availablePower = 0	
+	powerGridRebootTimer = powerGridRebootTime
+
+func getIdlePowerDrain():
 	var idlePower = 0
 	for sector in sectors:
 		if sector.isPowered:
 			idlePower += sector.getIdlePowerDrain()
-	print("idle power drain: "+str(idlePower))
-	print(str(maxPower)+" "+str(availablePower))
-	availablePower -= idlePower * delta
+	return idlePower
 
 func drainPower(power):
 	availablePower -= power
 	
 func getAvailablePower():
 	return availablePower
+
+func isGridCollapsed():
+	return gridCollapse

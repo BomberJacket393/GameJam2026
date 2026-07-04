@@ -37,7 +37,7 @@ volume_db = 5.807
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/sniperTurretWeapon" unique_id=929694099]
 z_index = 1
-position = Vector2(9.999999, 0)
+position = Vector2(13, 0)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_285in")
 
