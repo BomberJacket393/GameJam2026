@@ -12,7 +12,7 @@ var gridCollapseSfx : FileAccess
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print(name)
-	for child in get_children():
+	for child in get_tree().get_nodes_in_group("sector"):
 		if child is TileMapLayer:
 			sectors.append(child)
 	print(str(maxPower)+" "+str(availablePower))
@@ -34,8 +34,7 @@ func _physics_process(delta: float) -> void:
 func reboot():
 	gridCollapse = false
 	SoundManager.playSfx(preload("res://assets/GRID_ONLINE.mp3"), Vector2.ZERO, 0)	
-
-
+	
 func doGridCollapse():
 	gridCollapse = true
 	SoundManager.playSfx(preload("res://assets/GRID_COLLAPSE.mp3"), Vector2.ZERO, 20)
