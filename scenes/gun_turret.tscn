@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cmuihvin73qxx" path="res://assets/turrets/tower_base.png" id="1_pe7gp"]
 [ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_bxw35"]
 [ext_resource type="AudioStream" uid="uid://dw2usdeep6r8q" path="res://assets/dennish18-machine-gun-129928.mp3" id="2_f6a5g"]
-[ext_resource type="Texture2D" uid="uid://djevvv68usyp6" path="res://assets/turrets/machine_3.png" id="5_pe7gp"]
+[ext_resource type="Texture2D" uid="uid://dmya4wxdcjhd6" path="res://assets/turrets/machine_1.png" id="5_pe7gp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
 radius = 100.0
@@ -15,12 +15,11 @@ size = Vector2(32, 32)
 [node name="gunTurret" type="Node2D" unique_id=38451917]
 
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
-scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_pe7gp")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_bxw35")
-rotationSpeed = 0.01
+rotationSpeed = 1.0
 
 [node name="gunTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("pivot")]
 script = ExtResource("1_brovr")
@@ -36,11 +35,21 @@ powerPerShot = 2
 stream = ExtResource("2_f6a5g")
 volume_db = 5.807
 
-[node name="Sprite2D" type="Sprite2D" parent="Pivot/gunTurretWeapon" unique_id=929694099]
+[node name="Marker2D" type="Marker2D" parent="Pivot/gunTurretWeapon" unique_id=1213077663]
+position = Vector2(-1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot/gunTurretWeapon/Marker2D" unique_id=929694099]
 z_index = 1
-position = Vector2(3, 0)
+position = Vector2(9, -9)
 rotation = 1.5707964
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_pe7gp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Pivot/gunTurretWeapon/Marker2D" unique_id=561866724]
+z_index = 1
+position = Vector2(9.000001, 9)
+rotation = -1.5707963
+scale = Vector2(0.6, -0.6)
 texture = ExtResource("5_pe7gp")
 
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
