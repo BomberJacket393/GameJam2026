@@ -31,7 +31,7 @@ texture = ExtResource("4_n5qf0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GridSnapCollision" unique_id=1993762316]
 shape = SubResource("CircleShape2D_pakj4")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1846444014]
+[node name="Area2D" type="Area2D" parent="." unique_id=1846444014 groups=["cursor"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1697499222]
 shape = SubResource("RectangleShape2D_ndevg")

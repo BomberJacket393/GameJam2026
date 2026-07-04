@@ -48,7 +48,8 @@ func canDoAction():
 	return gunReady and sectorPerm
 
 func setTarget():
-	_current_target = pivot.get_target()
+	if pivot.get_target() != null:
+		_current_target = pivot.get_target()
 
 ##Handling fire in subclass allows for projectiles and raycast while reusing main code
 func doAction():

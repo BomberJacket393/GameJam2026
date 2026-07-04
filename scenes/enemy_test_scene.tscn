@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://de2pyl7nlclsb" path="res://scenes/water_handler.gd" id="11_w4tvi"]
 [ext_resource type="Script" uid="uid://d0gvwjq0lcssq" path="res://sectorBehaviour.gd" id="12_5h81t"]
 [ext_resource type="Script" uid="uid://cb6cbiq2d6thd" path="res://scenes/sectorManager.gd" id="12_cog33"]
+[ext_resource type="PackedScene" uid="uid://t41uvk4gco1i" path="res://halButton.tscn" id="17_y3xbn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_djf0h"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -599,7 +600,7 @@ position = Vector2(-74, 97)
 scale = Vector2(0.484375, 0.421875)
 texture = ExtResource("2_1mwrl")
 
-[node name="cursor" parent="." unique_id=1836918564 instance=ExtResource("5_326sm")]
+[node name="cursor" parent="." unique_id=1836918564 groups=["cursor"] instance=ExtResource("5_326sm")]
 turrets = Array[PackedScene]([ExtResource("4_1mwrl"), ExtResource("5_2j4nw"), ExtResource("6_yswyb"), ExtResource("7_xylw6")])
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1197400698]
@@ -668,6 +669,9 @@ offset_right = -228.0
 offset_bottom = 164.0
 text = "A1"
 
+[node name="halButton" parent="Sectors/SectorA1" unique_id=407498746 instance=ExtResource("17_y3xbn")]
+position = Vector2(-337, 154)
+
 [node name="SectorA2" type="TileMapLayer" parent="Sectors" unique_id=585589373 groups=["sector"]]
 z_index = -1
 tile_map_data = PackedByteArray("AADa//7/AABEAAIAAADa////AABEAAMAAADb//7/AABFAAIAAADb////AABFAAMAAADa/wAAAABEAAIAAADa/wEAAABEAAMAAADb/wAAAABFAAIAAADb/wEAAABFAAMAAADc//7/AABEAAIAAADc////AABEAAMAAADd//7/AABFAAIAAADd////AABFAAMAAADc/wAAAABEAAIAAADc/wEAAABEAAMAAADd/wAAAABFAAIAAADd/wEAAABFAAMAAADe//7/AABEAAIAAADe////AABEAAMAAADf//7/AABFAAIAAADf////AABFAAMAAADe/wAAAABEAAIAAADe/wEAAABEAAMAAADf/wAAAABFAAIAAADf/wEAAABFAAMAAADg//7/AABEAAIAAADg////AABEAAMAAADh//7/AABFAAIAAADh////AABFAAMAAADg/wAAAABEAAIAAADg/wEAAABEAAMAAADh/wAAAABFAAIAAADh/wEAAABFAAMAAAA=")
@@ -682,3 +686,6 @@ offset_top = -13.0
 offset_right = -413.0
 offset_bottom = 83.0
 text = "A2"
+
+[node name="halButton2" parent="Sectors/SectorA2" unique_id=255293657 instance=ExtResource("17_y3xbn")]
+position = Vector2(-562, -149)
