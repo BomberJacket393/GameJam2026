@@ -610,13 +610,13 @@ CAMERA_SPEED = 250
 [node name="Camera2D" type="Camera2D" parent="Marker2D" unique_id=2072218267]
 zoom = Vector2(2, 2)
 
-[node name="UI" parent="Marker2D/Camera2D" unique_id=968441483 instance=ExtResource("8_6oyhd")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="Marker2D/Camera2D" unique_id=1210268014]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Marker2D/Camera2D/CanvasLayer" unique_id=1406438817]
 material = SubResource("ShaderMaterial_5h81t")
 mesh = SubResource("QuadMesh_cog33")
+
+[node name="UI" parent="Marker2D/Camera2D" unique_id=968441483 instance=ExtResource("8_6oyhd")]
 
 [node name="roundHandler" type="Node2D" parent="." unique_id=350209330 node_paths=PackedStringArray("enemyTarget")]
 script = ExtResource("7_1ij2e")
