@@ -12,10 +12,10 @@ var speed = 100
 @export var target : Node2D
 var nextLoc : Vector2 = Vector2.ZERO
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	audioStreamPlayer = get_tree().current_scene.get_node("AudioStreamPlayer")
+@export var pushDragFactor : float
+@export var pushVelocity : Vector2
 
+var isBeingPushed : bool
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -40,10 +40,22 @@ func enemyDeath():
 	queue_free()
 
 func _physics_process(delta: float) -> void:
-	position += velocity * delta
+	if not isBeingPushed:
+		position += velocity * delta
+	if isBeingPushed:
+		position += pushVelocity * delta
+		pushVelocity -= pushVelocity.normalized() * pushDragFactor
+		if pushVelocity.length() < 5:
+			isBeingPushed = false
+			pushVelocity = Vector2.ZERO
 	
 func updateTargetPosition(target):
 	agent.set_target_position(target.position)
+	
+func push(pushForce, pushForceOrigin):
+	isBeingPushed = true
+	var pushDirection = position - pushForceOrigin
+	pushVelocity = pushDirection * pushForce
 	
 func takeDamage(damage):
 	health -= damage

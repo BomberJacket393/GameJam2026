@@ -37,7 +37,7 @@ func _aim_at_target(target : Vector2, delta : float):
 	var targetAngle = get_angle_to(target)
 	var direction = global_position.direction_to(target)
 	var target_angle = direction.angle()
-	rotation = lerp_angle(rotation, target_angle, 0.1)
+	rotation = lerp_angle(rotation, target_angle, rad_to_deg(rotationSpeed) * delta)
 	
 ##Accessed by weapon
 func get_target():

@@ -19,14 +19,14 @@ texture = ExtResource("1_285in")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_55c5c")
-rotationSpeed = 400.0
+rotationSpeed = 0.05
 range = 500
 instantRotation = true
 
 [node name="sniperTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("pivot")]
 script = ExtResource("3_285in")
 pivot = NodePath("..")
-actionDelay = 5.0
+actionDelay = 2.0
 damagePerHit = 100
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/sniperTurretWeapon" unique_id=71197828]
@@ -34,6 +34,7 @@ stream = ExtResource("4_55c5c")
 volume_db = 5.807
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/sniperTurretWeapon" unique_id=929694099]
+z_index = 1
 texture = ExtResource("5_kd664")
 
 [node name="RayCast2D" type="RayCast2D" parent="Pivot/sniperTurretWeapon" unique_id=1905366289]

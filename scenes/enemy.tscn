@@ -31,6 +31,7 @@ animations = [{
 [node name="enemy" type="Node2D" unique_id=433856685 node_paths=PackedStringArray("hitbox") groups=["enemies"]]
 script = ExtResource("1_md0e3")
 hitbox = NodePath("Area2D")
+pushDragFactor = 10.0
 
 [node name="navBrain" type="NavigationAgent2D" parent="." unique_id=483045622]
 simplify_path = true

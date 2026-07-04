@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dmp1v14m4fymt" path="res://scenes/sniper_turret.tscn" id="5_2j4nw"]
 [ext_resource type="PackedScene" uid="uid://despmow4iiyij" path="res://scenes/cursor.tscn" id="5_326sm"]
 [ext_resource type="Script" uid="uid://b0he8ju4tp7gr" path="res://scenes/camera_control.gd" id="6_ifku7"]
+[ext_resource type="PackedScene" uid="uid://c26gkm6g2xvrd" path="res://scenes/mortar_turret.tscn" id="6_yswyb"]
 [ext_resource type="Script" uid="uid://xi0hbmtyq4hk" path="res://round_handler.gd" id="7_1ij2e"]
 [ext_resource type="Texture2D" uid="uid://0cryijl6djjm" path="res://assets/CONTROLS.png" id="8_1ij2e"]
 
@@ -311,7 +312,7 @@ scale = Vector2(0.484375, 0.421875)
 texture = ExtResource("2_1mwrl")
 
 [node name="cursor" parent="." unique_id=1836918564 instance=ExtResource("5_326sm")]
-turrets = Array[PackedScene]([ExtResource("4_1mwrl"), ExtResource("5_2j4nw")])
+turrets = Array[PackedScene]([ExtResource("4_1mwrl"), ExtResource("5_2j4nw"), ExtResource("6_yswyb")])
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1197400698]
 script = ExtResource("6_ifku7")
@@ -350,3 +351,14 @@ position = Vector2(-7, 156)
 texture = ExtResource("8_1ij2e")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=740561325]
+
+[node name="Turrets" type="Marker2D" parent="." unique_id=484306546]
+
+[node name="sniperTurret" parent="Turrets" unique_id=38451917 instance=ExtResource("5_2j4nw")]
+position = Vector2(-192, 64)
+
+[node name="gunTurret" parent="Turrets" unique_id=801813350 instance=ExtResource("4_1mwrl")]
+position = Vector2(-256, 64)
+
+[node name="mortarWeapon" parent="Turrets" unique_id=56658122 instance=ExtResource("6_yswyb")]
+position = Vector2(-320, 64)
