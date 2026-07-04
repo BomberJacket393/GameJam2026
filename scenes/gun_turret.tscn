@@ -15,6 +15,7 @@ size = Vector2(32, 32)
 [node name="gunTurret" type="Node2D" unique_id=38451917]
 
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_pe7gp")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
@@ -38,6 +39,7 @@ volume_db = 5.807
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/gunTurretWeapon" unique_id=929694099]
 z_index = 1
 position = Vector2(3, 0)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_pe7gp")
 
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
