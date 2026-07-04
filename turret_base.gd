@@ -40,8 +40,6 @@ func _process(delta: float) -> void:
 		if modulate != POWER_OUTAGE_DIM_MODULATE:
 			modulate = POWER_OUTAGE_DIM_MODULATE
 			
-
-	
 func canDoAction():
 	var gunReady = _current_target != null and actionTimer <= 0
 	var sectorPerm = associatedSector.getAvailablePower() > powerPerShot and associatedSector.isPowered
