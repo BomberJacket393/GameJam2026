@@ -10,6 +10,7 @@ extends Node2D
 ##Which turret will i next place?
 @export var currentTurretIndex : int = 0
 @export var cursorArea : Area2D
+@export var currentTurret : PackedScene
 @export var cursorGridArea : Area2D
 var numberOfTurrets : int
 var _touchingTurret : bool
@@ -26,6 +27,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	mouseHandling()
+	currentTurret = turrets[currentTurretIndex]
 	ghost_turret_box.global_position = mousePosGridSnap
 	_touchingTurret = _isTouchingTurret()
 	_inSector = _isInSector()

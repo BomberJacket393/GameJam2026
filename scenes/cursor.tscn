@@ -10,7 +10,7 @@ radius = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndevg"]
 size = Vector2(1, 1)
 
-[node name="cursor" type="Node2D" unique_id=1836918564 node_paths=PackedStringArray("cursorArea", "cursorGridArea")]
+[node name="cursor" type="Node2D" unique_id=1836918564 node_paths=PackedStringArray("cursorArea", "cursorGridArea") groups=["cursor_script"]]
 script = ExtResource("1_ndevg")
 gridSize = 32
 cursorArea = NodePath("Area2D")

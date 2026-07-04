@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SoundManager="*uid://2uucbeyoseim"
 PD="*uid://cb6cbiq2d6thd"
+Economy="*uid://b4h24v3rq8ylj"
 
 [display]
 
@@ -26,6 +27,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1040
 window/size/mode=3
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 
@@ -44,6 +46,7 @@ turret_base_group=""
 spawners=""
 sector=""
 cursor=""
+cursor_script=""
 
 [input]
 

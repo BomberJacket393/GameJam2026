@@ -49,7 +49,6 @@ position = Vector2(790, 164)
 mesh = SubResource("QuadMesh_cog33")
 
 [node name="UI" parent="Marker2D/Camera2D" unique_id=968441483 instance=ExtResource("8_6oyhd")]
-script = null
 
 [node name="roundHandler" type="Node2D" parent="." unique_id=350209330 node_paths=PackedStringArray("enemyTarget")]
 script = ExtResource("7_1ij2e")

@@ -2,30 +2,41 @@ extends Node2D
 
 @export var maxPower : float = 100.0
 @export var availablePower : float = 50.0
-@export var powerPerSecond : float = 3.0
+@export var powerPerSecond : float = 10.0
 var sectors = []
 ##Idle turret consumption greater than power production
 var gridCollapseImminent = false
 var gridCollapse : bool = false
-var gridCollapseSfx : FileAccess
+
+@export var currentTurret : PackedScene = null
+@export var cursor : Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(name)
+	
+	print("START_"+name+"_DIAGNOSTICS")
+	print(powerPerSecond)
 	for child in get_tree().get_nodes_in_group("sector"):
 		if child is TileMapLayer:
 			sectors.append(child)
+			
+	var nodes = get_tree().get_nodes_in_group("cursor")
+	if nodes.size() != 0:
+		cursor = nodes[0]
 	print(str(maxPower)+" "+str(availablePower))
+	print("START_"+name+"_DIAGNOSTICS")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if cursor != null:
+		currentTurret = cursor.currentTurret
 	var idlePower = getIdlePowerDrain()
 	if not gridCollapse:
 		availablePower -= idlePower * delta
 		if availablePower<0:
 			doGridCollapse()
-		print("idle power drain: "+str(idlePower))
-		print(str(maxPower)+" "+str(availablePower))
+		##print("idle power drain: "+str(idlePower))
+		##print(str(maxPower)+" "+str(availablePower))
 	if maxPower > availablePower:
 		availablePower+=powerPerSecond*delta
 		if availablePower>maxPower:
