@@ -282,10 +282,7 @@ sources/0 = SubResource("TileSetAtlasSource_hi0ap")
 
 [node name="cursor" parent="." unique_id=1836918564 instance=ExtResource("1_w1t32")]
 position = Vector2(-119, -54)
-mousePos = null
-mousePosGridSnap = null
 turrets = Array[PackedScene]([ExtResource("2_j83er"), ExtResource("3_23e32"), ExtResource("4_ohbmd")])
-currentTurretIndex = null
 
 [node name="sectorTilelayer" type="TileMapLayer" parent="." unique_id=1979720526 groups=["sector"]]
 z_index = -1

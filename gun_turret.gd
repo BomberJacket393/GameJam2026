@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 	burstTimer-=delta
 
 func doAction():
+	super.doAction()
 	inBurst = true
 	audio_stream_player_2d.play()
 	#print("PLAYED_FIRE_SFX")

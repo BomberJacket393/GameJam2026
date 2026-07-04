@@ -6,6 +6,7 @@ extends turret_base
 @export var mortarShell : PackedScene
 
 func doAction():
+	super.doAction()
 	var shellInstance = mortarShell.instantiate()
 	shellInstance.setTargetPos(_current_target.position)
 	shellInstance.damage = damagePerHit

@@ -644,6 +644,7 @@ waterLabel = NodePath("../Marker2D/Camera2D/waterLabel")
 
 [node name="Sectors" type="Node2D" parent="." unique_id=1640678200]
 script = ExtResource("12_cog33")
+availablePower = 90.0
 
 [node name="SectorA1" type="TileMapLayer" parent="Sectors" unique_id=236835902 groups=["sector"]]
 z_index = -1
