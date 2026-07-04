@@ -19,12 +19,18 @@ func _physics_process(delta: float) -> void:
 		availablePower+=powerPerSecond*delta
 		if availablePower>maxPower:
 			availablePower = maxPower
+	if availablePower<0:
+		availablePower = 0
 	var idlePower = 0
 	for sector in sectors:
-		idlePower += sector.getIdlePowerDrain()
+		if sector.isPowered:
+			idlePower += sector.getIdlePowerDrain()
 	print("idle power drain: "+str(idlePower))
 	print(str(maxPower)+" "+str(availablePower))
 	availablePower -= idlePower * delta
 
 func drainPower(power):
 	availablePower -= power
+	
+func getAvailablePower():
+	return availablePower

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ciwtclgggpq6q" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x1.png" id="1_105hx"]
 [ext_resource type="Texture2D" uid="uid://dlkib2jtnjvrv" path="res://assets/TARGET_PLACEHOLDER.png" id="2_1mwrl"]
-[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://tower_base.tscn" id="4_1mwrl"]
+[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://scenes/gun_turret.tscn" id="4_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://vdwq5jrhbn21" path="res://scenes/enemy_spawner.tscn" id="4_a1sf3"]
 [ext_resource type="PackedScene" uid="uid://dmp1v14m4fymt" path="res://scenes/sniper_turret.tscn" id="5_2j4nw"]
 [ext_resource type="PackedScene" uid="uid://despmow4iiyij" path="res://scenes/cursor.tscn" id="5_326sm"]
@@ -307,7 +307,6 @@ shader = ExtResource("9_5h81t")
 [sub_resource type="QuadMesh" id="QuadMesh_cog33"]
 size = Vector2(1920, 1080)
 center_offset = Vector3(960, 540, 0)
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5h81t"]
 texture = ExtResource("1_105hx")
@@ -646,11 +645,9 @@ roundHandler = NodePath("..")
 position = Vector2(-7, 156)
 texture = ExtResource("8_1ij2e")
 
-[node name="waterHandler" type="Node2D" parent="." unique_id=792585787 node_paths=PackedStringArray("waterLabel")]
+[node name="waterHandler" type="Node2D" parent="." unique_id=792585787]
 position = Vector2(-272, 124)
 script = ExtResource("11_w4tvi")
-water = 500
-waterLabel = NodePath("../Marker2D/Camera2D/waterLabel")
 
 [node name="Sectors" type="Node2D" parent="." unique_id=1640678200]
 script = ExtResource("12_cog33")
@@ -684,4 +681,3 @@ offset_top = -13.0
 offset_right = -413.0
 offset_bottom = 83.0
 text = "A2"
->>>>>>> 7400ed82ecb712965547489c609ee1a6d7654e8f

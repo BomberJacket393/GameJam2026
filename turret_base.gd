@@ -13,13 +13,16 @@ var actionTimer : float
 var selfCanFire : bool = false
 @export var idlePowerDrain : int
 @export var powerPerShot : int
-var isPowered : bool = true
+var associatedSector : Node2D
 
 signal fired(power)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+	
+func setAssociatedSector(sector):
+	associatedSector = sector
 
 func _process(delta: float) -> void:
 	setTarget()
@@ -30,7 +33,9 @@ func _process(delta: float) -> void:
 		actionTimer -= delta
 	
 func canDoAction():
-	return _current_target != null and actionTimer <= 0
+	var gunReady = _current_target != null and actionTimer <= 0
+	var sectorPerm = associatedSector.getAvailablePower() > 0 and associatedSector.isPowered
+	return gunReady and sectorPerm
 
 func setTarget():
 	_current_target = pivot.get_target()
@@ -40,7 +45,4 @@ func doAction():
 	fired.emit(powerPerShot)
 	pass
 	
-##called when a sector is powered down
-func setPower(powerOn):
-	isPowered = powerOn
 	
