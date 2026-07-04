@@ -80,7 +80,7 @@ func _isInSector():
 	var touchedAreas = cursorArea.get_overlapping_bodies()
 	for area in touchedAreas:
 		if area.is_in_group("sector"):
-			print("TOUCHING_SECTOR")
+			##print("TOUCHING_SECTOR")
 			_inSector = true
 			break
 	return _inSector

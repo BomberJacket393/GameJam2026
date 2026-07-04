@@ -29,6 +29,8 @@ burstLengthTime = 0.5
 pivot = NodePath("..")
 actionDelay = 3.0
 damagePerHit = 100
+idlePowerDrain = 1
+powerPerShot = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/gunTurretWeapon" unique_id=71197828]
 stream = ExtResource("2_f6a5g")

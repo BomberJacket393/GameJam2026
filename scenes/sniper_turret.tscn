@@ -29,6 +29,8 @@ script = ExtResource("3_285in")
 pivot = NodePath("..")
 actionDelay = 2.0
 damagePerHit = 100
+idlePowerDrain = 1
+powerPerShot = 3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/sniperTurretWeapon" unique_id=71197828]
 stream = ExtResource("4_55c5c")
@@ -39,8 +41,6 @@ z_index = 1
 rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_285in")
-
-[node name="RayCast2D" type="RayCast2D" parent="Pivot/sniperTurretWeapon" unique_id=1905366289]
 
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
 collision_layer = 2
