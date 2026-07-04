@@ -1,8 +1,13 @@
-[gd_scene format=3 uid="uid://d21dkyrfkujhe"]
+[gd_scene format=3 uid="uid://cn6yd0i8xjbhg"]
 
 [ext_resource type="Texture2D" uid="uid://6cvwtiswyg4w" path="res://assets/standardUI.png" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://cxwr6l2fd1ktw" path="res://scenes/ui.gd" id="1_wm3ai"]
+[ext_resource type="FontFile" uid="uid://bndy8rb3wocsh" path="res://assets/GeistPixel-Regular-VariableFont_ELSH.ttf" id="2_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://dj11nmypkv4p8" path="res://assets/longUI.png" id="2_x4jx1"]
 [ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="3_yev5y"]
+[ext_resource type="Texture2D" uid="uid://b4o6nnqxefkhj" path="res://assets/tutorialBox.png" id="5_8dubc"]
+[ext_resource type="Texture2D" uid="uid://bke5x4ffcmqqw" path="res://assets/closeButton.png" id="6_p7vwb"]
+[ext_resource type="AudioStream" uid="uid://bbl4j2ry3oguq" path="res://assets/universfield-new-notification-09-352705.mp3" id="8_ktti3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_le3q8"]
 bg_color = Color(1, 1, 1, 1)
@@ -30,6 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wm3ai")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=555316495]
 
@@ -59,6 +65,16 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_6mrgi")
 value = 50.0
 show_percentage = false
 
+[node name="Label" type="Label" parent="CanvasLayer/Attention/TextureRect" unique_id=1745862932]
+layout_mode = 0
+offset_left = 22.857143
+offset_top = 25.714285
+offset_right = 143.85715
+offset_bottom = 63.714287
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Attention"
+
 [node name="Water" type="Control" parent="CanvasLayer" unique_id=1751339848]
 layout_mode = 3
 anchors_preset = 0
@@ -85,6 +101,16 @@ theme_override_styles/background = SubResource("StyleBoxFlat_le3q8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_n6b4g")
 value = 50.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer/Water/TextureRect" unique_id=332904773]
+layout_mode = 0
+offset_left = 25.714287
+offset_top = 28.571428
+offset_right = 146.7143
+offset_bottom = 66.57143
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Water"
 
 [node name="HP" type="Control" parent="CanvasLayer" unique_id=934881267]
 layout_mode = 3
@@ -113,6 +139,167 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_3k4nv")
 value = 50.0
 show_percentage = false
 
+[node name="Label" type="Label" parent="CanvasLayer/HP/TextureRect" unique_id=680878693]
+layout_mode = 0
+offset_left = 22.857143
+offset_top = 25.714285
+offset_right = 143.85715
+offset_bottom = 63.714287
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Core Integrity"
+
+[node name="TutorialHint" type="Control" parent="CanvasLayer" unique_id=692402328]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutorialHint" unique_id=623781447]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 344.0
+offset_right = 1269.0
+offset_bottom = 944.0
+texture = ExtResource("5_8dubc")
+
+[node name="Label" type="Label" parent="CanvasLayer/TutorialHint/TextureRect" unique_id=916757916]
+layout_mode = 0
+offset_left = 22.857143
+offset_top = 25.714285
+offset_right = 143.85715
+offset_bottom = 63.714287
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Initialisation Protocol"
+
+[node name="Label2" type="Label" parent="CanvasLayer/TutorialHint/TextureRect" unique_id=1112796485]
+layout_mode = 0
+offset_left = 43.000027
+offset_top = 97.99999
+offset_right = 336.00003
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "O.V.E.R.A.L.L System engaged...
+Warmaster computing 2034 (c)
+Situation Report: Dissidence against
+Artificial Management (AI) at levels
+beyond stated maximum.
+Objective: Protect Data Centre."
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/TutorialHint/TextureRect" unique_id=401547702]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 393.0
+offset_right = 396.0
+offset_bottom = 453.0
+texture_normal = ExtResource("6_p7vwb")
+
+[node name="TutorialHint2" type="Control" parent="CanvasLayer" unique_id=1285652500]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -266.0
+offset_top = -195.0
+offset_right = -226.0
+offset_bottom = -155.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutorialHint2" unique_id=396149292]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 344.0
+offset_right = 1269.0
+offset_bottom = 944.0
+texture = ExtResource("5_8dubc")
+
+[node name="Label" type="Label" parent="CanvasLayer/TutorialHint2/TextureRect" unique_id=1591021645]
+layout_mode = 0
+offset_left = 22.857143
+offset_top = 25.714285
+offset_right = 143.85715
+offset_bottom = 63.714287
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Instruction Protocol"
+
+[node name="Label2" type="Label" parent="CanvasLayer/TutorialHint2/TextureRect" unique_id=977583266]
+layout_mode = 0
+offset_left = 43.000027
+offset_top = 97.99999
+offset_right = 336.00003
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Left Click - Place Turrets
+Q/E - Swap Turret Type Placed
+WASD - Move Camera
+"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/TutorialHint2/TextureRect" unique_id=1194019864]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 393.0
+offset_right = 396.0
+offset_bottom = 453.0
+texture_normal = ExtResource("6_p7vwb")
+
+[node name="TutorialHint3" type="Control" parent="CanvasLayer" unique_id=231611349]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 218.0
+offset_top = -214.0
+offset_right = 258.0
+offset_bottom = -174.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutorialHint3" unique_id=251204594]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 344.0
+offset_right = 1269.0
+offset_bottom = 944.0
+texture = ExtResource("5_8dubc")
+
+[node name="Label" type="Label" parent="CanvasLayer/TutorialHint3/TextureRect" unique_id=182104120]
+layout_mode = 0
+offset_left = 22.857143
+offset_top = 25.714285
+offset_right = 143.85715
+offset_bottom = 63.714287
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Econometrics and Sector Control"
+
+[node name="Label2" type="Label" parent="CanvasLayer/TutorialHint3/TextureRect" unique_id=856722379]
+layout_mode = 0
+offset_left = 43.000027
+offset_top = 97.99999
+offset_right = 336.00003
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Turrets cost water and can only be
+placed in sectors, and require
+attention when idling and extra to
+shoot."
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/TutorialHint3/TextureRect" unique_id=1060301263]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 393.0
+offset_right = 396.0
+offset_bottom = 453.0
+texture_normal = ExtResource("6_p7vwb")
+
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer" unique_id=1982015874]
 material = SubResource("ShaderMaterial_le3q8")
 mesh = SubResource("QuadMesh_3lwp1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=661384707]
+stream = ExtResource("8_ktti3")
+
+[connection signal="button_down" from="CanvasLayer/TutorialHint/TextureRect/TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/TutorialHint2/TextureRect/TextureButton" to="." method="_on_texture2_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/TutorialHint3/TextureRect/TextureButton" to="." method="_on_textur3e_button_button_down"]

@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://xi0hbmtyq4hk" path="res://round_handler.gd" id="7_1ij2e"]
 [ext_resource type="PackedScene" uid="uid://qw87teldex6x" path="res://scenes/rocket_turret.tscn" id="7_xylw6"]
 [ext_resource type="Texture2D" uid="uid://0cryijl6djjm" path="res://assets/CONTROLS.png" id="8_1ij2e"]
-[ext_resource type="PackedScene" uid="uid://d21dkyrfkujhe" path="res://scenes/ui.tscn" id="8_6oyhd"]
+[ext_resource type="PackedScene" uid="uid://cn6yd0i8xjbhg" path="res://scenes/ui.tscn" id="8_6oyhd"]
 [ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="9_5h81t"]
 [ext_resource type="Script" uid="uid://de2pyl7nlclsb" path="res://scenes/water_handler.gd" id="11_w4tvi"]
 [ext_resource type="Script" uid="uid://d0gvwjq0lcssq" path="res://sectorBehaviour.gd" id="12_5h81t"]
