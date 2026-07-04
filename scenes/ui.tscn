@@ -39,20 +39,24 @@ script = ExtResource("1_wm3ai")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=555316495]
 
-[node name="Attention" type="Control" parent="CanvasLayer" unique_id=1097019297]
-layout_mode = 3
-anchors_preset = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=955664767]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Attention" unique_id=1185505094]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=1756233249]
+layout_mode = 2
+
+[node name="Attention" type="Control" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1097019297]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/VBoxContainer/Attention" unique_id=1185505094]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_nt7q6")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Attention/TextureRect" unique_id=506087987]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer/VBoxContainer/Attention/TextureRect" unique_id=506087987]
 custom_minimum_size = Vector2(345, 25)
 custom_maximum_size = Vector2(345, 25)
 layout_mode = 0
@@ -65,7 +69,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_6mrgi")
 value = 50.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="CanvasLayer/Attention/TextureRect" unique_id=1745862932]
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer/Attention/TextureRect" unique_id=1745862932]
 layout_mode = 0
 offset_left = 22.857143
 offset_top = 25.714285
@@ -75,13 +79,22 @@ theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Attention"
 
-[node name="Water" type="Control" parent="CanvasLayer" unique_id=1751339848]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer/Attention/TextureRect" unique_id=591653011]
+layout_mode = 0
+offset_left = 45.714283
+offset_top = 69.99999
+offset_right = 262.7143
+offset_bottom = 122.99999
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 18
+text = "17 Threads available
+"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Water" unique_id=1761881463]
+[node name="Water" type="Control" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1751339848]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/VBoxContainer/Water" unique_id=1761881463]
 layout_mode = 0
 offset_top = 130.0
 offset_right = 457.0
@@ -89,7 +102,7 @@ offset_bottom = 330.0
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_nt7q6")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Water/TextureRect" unique_id=1728056520]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer/VBoxContainer/Water/TextureRect" unique_id=1728056520]
 custom_minimum_size = Vector2(345, 25)
 custom_maximum_size = Vector2(345, 25)
 layout_mode = 0
@@ -102,7 +115,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_n6b4g")
 value = 50.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="CanvasLayer/Water/TextureRect" unique_id=332904773]
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer/Water/TextureRect" unique_id=332904773]
 layout_mode = 0
 offset_left = 25.714287
 offset_top = 28.571428
@@ -112,13 +125,22 @@ theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Water"
 
-[node name="HP" type="Control" parent="CanvasLayer" unique_id=934881267]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer/Water" unique_id=1506488239]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 153.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 18
+text = "67 MegaGallons available
+"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HP" unique_id=1657784659]
+[node name="HP" type="Control" parent="CanvasLayer/HBoxContainer" unique_id=934881267]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/HP" unique_id=1657784659]
 layout_mode = 0
 offset_left = 1365.0
 offset_right = 2165.0
@@ -126,7 +148,7 @@ offset_bottom = 200.0
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_x4jx1")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/HP/TextureRect" unique_id=1785013085]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer/HP/TextureRect" unique_id=1785013085]
 custom_minimum_size = Vector2(695, 25)
 custom_maximum_size = Vector2(695, 25)
 layout_mode = 0
@@ -139,7 +161,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_3k4nv")
 value = 50.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="CanvasLayer/HP/TextureRect" unique_id=680878693]
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/HP/TextureRect" unique_id=680878693]
 layout_mode = 0
 offset_left = 22.857143
 offset_top = 25.714285
