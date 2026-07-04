@@ -39,6 +39,7 @@ volume_db = 5.807
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/mortarTurretWeapon" unique_id=929694099]
 z_index = 1
+rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_rxqqj")
 
