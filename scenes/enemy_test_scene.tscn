@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ciwtclgggpq6q" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x1.png" id="1_105hx"]
 [ext_resource type="Texture2D" uid="uid://dlkib2jtnjvrv" path="res://assets/TARGET_PLACEHOLDER.png" id="2_1mwrl"]
-[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://scenes/gun_turret.tscn" id="4_1mwrl"]
+[ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://tower_base.tscn" id="4_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://vdwq5jrhbn21" path="res://scenes/enemy_spawner.tscn" id="4_a1sf3"]
 [ext_resource type="PackedScene" uid="uid://dmp1v14m4fymt" path="res://scenes/sniper_turret.tscn" id="5_2j4nw"]
 [ext_resource type="PackedScene" uid="uid://despmow4iiyij" path="res://scenes/cursor.tscn" id="5_326sm"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c26gkm6g2xvrd" path="res://scenes/mortar_turret.tscn" id="6_yswyb"]
 [ext_resource type="Script" uid="uid://xi0hbmtyq4hk" path="res://round_handler.gd" id="7_1ij2e"]
 [ext_resource type="Texture2D" uid="uid://0cryijl6djjm" path="res://assets/CONTROLS.png" id="8_1ij2e"]
+[ext_resource type="PackedScene" uid="uid://d21dkyrfkujhe" path="res://scenes/ui.tscn" id="8_6oyhd"]
+[ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="9_5h81t"]
 [ext_resource type="Script" uid="uid://de2pyl7nlclsb" path="res://scenes/water_handler.gd" id="11_w4tvi"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_djf0h"]
@@ -297,6 +299,13 @@ parsed_geometry_type = 1
 source_geometry_mode = 2
 agent_radius = 20.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5h81t"]
+shader = ExtResource("9_5h81t")
+
+[sub_resource type="QuadMesh" id="QuadMesh_cog33"]
+size = Vector2(1920, 1080)
+center_offset = Vector3(960, 540, 0)
+
 [node name="enemyTestScene" type="Node2D" unique_id=906758217]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1064377768 groups=["navigation_polygon_source_geometry_group"]]
@@ -322,13 +331,13 @@ CAMERA_SPEED = 250
 [node name="Camera2D" type="Camera2D" parent="Marker2D" unique_id=2072218267]
 zoom = Vector2(2, 2)
 
-[node name="waterLabel" type="RichTextLabel" parent="Marker2D/Camera2D" unique_id=1857151843]
-offset_left = -280.0
-offset_top = 120.0
-offset_right = -145.0
-offset_bottom = 160.0
-text = "WATER : NULL"
-fit_content = true
+[node name="UI" parent="Marker2D/Camera2D" unique_id=968441483 instance=ExtResource("8_6oyhd")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Marker2D/Camera2D" unique_id=1210268014]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Marker2D/Camera2D/CanvasLayer" unique_id=1406438817]
+material = SubResource("ShaderMaterial_5h81t")
+mesh = SubResource("QuadMesh_cog33")
 
 [node name="roundHandler" type="Node2D" parent="." unique_id=350209330 node_paths=PackedStringArray("enemyTarget")]
 script = ExtResource("7_1ij2e")
@@ -372,8 +381,6 @@ position = Vector2(-256, 64)
 [node name="mortarWeapon" parent="Turrets" unique_id=56658122 instance=ExtResource("6_yswyb")]
 position = Vector2(-320, 64)
 
-[node name="waterHandler" type="Node2D" parent="." unique_id=792585787 node_paths=PackedStringArray("waterLabel")]
+[node name="waterHandler" type="Node2D" parent="." unique_id=792585787]
 position = Vector2(-272, 124)
 script = ExtResource("11_w4tvi")
-water = 500
-waterLabel = NodePath("../Marker2D/Camera2D/waterLabel")

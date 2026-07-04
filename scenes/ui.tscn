@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://d21dkyrfkujhe"]
+
+[ext_resource type="Texture2D" uid="uid://6cvwtiswyg4w" path="res://assets/standardUI.png" id="1_nt7q6"]
+[ext_resource type="Texture2D" uid="uid://dj11nmypkv4p8" path="res://assets/longUI.png" id="2_x4jx1"]
+[ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="3_yev5y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_le3q8"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mrgi"]
+bg_color = Color(2.5990605e-06, 0.7070848, 0.32749438, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6b4g"]
+bg_color = Color(0.042823717, 0.6234041, 0.99999994, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3k4nv"]
+bg_color = Color(0.9999998, 0.35260022, 0.16765049, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_le3q8"]
+shader = ExtResource("3_yev5y")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3lwp1"]
+size = Vector2(1920, 1080)
+center_offset = Vector3(960, 540, 0)
+
+[node name="UI" type="Control" unique_id=968441483]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=555316495]
+
+[node name="Attention" type="Control" parent="CanvasLayer" unique_id=1097019297]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Attention" unique_id=1185505094]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_nt7q6")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Attention/TextureRect" unique_id=506087987]
+custom_minimum_size = Vector2(345, 25)
+custom_maximum_size = Vector2(345, 25)
+layout_mode = 0
+offset_left = 45.714287
+offset_top = 111.428566
+offset_right = 390.7143
+offset_bottom = 136.42856
+theme_override_styles/background = SubResource("StyleBoxFlat_le3q8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6mrgi")
+value = 50.0
+show_percentage = false
+
+[node name="Water" type="Control" parent="CanvasLayer" unique_id=1751339848]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Water" unique_id=1761881463]
+layout_mode = 0
+offset_top = 130.0
+offset_right = 457.0
+offset_bottom = 330.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_nt7q6")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Water/TextureRect" unique_id=1728056520]
+custom_minimum_size = Vector2(345, 25)
+custom_maximum_size = Vector2(345, 25)
+layout_mode = 0
+offset_left = 45.714287
+offset_top = 111.428566
+offset_right = 390.7143
+offset_bottom = 136.42856
+theme_override_styles/background = SubResource("StyleBoxFlat_le3q8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n6b4g")
+value = 50.0
+show_percentage = false
+
+[node name="HP" type="Control" parent="CanvasLayer" unique_id=934881267]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HP" unique_id=1657784659]
+layout_mode = 0
+offset_left = 1365.0
+offset_right = 2165.0
+offset_bottom = 200.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_x4jx1")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/HP/TextureRect" unique_id=1785013085]
+custom_minimum_size = Vector2(695, 25)
+custom_maximum_size = Vector2(695, 25)
+layout_mode = 0
+offset_left = 45.714287
+offset_top = 111.428566
+offset_right = 390.7143
+offset_bottom = 136.42856
+theme_override_styles/background = SubResource("StyleBoxFlat_le3q8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3k4nv")
+value = 50.0
+show_percentage = false
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer" unique_id=1982015874]
+material = SubResource("ShaderMaterial_le3q8")
+mesh = SubResource("QuadMesh_3lwp1")
