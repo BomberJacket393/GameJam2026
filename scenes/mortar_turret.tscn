@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c26gkm6g2xvrd"]
+
+[ext_resource type="Texture2D" uid="uid://0wfacl5es35" path="res://assets/TOWER_BASE_PLACEHOLDER.png" id="1_6co73"]
+[ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_rxqqj"]
+[ext_resource type="Script" uid="uid://3pdarxrrtgdg" path="res://scenes/mortar_turret_weapon.gd" id="3_6co73"]
+[ext_resource type="AudioStream" uid="uid://tjcxr25g5fqj" path="res://assets/MORTAR_SOUND_PLACEHOLDER.mp3" id="4_6co73"]
+[ext_resource type="PackedScene" uid="uid://bl6f1675vmx43" path="res://scenes/mortar_shell.tscn" id="4_rxqqj"]
+[ext_resource type="Texture2D" uid="uid://bxd8uts57sxng" path="res://assets/MORTAR_PLACEHOLDER.png" id="5_rxqqj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
+radius = 300.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pakj4"]
+size = Vector2(32, 32)
+
+[node name="mortarWeapon" type="Node2D" unique_id=38451917]
+
+[node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
+texture = ExtResource("1_6co73")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
+script = ExtResource("2_rxqqj")
+rotationSpeed = 0.1
+range = 450
+
+[node name="mortarTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("pivot")]
+script = ExtResource("3_6co73")
+mortarShell = ExtResource("4_rxqqj")
+pivot = NodePath("..")
+actionDelay = 5.0
+damagePerHit = 20
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/mortarTurretWeapon" unique_id=71197828]
+stream = ExtResource("4_6co73")
+volume_db = 5.807
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot/mortarTurretWeapon" unique_id=929694099]
+z_index = 1
+texture = ExtResource("5_rxqqj")
+
+[node name="Range" type="Area2D" parent="." unique_id=75107804]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=438295061]
+shape = SubResource("CircleShape2D_3lwp1")
+
+[node name="TurretArea" type="Area2D" parent="." unique_id=1687569964 groups=["turret_base_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurretArea" unique_id=137337132]
+shape = SubResource("RectangleShape2D_pakj4")

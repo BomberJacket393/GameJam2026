@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://b4w281c0g3po"]
+
+[ext_resource type="Script" uid="uid://1qnyvre7pkri" path="res://scripts/control.gd" id="1_ee4bf"]
+[ext_resource type="Script" uid="uid://c7qju2aplm2s1" path="res://scripts/final_round.gd" id="2_62e2m"]
+[ext_resource type="PackedScene" uid="uid://d3caq4vm4nxgp" path="res://scenes/enemy_test_scene.tscn" id="2_lpubu"]
+[ext_resource type="Texture2D" uid="uid://b6b4ump6v5571" path="res://assets/background.webp" id="3_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://cniunlmjcf1hc" path="res://assets/wave.svg" id="3_kbped"]
+[ext_resource type="FontFile" uid="uid://dbxhtj8jig3au" path="res://assets/Jersey25-Regular.ttf" id="5_fj5cn"]
+
+[sub_resource type="Animation" id="Animation_kbped"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/Control/Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(163, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fj5cn"]
+resource_name = "float"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/Control/Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(100.5, 30), Vector2(100.5, 50), Vector2(100.5, 30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iy58a"]
+_data = {
+&"RESET": SubResource("Animation_kbped"),
+&"float": SubResource("Animation_fj5cn")
+}
+
+[node name="Menu" type="Control" unique_id=141449785]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ee4bf")
+mainScene = ExtResource("2_lpubu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=741744274]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 1150.0
+offset_bottom = 645.0
+color = Color(0.07250547, 0.105310716, 0.1407611, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=6570134]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=2124124607]
+layout_mode = 2
+texture = ExtResource("3_fj5cn")
+expand_mode = 1
+
+[node name="Waves" type="TextureRect" parent="MarginContainer" unique_id=495221916]
+visible = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("3_kbped")
+expand_mode = 2
+flip_v = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=290727745]
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1639489961]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Control" unique_id=1963238457]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -401.0
+offset_right = 526.0
+offset_bottom = 113.99991
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_fj5cn")
+theme_override_font_sizes/font_size = 74
+text = "Protect The Datacenter..."
+horizontal_alignment = 1
+script = ExtResource("2_62e2m")
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2139003392]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_position = Vector2(0, 100)
+theme_override_fonts/font = ExtResource("5_fj5cn")
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=477698590]
+libraries/ = SubResource("AnimationLibrary_iy58a")
+autoplay = &"float"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bl6f1675vmx43"]
+
+[ext_resource type="Script" uid="uid://opav75rnuoia" path="res://mortarShell.gd" id="1_l3xtx"]
+[ext_resource type="Texture2D" uid="uid://cfrs7ookohal1" path="res://assets/SHELL_PLACEHOLDER.png" id="2_7xgxh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pakj4"]
+
+[node name="mortarShell" type="Node2D" unique_id=1497135895]
+script = ExtResource("1_l3xtx")
+explosionDamageRadius = 30.0
+explosionPushRadius = 100.0
+pushForce = 3.0
+SPEED = 350.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1922452947]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=79640829]
+shape = SubResource("CircleShape2D_pakj4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=791025507]
+texture = ExtResource("2_7xgxh")

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dke7ndxa141sl"]
+
+[ext_resource type="Texture2D" uid="uid://0wfacl5es35" path="res://assets/TOWER_BASE_PLACEHOLDER.png" id="1_fqc1q"]
+[ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_er0qm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
+radius = 500.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pakj4"]
+size = Vector2(32, 32)
+
+[node name="towerBase" type="Node2D" unique_id=38451917]
+
+[node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
+texture = ExtResource("1_fqc1q")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
+script = ExtResource("2_er0qm")
+rotationSpeed = 20.0
+
+[node name="weaponTemplate" type="Node2D" parent="Pivot" unique_id=1337379642]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/weaponTemplate" unique_id=71197828]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot/weaponTemplate" unique_id=929694099]
+
+[node name="Range" type="Area2D" parent="." unique_id=75107804]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=438295061]
+shape = SubResource("CircleShape2D_3lwp1")
+
+[node name="TurretArea" type="Area2D" parent="." unique_id=1687569964 groups=["turret_base_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurretArea" unique_id=137337132]
+shape = SubResource("RectangleShape2D_pakj4")

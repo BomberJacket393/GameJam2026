@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://vdwq5jrhbn21"]
+
+[ext_resource type="Script" uid="uid://dqqyd1i8noe8v" path="res://scenes/enemy_spawner.gd" id="1_devoi"]
+[ext_resource type="Texture2D" uid="uid://dl558lsvp6kfq" path="res://assets/SPAWN_PLACEHOLDER.png" id="1_ks1gq"]
+[ext_resource type="PackedScene" uid="uid://donsp73885d7w" path="res://scenes/enemy.tscn" id="2_xl0gr"]
+
+[node name="enemySpawner" type="Node2D" unique_id=986775256 groups=["spawners"]]
+script = ExtResource("1_devoi")
+enemy = ExtResource("2_xl0gr")
+enemiesInBatchRange = Array[int]([2, 5])
+batchSizeRoundIncrement = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=445881989]
+texture = ExtResource("1_ks1gq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1293813639]
+wait_time = 2.0
+autostart = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mwpo6rfr2cvq"
-path="res://.godot/imported/TOWER_BASE_PLACEHOLDERpng.png-5ba683ddf2e069c858914b2d7d111b98.ctex"
+uid="uid://bn6exx527bpgq"
+path="res://.godot/imported/BURST_MG_PLACEHOLDER.png-36e5e8a925fc7df8261db9c55ca138d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TOWER_BASE_PLACEHOLDERpng.png"
-dest_files=["res://.godot/imported/TOWER_BASE_PLACEHOLDERpng.png-5ba683ddf2e069c858914b2d7d111b98.ctex"]
+source_file="res://assets/BURST_MG_PLACEHOLDER.png"
+dest_files=["res://.godot/imported/BURST_MG_PLACEHOLDER.png-36e5e8a925fc7df8261db9c55ca138d1.ctex"]
 
 [params]
 
