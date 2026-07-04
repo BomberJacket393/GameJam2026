@@ -26,7 +26,7 @@ func setAssociatedSector(sector):
 	associatedSector = sector
 
 func _process(delta: float) -> void:
-	pivot.setCanTurn(canSelfTurn())	
+	pivot.canTurn = canSelfTurn()
 	if canSelfTurn():
 		if modulate != Color(1,1,1):
 			modulate = Color(1,1,1)

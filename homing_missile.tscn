@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://fiygbyrieor5"]
+
+[ext_resource type="Script" uid="uid://cohx8xvsgtq4" path="res://homing_missile.gd" id="1_xdjs4"]
+[ext_resource type="Texture2D" uid="uid://6smou0vow781" path="res://assets/turrets/missile_amo.png" id="2_d0nnr"]
+
+[node name="homingMissile" type="Node2D" unique_id=1564111888]
+script = ExtResource("1_xdjs4")
+explosionDamageRadius = 20.0
+explosionPushRadius = 60.0
+pushForce = 2.0
+SPEED = 300.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626920583]
+texture = ExtResource("2_d0nnr")
