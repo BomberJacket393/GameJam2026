@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c26gkm6g2xvrd" path="res://scenes/mortar_turret.tscn" id="6_yswyb"]
 [ext_resource type="Script" uid="uid://xi0hbmtyq4hk" path="res://round_handler.gd" id="7_1ij2e"]
 [ext_resource type="Texture2D" uid="uid://0cryijl6djjm" path="res://assets/CONTROLS.png" id="8_1ij2e"]
+[ext_resource type="Script" uid="uid://de2pyl7nlclsb" path="res://scenes/water_handler.gd" id="11_w4tvi"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_djf0h"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -321,6 +322,14 @@ CAMERA_SPEED = 250
 [node name="Camera2D" type="Camera2D" parent="Marker2D" unique_id=2072218267]
 zoom = Vector2(2, 2)
 
+[node name="waterLabel" type="RichTextLabel" parent="Marker2D/Camera2D" unique_id=1857151843]
+offset_left = -280.0
+offset_top = 120.0
+offset_right = -145.0
+offset_bottom = 160.0
+text = "WATER : NULL"
+fit_content = true
+
 [node name="roundHandler" type="Node2D" parent="." unique_id=350209330 node_paths=PackedStringArray("enemyTarget")]
 script = ExtResource("7_1ij2e")
 enemiesPerRound = Array[int]([30, 90, 200])
@@ -329,6 +338,8 @@ timeBetweenBatchesFactor = 1.0
 intermissionTime = 5
 enemySpeedFactor = 1.0
 batchReleaseDelayFactor = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="roundHandler" unique_id=740561325]
 
 [node name="enemySpawner4" parent="roundHandler" unique_id=986775256 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
 position = Vector2(-932, -63)
@@ -350,8 +361,6 @@ roundHandler = NodePath("..")
 position = Vector2(-7, 156)
 texture = ExtResource("8_1ij2e")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=740561325]
-
 [node name="Turrets" type="Marker2D" parent="." unique_id=484306546]
 
 [node name="sniperTurret" parent="Turrets" unique_id=38451917 instance=ExtResource("5_2j4nw")]
@@ -362,3 +371,9 @@ position = Vector2(-256, 64)
 
 [node name="mortarWeapon" parent="Turrets" unique_id=56658122 instance=ExtResource("6_yswyb")]
 position = Vector2(-320, 64)
+
+[node name="waterHandler" type="Node2D" parent="." unique_id=792585787 node_paths=PackedStringArray("waterLabel")]
+position = Vector2(-272, 124)
+script = ExtResource("11_w4tvi")
+water = 500
+waterLabel = NodePath("../Marker2D/Camera2D/waterLabel")
