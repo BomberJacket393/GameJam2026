@@ -620,7 +620,7 @@ mesh = SubResource("QuadMesh_cog33")
 
 [node name="roundHandler" type="Node2D" parent="." unique_id=350209330 node_paths=PackedStringArray("enemyTarget")]
 script = ExtResource("7_1ij2e")
-enemiesPerRound = Array[int]([30, 90, 200])
+enemiesPerRound = Array[int]([30, 90, 300])
 enemyTarget = NodePath("../target")
 timeBetweenBatchesFactor = 1.0
 intermissionTime = 5
