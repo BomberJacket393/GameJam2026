@@ -5,6 +5,7 @@ class_name aim_at_enemy
 @export var rotationSpeed : float
 @export var range = 100
 var target : Node2D
+@export var instantRotation : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +15,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	target = _find_target()
 	if target != null:
-		_aim_at_target(target.position, delta)
+		if not instantRotation:
+			_aim_at_target(target.position, delta)
+		else:
+			look_at(target.position)
 
 func _find_target():
 	var enemies = get_tree().get_nodes_in_group("enemies")

@@ -5,7 +5,8 @@ extends Node2D
 var current_node : int = 0
 var health : int = 10
 var velocity : Vector2
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+var audioStreamPlayer : AudioStreamPlayer
+var deathAudio : FileAccess
 
 var speed = 100
 @export var target : Node2D
@@ -13,7 +14,7 @@ var nextLoc : Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	audioStreamPlayer = get_tree().current_scene.get_node("AudioStreamPlayer")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,7 +36,7 @@ func _process(delta: float) -> void:
 		enemyDeath()
 
 func enemyDeath():
-	audio_stream_player_2d.play()
+	SoundManager.playSfx(preload("res://assets/DEATH_PLACEHOLDER.mp3"),position)
 	queue_free()
 
 func _physics_process(delta: float) -> void:
