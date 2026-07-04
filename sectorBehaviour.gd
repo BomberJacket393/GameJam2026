@@ -5,7 +5,7 @@ class_name sectorBehaviour
 @export var sectorId = "A1"
 var sectorSquares : Array[Node2D]
 var turretsInSector : Array[Node2D]
-@onready var powerManager : Node2D = $".."
+@onready var powerManager : Node2D = PD
 var isPowered : bool = true
 
 # Called when the node enters the scene tree for the first time.

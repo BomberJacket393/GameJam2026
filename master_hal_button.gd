@@ -13,7 +13,7 @@ var isBeingHovered : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	sectorManager = get_parent()
+	sectorManager = PD
 	cursor = get_tree().get_nodes_in_group("cursor")[0].get_node("Area2D")
 	halLight.self_modulate = poweredDownColor
 

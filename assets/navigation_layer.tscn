@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://ct4m34muogq1o"]
 
 [ext_resource type="TileSet" uid="uid://cbj2ekofpamxs" path="res://assets/navigation_tileset.tres" id="1_qoclc"]
-[ext_resource type="Script" uid="uid://cb6cbiq2d6thd" path="res://scenes/sectorManager.gd" id="2_ydu1u"]
 [ext_resource type="Texture2D" uid="uid://ciwtclgggpq6q" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x1.png" id="3_754ls"]
 [ext_resource type="Script" uid="uid://d0gvwjq0lcssq" path="res://sectorBehaviour.gd" id="4_kxx5m"]
 [ext_resource type="PackedScene" uid="uid://t41uvk4gco1i" path="res://halButton.tscn" id="5_klc8c"]
@@ -300,9 +299,6 @@ navigation_enabled = false
 navigation_polygon = SubResource("NavigationPolygon_pakj4")
 
 [node name="Sectors" type="Node2D" parent="." unique_id=51324007]
-script = ExtResource("2_ydu1u")
-availablePower = 90.0
-powerPerSecond = 6.0
 
 [node name="SectorA5" type="TileMapLayer" parent="Sectors" unique_id=26330025 groups=["sector"]]
 z_index = -1
