@@ -22,11 +22,10 @@ PD="*uid://cb6cbiq2d6thd"
 
 [display]
 
-window/size/viewport_width=2248
-window/size/viewport_height=1126
+window/size/viewport_width=1920
+window/size/viewport_height=1040
 window/size/mode=3
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [dotnet]
 

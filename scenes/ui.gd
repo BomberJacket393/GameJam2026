@@ -6,10 +6,6 @@ func _ready():
 	$CanvasLayer/TutorialHint3.hide()
 	$AudioStreamPlayer2D.play()
 
-#func _process(delta):
-	#$CanvasLayer/Attention/TextureRect/ProgressBar.value = PD.availablePower
-	#$CanvasLayer/Water/TextureRect/ProgressBar.max_value = PD.maxPower
-
 func _on_texture_button_button_down():
 	$CanvasLayer/TutorialHint.hide()
 	$CanvasLayer/TutorialHint2.show()
