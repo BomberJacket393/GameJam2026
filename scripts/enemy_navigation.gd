@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 		enemyDeath()
 
 func enemyDeath():
-	SoundManager.playSfx(preload("res://assets/DEATH_PLACEHOLDER.mp3"),position)
+	SoundManager.playSfx(preload("res://assets/DEATH_PLACEHOLDER.mp3"),position,-10)
 	queue_free()
 
 func _physics_process(delta: float) -> void:

@@ -29,16 +29,16 @@ func _process(delta: float) -> void:
 func doAction():
 	super.doAction()
 	inBurst = true
-	audio_stream_player_2d.play()
+	
 	#print("PLAYED_FIRE_SFX")
 	bulletsLeftInBurst = bulletsPerBurst
 	burstTimer = 0
 	
 func fireGun():
-	super.doAction()
+	audio_stream_player_2d.play()
 	var shellInstance = missile.instantiate()
-	shellInstance.setTargetPos(_current_target.position)
 	shellInstance.damage = damagePerHit
 	shellInstance.global_position = global_position
+	shellInstance.rotation = global_rotation
 	get_tree().current_scene.add_child(shellInstance)
 	audio_stream_player_2d.play()

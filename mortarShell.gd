@@ -11,6 +11,7 @@ var targetPosition : Vector2
 var origin : Vector2
 var direction : Vector2
 
+
 func _ready() -> void:
 	origin = global_position
 	direction = targetPosition - origin
