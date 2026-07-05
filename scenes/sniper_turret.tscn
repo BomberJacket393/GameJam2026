@@ -53,6 +53,7 @@ radius = 500.0
 size = Vector2(32, 32)
 
 [node name="sniperTurret" type="Node2D" unique_id=38451917]
+metadata/weaponId = 1
 
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
 texture = ExtResource("1_285in")
@@ -72,7 +73,8 @@ pivot = NodePath("..")
 actionDelay = 1.8
 damagePerHit = 100
 idlePowerDrain = 1
-powerPerShot = 5
+powerPerShot = 3
+metadata/weaponId = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/sniperTurretWeapon" unique_id=71197828]
 stream = ExtResource("4_55c5c")
