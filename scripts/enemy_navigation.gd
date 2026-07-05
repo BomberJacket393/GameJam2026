@@ -21,27 +21,30 @@ var nextLoc : Vector2 = Vector2.ZERO
 
 var isBeingPushed : bool
 var aboutToDie
+var beingPulled : bool
+var pullVelocity : Vector2
 
 func _ready():
 	animator.animation_finished.connect(enemyDeath)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	updateTargetPosition(target)
-	nextLoc = agent.get_next_path_position()
-	if position.distance_to(target.position) > 10:
-		var curLoc = global_transform.origin
+	if not beingPulled:
+		updateTargetPosition(target)
 		nextLoc = agent.get_next_path_position()
-		var newVel = (nextLoc - curLoc).normalized()  * speed
-		if newVel.x > 0:
-			scale.x = 1
-		else: scale.x = -1
-		velocity = newVel
-	else:
-		velocity = Vector2.ZERO
-		
-	if is_touching_reactor() and not aboutToDie:
-		attackReactor()
+		if position.distance_to(target.position) > 10:
+			var curLoc = global_transform.origin
+			nextLoc = agent.get_next_path_position()
+			var newVel = (nextLoc - curLoc).normalized()  * speed
+			if newVel.x > 0:
+				scale.x = 1
+			else: scale.x = -1
+			velocity = newVel
+		else:
+			velocity = Vector2.ZERO
+			
+		if is_touching_reactor() and not aboutToDie:
+			attackReactor()
 		
 	##Destroy when less than 0 health
 	if health <= 0:
@@ -70,9 +73,14 @@ func is_touching_reactor():
 	return false
 
 func _physics_process(delta: float) -> void:
-	if not isBeingPushed:
+	
+	if not isBeingPushed and not beingPulled:
 		position += velocity * delta
-	if isBeingPushed:
+	elif beingPulled:
+		print("being pulled")
+		position += pullVelocity*0.03
+		##pullVelocity += pushVelocity.normalized()
+	elif isBeingPushed:
 		position += pushVelocity * delta
 		pushVelocity -= pushVelocity.normalized() * pushDragFactor
 		if pushVelocity.length() < 5:

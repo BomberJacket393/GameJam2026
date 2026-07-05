@@ -41,12 +41,12 @@ func _process(delta):
 	$CanvasLayer/GameUI/Attention/Label.text = str(round(PD.availablePower)) + " Threads available"
 	$CanvasLayer/GameUI/HP/TextureRect/ProgressBar.value = Economy.coreHealth
 	
-	if PD.currentTurret != null:
-		$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label3.text = description[PD.currentTurret]
-		$CanvasLayer/GameUI/WeaponSelect/TextureRect.texture = sprites[PD.currentTurret]
-		$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label2.text = array[PD.currentTurret]
-	else:
-		$CanvasLayer/GameUI/Control/Label.text = "ERROR"
+	#if PD.currentTurret != null:
+		#$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label3.text = description[PD.currentTurret]
+		#$CanvasLayer/GameUI/WeaponSelect/TextureRect.texture = sprites[PD.currentTurret]
+		#$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label2.text = array[PD.currentTurret]
+	#else:
+		#$CanvasLayer/GameUI/Control/Label.text = "ERROR"
 func _on_texture_button_button_down():
 	$CanvasLayer/GameUI/TutorialHint.hide()
 	$CanvasLayer/GameUI/TutorialHint2.show()
