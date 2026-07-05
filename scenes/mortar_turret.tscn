@@ -14,6 +14,7 @@ radius = 300.0
 size = Vector2(32, 32)
 
 [node name="mortarWeapon" type="Node2D" unique_id=38451917]
+metadata/weaponId = 2
 
 [node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
 texture = ExtResource("1_rxqqj")
@@ -36,6 +37,7 @@ powerPerShot = 10
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/mortarTurretWeapon" unique_id=71197828]
 stream = ExtResource("4_6co73")
 volume_db = -12.142
+metadata/weaponId = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/mortarTurretWeapon" unique_id=929694099]
 z_index = 1

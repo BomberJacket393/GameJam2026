@@ -24,8 +24,9 @@ func assignTurret(turret : Node2D):
 func getIdlePowerDrain():
 	var idlePower = 0
 	for turret in turretsInSector:
-		var _turret_script = turret.get_node("Pivot").get_child(0) as turret_base
-		idlePower += _turret_script.idlePowerDrain
+		if turret != null:
+			var _turret_script = turret.get_node("Pivot").get_child(0) as turret_base
+			idlePower += _turret_script.idlePowerDrain
 	return idlePower
 	
 func shotFired(power):
