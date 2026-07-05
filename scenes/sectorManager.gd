@@ -14,7 +14,7 @@ var gridCollapse : bool = false
 
 var baseReactorProduction = 10
 var reactorLevel : int = 0
-var threadsPerLevel : int = 5
+var threadsPerLevel : int = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
