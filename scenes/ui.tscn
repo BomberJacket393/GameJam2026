@@ -8,11 +8,12 @@
 [ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="3_yev5y"]
 [ext_resource type="Script" uid="uid://ccuj1b14oqx61" path="res://scenes/assignGameoverText.gd" id="4_vsj0x"]
 [ext_resource type="Texture2D" uid="uid://b4o6nnqxefkhj" path="res://assets/tutorialBox.png" id="5_8dubc"]
+[ext_resource type="Texture2D" uid="uid://bm00gw7q4kysr" path="res://assets/weaponDisplay1.png" id="5_vsj0x"]
 [ext_resource type="Texture2D" uid="uid://bke5x4ffcmqqw" path="res://assets/closeButton.png" id="6_p7vwb"]
 [ext_resource type="Script" uid="uid://bs7hpw0sx48bs" path="res://scenes/setTextToRound.gd" id="7_vsj0x"]
 [ext_resource type="AudioStream" uid="uid://bbl4j2ry3oguq" path="res://assets/universfield-new-notification-09-352705.mp3" id="8_ktti3"]
-[ext_resource type="Texture2D" uid="uid://du7v146e764hw" path="res://assets/RetroWindowsGUI/RetroWindowsGUI/Window_Header.png" id="8_qsv74"]
 [ext_resource type="Script" uid="uid://uxyj6xvkh8vj" path="res://scenes/setTextToEnemies.gd" id="9_6rmj2"]
+[ext_resource type="Texture2D" uid="uid://7q7oiqj35ipp" path="res://assets/shortUI.png" id="9_qsv74"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_le3q8"]
 shader = ExtResource("3_yev5y")
@@ -132,15 +133,52 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Control" type="Control" parent="CanvasLayer/GameUI" unique_id=1158115079]
+[node name="WeaponSelect" type="Control" parent="CanvasLayer/GameUI" unique_id=1158115079]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="CanvasLayer/GameUI/Control" unique_id=1004751130]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/WeaponSelect" unique_id=739813663]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 15.999999
+offset_top = 783.0
+offset_right = 616.0
+offset_bottom = 1383.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_vsj0x")
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/WeaponSelect/TextureRect" unique_id=1508595027]
+layout_mode = 0
+offset_left = 22.857143
+offset_top = 25.714285
+offset_right = 143.85715
+offset_bottom = 63.714287
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Turrets"
+
+[node name="Label2" type="Label" parent="CanvasLayer/GameUI/WeaponSelect/TextureRect" unique_id=1652802646]
+layout_mode = 0
+offset_left = 31.428574
+offset_top = 72.85717
+offset_right = 338.4286
+offset_bottom = 110.85718
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Rocket Turret Selected"
+
+[node name="Label3" type="Label" parent="CanvasLayer/GameUI/WeaponSelect/TextureRect" unique_id=1493865180]
+layout_mode = 0
+offset_left = 44.285717
+offset_top = 181.42859
+offset_right = 351.2857
+offset_bottom = 219.42859
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Costs 20 Water. Fires salvos of
+tracking rockets."
 
 [node name="Attention" type="Control" parent="CanvasLayer/GameUI" unique_id=1097019297]
 anchors_preset = 0
@@ -210,6 +248,7 @@ offset_right = 390.7143
 offset_bottom = 136.42856
 theme_override_styles/background = SubResource("StyleBoxFlat_le3q8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_n6b4g")
+max_value = 1200.0
 value = 50.0
 show_percentage = false
 
@@ -277,13 +316,13 @@ offset_top = 10.0
 offset_right = 19.0
 offset_bottom = 1260.0
 
-[node name="Label" type="Label" parent="CanvasLayer/GameUI/ROUND" unique_id=698920654]
-z_index = 1
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/ROUND" unique_id=1242647746]
 layout_mode = 0
-offset_left = 1768.0
-offset_top = 142.0
-offset_right = 1953.0
-offset_bottom = 180.0
+offset_left = 1617.0
+offset_top = 137.0
+offset_right = 1738.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Round"
@@ -303,13 +342,23 @@ script = ExtResource("7_vsj0x")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/ROUND" unique_id=746940455]
 layout_mode = 0
-offset_left = 1755.0
-offset_top = 125.0
-offset_right = 1803.0
-offset_bottom = 173.0
-scale = Vector2(2.834449, 2.454218)
-texture = ExtResource("8_qsv74")
+offset_left = 1700.9999
+offset_top = 123.0
+offset_right = 2000.9999
+offset_bottom = 323.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_qsv74")
 stretch_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/ROUND/TextureRect" unique_id=1227709659]
+layout_mode = 0
+offset_left = 42.857315
+offset_top = 25.714285
+offset_right = 163.85733
+offset_bottom = 63.714287
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = " Wave"
 
 [node name="enemyCounter" type="Control" parent="CanvasLayer/GameUI" unique_id=763662936]
 anchors_preset = 0
@@ -318,23 +367,12 @@ offset_top = 10.0
 offset_right = -124.0
 offset_bottom = 1260.0
 
-[node name="Label" type="Label" parent="CanvasLayer/GameUI/enemyCounter" unique_id=702112924]
-z_index = 1
-layout_mode = 0
-offset_left = 1768.0
-offset_top = 142.0
-offset_right = 1953.0
-offset_bottom = 180.0
-theme_override_fonts/font = ExtResource("2_gdt2y")
-theme_override_font_sizes/font_size = 28
-text = "Enemies"
-
 [node name="enemies" type="Label" parent="CanvasLayer/GameUI/enemyCounter" unique_id=846126871]
 z_index = 1
 layout_mode = 0
-offset_left = 1767.0
+offset_left = 1752.0
 offset_top = 189.0
-offset_right = 1952.0
+offset_right = 1937.0
 offset_bottom = 227.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_gdt2y")
@@ -344,13 +382,23 @@ script = ExtResource("9_6rmj2")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/enemyCounter" unique_id=1280409167]
 layout_mode = 0
-offset_left = 1755.0
-offset_top = 125.0
-offset_right = 1803.0
-offset_bottom = 173.0
-scale = Vector2(2.834449, 2.454218)
-texture = ExtResource("8_qsv74")
+offset_left = 1667.0
+offset_top = 123.0
+offset_right = 1967.0
+offset_bottom = 323.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_qsv74")
 stretch_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/enemyCounter/TextureRect" unique_id=987401239]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 25.714285
+offset_right = 160.0
+offset_bottom = 63.714287
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "  Enemies"
 
 [node name="TutorialHint" type="Control" parent="CanvasLayer/GameUI" unique_id=692402328]
 anchors_preset = 0

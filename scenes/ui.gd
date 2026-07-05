@@ -1,7 +1,18 @@
 extends Control
 
-var array = ["gunTurret", "sniperTurret", "mortarTurret", "rocketTurret"]
-
+var array = ["Gun Turret", "Sniper Turret", "Mortar Turret", "Rocket Turret"]
+var description = [
+	"Costs 125 Water.",
+	"Costs 75 Water.",
+	"Costs 200 Water.",
+	"Costs 325 Water."
+]
+var sprites = [
+	preload("res://assets/weaponDisplay1.png"),
+	preload("res://assets/weaponDisplay2.png"),
+	preload("res://assets/weaponDisplay3.png"),
+	preload("res://assets/weaponDisplay4.png")
+]
 @export var inGameUI : Control
 @export var gameOverUI : Control
 
@@ -17,9 +28,13 @@ func _ready():
 func _process(delta):
 	$CanvasLayer/GameUI/Attention/TextureRect/ProgressBar.value = PD.availablePower
 	$CanvasLayer/GameUI/Attention/TextureRect/ProgressBar.max_value = PD.maxPower
+	$CanvasLayer/GameUI/Water/TextureRect/ProgressBar.value = Economy.water
+	$CanvasLayer/GameUI/Water/Label.text = str(round(Economy.water)) + "Gallons available"
 	$CanvasLayer/GameUI/Attention/Label.text = str(round(PD.availablePower)) + " Threads available"
+	$CanvasLayer/GameUI/HP/TextureRect/ProgressBar.value = Economy.coreHealth
 	if PD.currentTurret != null:
-		$CanvasLayer/GameUI/Control/Label.text = array[PD.currentTurret]
+		$CanvasLayer/GameUI/WeaponSelect/TextureRect.texture = sprites[PD.currentTurret]
+		$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label2.text = array[PD.currentTurret]
 	else:
 		$CanvasLayer/GameUI/Control/Label.text = "ERROR"
 func _on_texture_button_button_down():
