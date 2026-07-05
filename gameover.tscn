@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cpcwsvn10fqi6" path="res://panel_cascade.tscn" id="2_tpdqf"]
 
 [node name="gameover" type="Node2D" unique_id=1040048886]
+z_index = 20
 script = ExtResource("1_4nh4k")
 
 [node name="panelCascade" parent="." unique_id=178154994 instance=ExtResource("2_tpdqf")]
@@ -21,6 +22,15 @@ position = Vector2(-1186, -92)
 
 [node name="panelCascade5" parent="." unique_id=1304726473 instance=ExtResource("2_tpdqf")]
 position = Vector2(-737, -47)
+
+[node name="panelCascade5" parent="panelCascade5" unique_id=756179442 instance=ExtResource("2_tpdqf")]
+position = Vector2(56, -436)
+
+[node name="panelCascade5" parent="panelCascade5/panelCascade5" unique_id=942844207 instance=ExtResource("2_tpdqf")]
+position = Vector2(378, -761)
+
+[node name="panelCascade5" parent="panelCascade5/panelCascade5/panelCascade5" unique_id=1267516608 instance=ExtResource("2_tpdqf")]
+position = Vector2(341, -381)
 
 [node name="panelCascade6" parent="." unique_id=1640662763 instance=ExtResource("2_tpdqf")]
 position = Vector2(779, 177)
@@ -55,9 +65,6 @@ doSound = false
 position = Vector2(-1908, -1060)
 sequentialPanelFactor = 0.7
 doSound = false
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1793473770]
-zoom = Vector2(0.75, 0.75)
 
 [node name="Timer" type="Timer" parent="." unique_id=711340186]
 wait_time = 2.5

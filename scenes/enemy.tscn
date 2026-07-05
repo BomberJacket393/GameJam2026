@@ -6,6 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://iunkcfx67tfr" path="res://assets/enemy_run2.png" id="3_xwavj"]
 [ext_resource type="Texture2D" uid="uid://cpjum0siad441" path="res://assets/enemy_run3.png" id="4_nenq2"]
 [ext_resource type="Texture2D" uid="uid://cqhafinun0r5m" path="res://assets/enemy_run4.png" id="5_md484"]
+[ext_resource type="Texture2D" uid="uid://b76vpfenwem80" path="res://assets/ENEMY_BLOW_UP1.png" id="7_wtq4b"]
+[ext_resource type="Texture2D" uid="uid://oqg1230m4ipc" path="res://assets/ENEMY_BLOW_UP2.png" id="8_j0cyh"]
+[ext_resource type="Texture2D" uid="uid://cu4srrr0ik862" path="res://assets/ENEMY_BLOW_UP3.png" id="9_g0wcc"]
+[ext_resource type="Texture2D" uid="uid://dwa03owx6iol0" path="res://assets/ENEMY_BLOW_UP4.png" id="10_s1ycm"]
+[ext_resource type="Texture2D" uid="uid://6wjer2c8cjlm" path="res://assets/ENEMY_BLOW_UP5.png" id="11_shcg2"]
+[ext_resource type="Texture2D" uid="uid://bomijtwkfgqut" path="res://assets/ENEMY_BLOW_UP6.png" id="12_ile5s"]
+[ext_resource type="Texture2D" uid="uid://c1006h52mv6mt" path="res://assets/ENEMY_BLOW_UP7.png" id="13_1x4g4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pakj4"]
 
@@ -27,18 +34,45 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 0.4,
+"texture": ExtResource("7_wtq4b")
+}, {
+"duration": 0.4,
+"texture": ExtResource("8_j0cyh")
+}, {
+"duration": 0.4,
+"texture": ExtResource("9_g0wcc")
+}, {
+"duration": 0.4,
+"texture": ExtResource("10_s1ycm")
+}, {
+"duration": 0.4,
+"texture": ExtResource("11_shcg2")
+}, {
+"duration": 0.4,
+"texture": ExtResource("12_ile5s")
+}, {
+"duration": 0.4,
+"texture": ExtResource("13_1x4g4")
+}],
+"loop": 0,
+"name": &"destroy",
+"speed": 5.0
 }]
 
-[node name="enemy" type="Node2D" unique_id=433856685 node_paths=PackedStringArray("hitbox") groups=["enemies"]]
+[node name="enemy" type="Node2D" unique_id=433856685 node_paths=PackedStringArray("hitbox", "animator") groups=["enemies"]]
 script = ExtResource("1_md0e3")
 hitbox = NodePath("Area2D")
 pushDragFactor = 10.0
 deathBubble = ExtResource("2_xwavj")
+animator = NodePath("AnimatedSprite2D")
 
 [node name="navBrain" type="NavigationAgent2D" parent="." unique_id=483045622]
 simplify_path = true
 avoidance_enabled = true
-debug_enabled = true
+radius = 30.0
 metadata/nav_node_id = 0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=224533707]
@@ -48,6 +82,8 @@ shape = SubResource("CircleShape2D_pakj4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2020690350]
 sprite_frames = SubResource("SpriteFrames_7p1mj")
+animation = &"destroy"
 autoplay = "default"
-frame_progress = 0.10367114
+frame = 6
+frame_progress = 1.0
 speed_scale = 1.3

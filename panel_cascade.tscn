@@ -5,7 +5,7 @@
 
 [node name="panelCascade" type="Node2D" unique_id=178154994]
 top_level = true
-z_index = 10
+z_index = 15
 script = ExtResource("1_4mwla")
 errorPanel = ExtResource("2_jqe31")
 yIncrement = 50

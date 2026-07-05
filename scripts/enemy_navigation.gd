@@ -17,8 +17,12 @@ var nextLoc : Vector2 = Vector2.ZERO
 
 @export var waterOnDeath : int = 10
 @export var deathBubble : PackedScene
+@export var animator : AnimatedSprite2D
 
 var isBeingPushed : bool
+
+func _ready():
+	animator.animation_finished.connect(enemyDeath)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -34,6 +38,10 @@ func _process(delta: float) -> void:
 		velocity = newVel
 	else:
 		velocity = Vector2.ZERO
+		
+	if is_touching_reactor():
+		attackReactor()
+		
 	##Destroy when less than 0 health
 	if health <= 0:
 		enemyDeath()
@@ -46,6 +54,18 @@ func enemyDeath():
 	deathBubbleInstance.amount = waterOnDeath
 	get_tree().current_scene.add_child(deathBubbleInstance)
 	queue_free()
+
+func attackReactor():
+	remove_from_group("enemies")
+	animator.play("destroy")
+	target.takeDamage(10)
+	
+func is_touching_reactor():
+	var areas = hitbox.get_overlapping_areas()
+	for area in areas:
+		if area.is_in_group("reactorHitbox"):
+			return true
+	return false
 
 func _physics_process(delta: float) -> void:
 	if not isBeingPushed:

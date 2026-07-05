@@ -33,5 +33,8 @@ func tryTransaction(waterCost):
 		water -= waterCost
 		return true
 
+func roundReset():
+	water = 150
+
 func addWater(_water):
 	water += _water

@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://ct4m34muogq1o" path="res://assets/map.tscn" id="1_e4l8o"]
 [ext_resource type="Texture2D" uid="uid://dlkib2jtnjvrv" path="res://assets/TARGET_PLACEHOLDER.png" id="2_1mwrl"]
+[ext_resource type="Script" uid="uid://d30hoxtlkly3n" path="res://scenes/reactorHealth.gd" id="3_cog33"]
 [ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://scenes/gun_turret.tscn" id="4_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://vdwq5jrhbn21" path="res://scenes/enemy_spawner.tscn" id="4_a1sf3"]
+[ext_resource type="PackedScene" uid="uid://4rccycac8sep" path="res://gameover.tscn" id="4_c0q4c"]
 [ext_resource type="PackedScene" uid="uid://dmp1v14m4fymt" path="res://scenes/sniper_turret.tscn" id="5_2j4nw"]
 [ext_resource type="PackedScene" uid="uid://despmow4iiyij" path="res://scenes/cursor.tscn" id="5_326sm"]
 [ext_resource type="Script" uid="uid://b0he8ju4tp7gr" path="res://scenes/camera_control.gd" id="6_ifku7"]
@@ -13,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://cn6yd0i8xjbhg" path="res://scenes/ui.tscn" id="8_6oyhd"]
 [ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="9_5h81t"]
 [ext_resource type="PackedScene" uid="uid://0eptdqpcb57k" path="res://smoke_cloud_3.tscn" id="13_5h81t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pakj4"]
+size = Vector2(100, 100)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5h81t"]
 shader = ExtResource("9_5h81t")
@@ -25,10 +30,20 @@ center_offset = Vector3(960, 540, 0)
 
 [node name="map" parent="." unique_id=921165198 instance=ExtResource("1_e4l8o")]
 
-[node name="target" type="Sprite2D" parent="." unique_id=759789441]
+[node name="reactor" type="Sprite2D" parent="." unique_id=759789441 node_paths=PackedStringArray("ui")]
 position = Vector2(1.0000076, 185)
 scale = Vector2(0.484375, 0.421875)
 texture = ExtResource("2_1mwrl")
+script = ExtResource("3_cog33")
+ui = NodePath("../Marker2D/Camera2D/UI")
+gameOverErrorCascade = ExtResource("4_c0q4c")
+biosTimer = 4.5
+
+[node name="reactorHitbox" type="Area2D" parent="reactor" unique_id=836885597 groups=["reactorHitbox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reactor/reactorHitbox" unique_id=1131956071]
+position = Vector2(-2.0645332, 2.370369)
+shape = SubResource("RectangleShape2D_pakj4")
 
 [node name="cursor" parent="." unique_id=1836918564 groups=["cursor"] instance=ExtResource("5_326sm")]
 turrets = Array[PackedScene]([ExtResource("4_1mwrl"), ExtResource("5_2j4nw"), ExtResource("6_yswyb"), ExtResource("7_xylw6")])
@@ -60,7 +75,7 @@ mesh = SubResource("QuadMesh_cog33")
 [node name="roundHandler" type="Node2D" parent="." unique_id=350209330 node_paths=PackedStringArray("enemyTarget")]
 script = ExtResource("7_1ij2e")
 enemiesPerRound = Array[int]([10, 25, 60, 120, 250, 600])
-enemyTarget = NodePath("../target")
+enemyTarget = NodePath("../reactor")
 timeBetweenBatchesFactor = 1.0
 intermissionTime = 3
 enemySpeedFactor = 8.0

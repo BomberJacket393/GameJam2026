@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://dcb6enyygtyis" path="res://erro.mp3" id="4_5ey2l"]
 
 [node name="gameoverPanel" type="Node2D" unique_id=204290684]
+z_index = 20
+scale = Vector2(0.7, 0.7)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=429289373]
 texture = ExtResource("1_6ud5s")

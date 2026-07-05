@@ -12,6 +12,8 @@ func _ready():
 	$CanvasLayer/GameUI/TutorialHint3.hide()
 	$AudioStreamPlayer2D.play()
 	
+	gameOverUI.hide()
+	
 func _process(delta):
 	$CanvasLayer/GameUI/Attention/TextureRect/ProgressBar.value = PD.availablePower
 	$CanvasLayer/GameUI/Attention/TextureRect/ProgressBar.max_value = PD.maxPower
@@ -38,6 +40,9 @@ func _on_textur3e_button_button_down():
 	$CanvasLayer/GameUI/TutorialHint2.hide()
 	$CanvasLayer/GameUI/TutorialHint.hide()
 
-func game_over():
+func game_over_stage_1():
 	inGameUI.hide()
+
+func game_over_stage_2():
+	SoundManager.playSfx(preload("res://erro.mp3"))
 	gameOverUI.show()
