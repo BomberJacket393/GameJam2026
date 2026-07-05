@@ -7,10 +7,10 @@
 
 [node name="mortarShell" type="Node2D" unique_id=1497135895]
 script = ExtResource("1_l3xtx")
-explosionDamageRadius = 30.0
-explosionSecondaryDamageRadius = 60.0
-explosionPushRadius = 100.0
-pushForce = 2.0
+explosionDamageRadius = 50.0
+explosionSecondaryDamageRadius = 100.0
+explosionPushRadius = 150.0
+pushForce = 2.5
 SPEED = 350.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1922452947]

@@ -9,6 +9,9 @@ var cursor
 @export var juicerTurretCost = 250
 @export var turretStartGameDelay = 2.0
 @export var coreHealth : int = 100
+var currentReactorLevel = 0
+var currentReactorUpgradePrice = 300
+var reactorUpgradePriceIncrement = 200
 
 var gameStarted
 
@@ -23,6 +26,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	currentReactorLevel = PD.reactorLevel
 	if Engine.time_scale == 1 and turretStartGameDelay > 0:
 		turretStartGameDelay -= delta
 	if turretStartGameDelay < 0:
@@ -35,9 +39,17 @@ func tryTransaction(waterCost):
 		water -= waterCost
 		return true
 
+func tryUpgradeReactor():
+	if tryTransaction(currentReactorUpgradePrice):
+		currentReactorUpgradePrice += reactorUpgradePriceIncrement
+		PD.upgradeReactor()
+	else:
+		return false
+
 func roundReset():
 	water = 150
 	turretStartGameDelay = 2.0
+	currentReactorUpgradePrice = 300
 
 func addWater(_water):
 	water += _water

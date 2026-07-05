@@ -33,6 +33,7 @@ center_offset = Vector3(960, 540, 0)
 [node name="map" parent="." unique_id=921165198 instance=ExtResource("1_e4l8o")]
 
 [node name="reactor" type="Sprite2D" parent="." unique_id=759789441 node_paths=PackedStringArray("ui")]
+visible = false
 position = Vector2(1.0000076, 185)
 scale = Vector2(0.484375, 0.421875)
 texture = ExtResource("2_1mwrl")
@@ -51,6 +52,12 @@ shape = SubResource("RectangleShape2D_pakj4")
 [node name="cursor" parent="." unique_id=1836918564 groups=["cursor"] instance=ExtResource("5_326sm")]
 turrets = Array[PackedScene]([ExtResource("4_1mwrl"), ExtResource("5_2j4nw"), ExtResource("6_yswyb"), ExtResource("7_xylw6"), ExtResource("10_xylw6")])
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=329637344]
+stream = ExtResource("12_xylw6")
+volume_db = -21.893
+autoplay = true
+parameters/looping = false
+
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1197400698]
 script = ExtResource("6_ifku7")
 CAMERA_SPEED = 250
@@ -59,12 +66,6 @@ CAMERA_SPEED = 250
 zoom = Vector2(1.75, 1.75)
 
 [node name="UI" parent="Marker2D/Camera2D" unique_id=968441483 instance=ExtResource("8_6oyhd")]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Marker2D/Camera2D" unique_id=329637344]
-stream = ExtResource("12_xylw6")
-volume_db = -7.111
-autoplay = true
-parameters/looping = false
 
 [node name="Control" type="Control" parent="." unique_id=1944083517]
 layout_mode = 3

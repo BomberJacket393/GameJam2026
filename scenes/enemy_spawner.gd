@@ -20,7 +20,7 @@ func _process(delta):
 	if not isIntermission and roundHandler.getEnemiesInRound()>0 and active:
 		enemySpawnTimer -= delta
 		if enemySpawnTimer < 0:
-			enemySpawnTimer = enemySpawnDelay
+			enemySpawnTimer = enemySpawnDelay + rng.randf_range(-0.2,0.2)
 			spawnEnemy()
 	
 func spawnEnemy():

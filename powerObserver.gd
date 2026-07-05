@@ -1,6 +1,7 @@
 extends Node
 
-var isGameOver : bool
+var threadProduction : float
+var idleThreads : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,14 +10,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("esc"):
-		quitGame()
-		
-func resetGame():
-	get_tree().reload_current_scene()
-	PD.roundReset()
-	Economy.roundReset()
-	isGameOver = false
-		
-func quitGame():
-	get_tree().quit()
+	pass

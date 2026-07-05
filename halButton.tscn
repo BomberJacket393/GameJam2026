@@ -1,16 +1,44 @@
 [gd_scene format=3 uid="uid://t41uvk4gco1i"]
 
 [ext_resource type="Script" uid="uid://u5w2j551s7q8" path="res://power_button.gd" id="1_1vlu3"]
-[ext_resource type="Texture2D" uid="uid://dn5qq3f5dydcy" path="res://assets/HAL_EYE.png" id="2_jh2uo"]
-[ext_resource type="Texture2D" uid="uid://hhawsul6ygn7" path="res://assets/HAL_FRAME.png" id="3_5yqtl"]
+[ext_resource type="Texture2D" uid="uid://b0vmabu2aueey" path="res://assets/offButton.png" id="2_5yqtl"]
+[ext_resource type="Texture2D" uid="uid://bos4lr6uat530" path="res://assets/onButton.png" id="2_jh2uo"]
+[ext_resource type="Texture2D" uid="uid://bvvs4ejtk4dmv" path="res://assets/tween.png" id="4_w41x0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pakj4"]
 radius = 28.0
 
-[node name="halButton" type="Node2D" unique_id=407498746 node_paths=PackedStringArray("halLight")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pakj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5yqtl")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jh2uo")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("4_w41x0")
+}],
+"loop": 0,
+"name": &"tween",
+"speed": 5.0
+}]
+
+[node name="halButton" type="Node2D" unique_id=407498746 node_paths=PackedStringArray("button")]
 z_index = 5
 script = ExtResource("1_1vlu3")
-halLight = NodePath("Sprite2D")
+button = NodePath("AnimatedSprite2D")
 gridCollapsePoweredOnColor = Color(0, 0.5764706, 0.58431375, 1)
 gridCollapsePoweredOffColor = Color(0.44705883, 0, 0.49411765, 1)
 poweredDownColor = Color(1, 1, 1, 1)
@@ -21,8 +49,9 @@ poweredOnColor = Color(0, 1, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1732210456]
 shape = SubResource("CircleShape2D_pakj4")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1188605535]
-texture = ExtResource("2_jh2uo")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1054929415]
-texture = ExtResource("3_5yqtl")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2003957916]
+position = Vector2(0, 4.75)
+scale = Vector2(1, 0.76829267)
+sprite_frames = SubResource("SpriteFrames_pakj4")
+animation = &"tween"
+autoplay = "on"

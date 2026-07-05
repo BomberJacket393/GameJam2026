@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://bbl4j2ry3oguq" path="res://assets/universfield-new-notification-09-352705.mp3" id="8_ktti3"]
 [ext_resource type="Script" uid="uid://uxyj6xvkh8vj" path="res://scenes/setTextToEnemies.gd" id="9_6rmj2"]
 [ext_resource type="Texture2D" uid="uid://7q7oiqj35ipp" path="res://assets/shortUI.png" id="9_qsv74"]
+[ext_resource type="Script" uid="uid://wjglphu81f0p" path="res://scenes/getThreadsPerSecond.gd" id="11_cof4p"]
+[ext_resource type="Script" uid="uid://dcg1swwt71ow" path="res://scenes/showIdlePowerUsage.gd" id="11_h1mc3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_le3q8"]
 shader = ExtResource("3_yev5y")
@@ -308,6 +310,86 @@ offset_bottom = 63.714287
 theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Core Integrity"
+
+[node name="THREADS" type="Control" parent="CanvasLayer/GameUI" unique_id=2038938423]
+anchors_preset = 0
+offset_left = -1405.0
+offset_top = -122.0
+offset_right = -1405.0
+offset_bottom = 1128.0
+
+[node name="Round" type="Label" parent="CanvasLayer/GameUI/THREADS" unique_id=498729669]
+z_index = 1
+layout_mode = 0
+offset_left = 1767.0
+offset_top = 189.0
+offset_right = 1952.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "null"
+script = ExtResource("11_cof4p")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/THREADS" unique_id=172726166]
+layout_mode = 0
+offset_left = 1700.9999
+offset_top = 123.0
+offset_right = 2000.9999
+offset_bottom = 323.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_qsv74")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/THREADS/TextureRect" unique_id=1455004471]
+layout_mode = 0
+offset_left = 42.857315
+offset_top = 25.714285
+offset_right = 163.85733
+offset_bottom = 63.714287
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Threads/s"
+
+[node name="IDLEPOWER" type="Control" parent="CanvasLayer/GameUI" unique_id=63600772]
+anchors_preset = 0
+offset_left = -1224.0
+offset_top = -122.0
+offset_right = -1224.0
+offset_bottom = 1128.0
+
+[node name="Round" type="Label" parent="CanvasLayer/GameUI/IDLEPOWER" unique_id=320893731]
+z_index = 1
+layout_mode = 0
+offset_left = 1767.0
+offset_top = 189.0
+offset_right = 1952.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "null"
+script = ExtResource("11_h1mc3")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/IDLEPOWER" unique_id=313436715]
+layout_mode = 0
+offset_left = 1700.9999
+offset_top = 123.0
+offset_right = 2000.9999
+offset_bottom = 323.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_qsv74")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/IDLEPOWER/TextureRect" unique_id=532763137]
+layout_mode = 0
+offset_left = 42.857315
+offset_top = 25.714285
+offset_right = 163.85733
+offset_bottom = 63.714287
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Tur. Usage"
 
 [node name="ROUND" type="Control" parent="CanvasLayer/GameUI" unique_id=697939508]
 anchors_preset = 0
