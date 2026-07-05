@@ -8,7 +8,10 @@
 [ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="3_yev5y"]
 [ext_resource type="Texture2D" uid="uid://b4o6nnqxefkhj" path="res://assets/tutorialBox.png" id="5_8dubc"]
 [ext_resource type="Texture2D" uid="uid://bke5x4ffcmqqw" path="res://assets/closeButton.png" id="6_p7vwb"]
+[ext_resource type="Script" uid="uid://bs7hpw0sx48bs" path="res://scenes/setTextToRound.gd" id="7_vsj0x"]
 [ext_resource type="AudioStream" uid="uid://bbl4j2ry3oguq" path="res://assets/universfield-new-notification-09-352705.mp3" id="8_ktti3"]
+[ext_resource type="Texture2D" uid="uid://du7v146e764hw" path="res://assets/RetroWindowsGUI/RetroWindowsGUI/Window_Header.png" id="8_qsv74"]
+[ext_resource type="Script" uid="uid://uxyj6xvkh8vj" path="res://scenes/setTextToEnemies.gd" id="9_6rmj2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_le3q8"]
 shader = ExtResource("3_yev5y")
@@ -265,6 +268,88 @@ theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Core Integrity"
 
+[node name="ROUND" type="Control" parent="CanvasLayer/GameUI" unique_id=697939508]
+anchors_preset = 0
+offset_left = 19.0
+offset_top = 10.0
+offset_right = 19.0
+offset_bottom = 1260.0
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/ROUND" unique_id=698920654]
+z_index = 1
+layout_mode = 0
+offset_left = 1768.0
+offset_top = 142.0
+offset_right = 1953.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Round"
+
+[node name="Round" type="Label" parent="CanvasLayer/GameUI/ROUND" unique_id=1681961388]
+z_index = 1
+layout_mode = 0
+offset_left = 1767.0
+offset_top = 189.0
+offset_right = 1952.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "null"
+script = ExtResource("7_vsj0x")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/ROUND" unique_id=746940455]
+layout_mode = 0
+offset_left = 1755.0
+offset_top = 125.0
+offset_right = 1803.0
+offset_bottom = 173.0
+scale = Vector2(2.834449, 2.454218)
+texture = ExtResource("8_qsv74")
+stretch_mode = 1
+
+[node name="enemyCounter" type="Control" parent="CanvasLayer/GameUI" unique_id=763662936]
+anchors_preset = 0
+offset_left = -124.0
+offset_top = 10.0
+offset_right = -124.0
+offset_bottom = 1260.0
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/enemyCounter" unique_id=702112924]
+z_index = 1
+layout_mode = 0
+offset_left = 1768.0
+offset_top = 142.0
+offset_right = 1953.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Enemies"
+
+[node name="enemies" type="Label" parent="CanvasLayer/GameUI/enemyCounter" unique_id=846126871]
+z_index = 1
+layout_mode = 0
+offset_left = 1767.0
+offset_top = 189.0
+offset_right = 1952.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "null"
+script = ExtResource("9_6rmj2")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/enemyCounter" unique_id=1280409167]
+layout_mode = 0
+offset_left = 1755.0
+offset_top = 125.0
+offset_right = 1803.0
+offset_bottom = 173.0
+scale = Vector2(2.834449, 2.454218)
+texture = ExtResource("8_qsv74")
+stretch_mode = 1
+
 [node name="TutorialHint" type="Control" parent="CanvasLayer/GameUI" unique_id=692402328]
 anchors_preset = 0
 offset_bottom = 1250.0
@@ -301,7 +386,8 @@ Warmaster computing 2034 (c)
 Situation Report: Dissidence against
 Artificial Management (AI) at levels
 beyond stated maximum.
-Objective: Protect Data Centre."
+Objective: Protect Data Centre
+and Destroy Dissidents"
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/GameUI/TutorialHint/TextureRect" unique_id=401547702]
 layout_mode = 0
@@ -348,7 +434,10 @@ theme_override_font_sizes/font_size = 28
 text = "Left Click - Place Turrets
 Q/E - Swap Turret Type Placed
 WASD - Move Camera
-"
+esc - Quit Game
+Sectors Can Be Toggled On and
+Off By Clicking The 
+Associated Button"
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/GameUI/TutorialHint2/TextureRect" unique_id=1194019864]
 layout_mode = 0
@@ -392,10 +481,13 @@ offset_bottom = 136.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
-text = "Turrets cost water and can only be
-placed in sectors, and require
-attention when idling and extra to
-shoot."
+text = "Turrets cost water to place 
+and can only be placed in sectors. 
+Get water by exterminating enemies
+Attention is passively generated
+and passively used by
+turrets. Attention is also used when
+a weapon fires. "
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/GameUI/TutorialHint3/TextureRect" unique_id=1060301263]
 layout_mode = 0

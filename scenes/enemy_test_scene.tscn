@@ -35,6 +35,7 @@ position = Vector2(1.0000076, 185)
 scale = Vector2(0.484375, 0.421875)
 texture = ExtResource("2_1mwrl")
 script = ExtResource("3_cog33")
+reactorHealth = 100
 ui = NodePath("../Marker2D/Camera2D/UI")
 gameOverErrorCascade = ExtResource("4_c0q4c")
 biosTimer = 4.5

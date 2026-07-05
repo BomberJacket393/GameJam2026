@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cxgtyeiixw3xm"]
+
+[ext_resource type="Script" uid="uid://bb67agpoki7yd" path="res://roundPopup.gd" id="1_iis7w"]
+[ext_resource type="FontFile" uid="uid://cnacn1turrp8x" path="res://assets/aseprite.ttf" id="2_xgev6"]
+
+[node name="Control" type="Control" unique_id=1677216028 node_paths=PackedStringArray("label")]
+z_index = 30
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+script = ExtResource("1_iis7w")
+label = NodePath("Label")
+timeBeforeFade = 1.5
+
+[node name="Label" type="Label" parent="." unique_id=389435827]
+z_index = 15
+layout_mode = 0
+offset_left = 389.0
+offset_top = 257.0
+offset_right = 6672.0
+offset_bottom = 1057.0
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("2_xgev6")
+theme_override_font_sizes/font_size = 100
+text = "ROUND COUNT"

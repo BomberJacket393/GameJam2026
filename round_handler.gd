@@ -9,14 +9,11 @@ class_name round_handler
 @export var currentRound : int
 @export var enemyTarget : Node2D
 @export var spawners : Array[Node]
-@export var timeBetweenBatchesFactor : float
 @export var intermissionTime : int
 @export var enemySpeedFactor : float
 @export var flatEnemySpeed : float
-@export var batchReleaseDelayFactor : float
 var inIntermission : bool = false
 var intermissionTimer : float
-var timeBetweenBatches : float
 @export var activeSpawners : Array = []
 ##When there are no enemies, Wait a few seconds
 ##If still no enemies, persist to next round 
@@ -46,6 +43,8 @@ func rollSpawners(spawnerCount):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var livingEnemyCount = get_tree().get_nodes_in_group("enemies").size()
+	RoundInformation.livingEnemies = livingEnemyCount
+	RoundInformation.currentRound = currentRound
 	if livingEnemyCount == 0 and not inIntermission:
 		timeWithNoLivingEnemies += delta
 		if timeWithNoLivingEnemies > timeBeforeEndingRound:
@@ -84,7 +83,7 @@ func startRound(activeSpawners):
 	inIntermission = false
 	enemiesLeftToSpawn = enemiesPerRound[currentRound]
 	for spawner in activeSpawners:
-		spawner.roundStart(currentRound * enemySpeedFactor + flatEnemySpeed, 1/(currentRound+1))
+		spawner.roundStart(currentRound * enemySpeedFactor + flatEnemySpeed, 0.8 ** currentRound)
 	
 func collectSpawners():
 	spawners = get_tree().get_nodes_in_group("spawners")

@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://b7pfkxhtvr78h" path="res://smoke_cloud.tscn" id="6_4jj7h"]
 [ext_resource type="PackedScene" uid="uid://dwrqho55a0m42" path="res://masterHalButton.tscn" id="6_fqq1x"]
 [ext_resource type="Texture2D" uid="uid://bkjkfq60edn4s" path="res://assets/Sprite-0004.png" id="6_i0kr6"]
+[ext_resource type="Script" uid="uid://bk5312pha6oa4" path="res://assets/sinosuidalMotion.gd" id="6_ide2h"]
+[ext_resource type="Texture2D" uid="uid://b8vr203bg5yrf" path="res://assets/arrow.png" id="7_41ap8"]
 [ext_resource type="PackedScene" uid="uid://c1d36r3iak6su" path="res://smoke_cloud_2.tscn" id="7_i0kr6"]
+[ext_resource type="FontFile" uid="uid://cnacn1turrp8x" path="res://assets/aseprite.ttf" id="8_lmjdv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pakj4"]
 vertices = PackedVector2Array(418, -78, 750, -78, 750, -50, 446, -50, 418, 50, 446, 78, 366, 78, 270, 50, 366, 174, 350, 174, 306, 78, 350, 274, 366, 274, 366, 318, 306, 318, 306, 274, 322, 274, 322, 174, 306, 174, 14, 130, 94, 130, 94, 254, 14, 254, 14, 594, 254, 594, 254, 622, 14, 622, 14, 690, 254, 690, 254, 718, 14, 718, 14, 926, -14, 926, -14, 718, -14, 690, -238, 718, -238, 690, -14, 622, -14, 594, -238, 622, -238, 594, -14, 254, -14, 130, -94, 254, -94, 130, 14, -50, -14, -50, -226, -50, -226, 174, -254, 174, -254, -50, -514, -50, -514, 254, -542, 254, -542, -78, -254, -78, -226, -78, -254, -302, -226, -302, 270, -78, 242, -50, 242, 78)
@@ -703,10 +706,29 @@ text = "A3"
 [node name="halButton2" parent="Sectors/SectorA3" unique_id=1098702247 instance=ExtResource("5_klc8c")]
 position = Vector2(-502, 64)
 
-[node name="rebootButton" parent="Sectors" unique_id=1874291674 instance=ExtResource("6_fqq1x")]
+[node name="rebootButton" parent="Sectors" unique_id=1874291674 node_paths=PackedStringArray("resetGridPrompt") instance=ExtResource("6_fqq1x")]
 z_index = 8
 position = Vector2(-150, 203)
 poweredOnColor = Color(0, 0.6862745, 0, 1)
+resetGridPrompt = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Sectors/rebootButton" unique_id=608509282]
+script = ExtResource("6_ide2h")
+amplitude = 5.0
+frequency = 2.0
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sectors/rebootButton/Marker2D" unique_id=1722520003]
+position = Vector2(-39, -5)
+texture = ExtResource("7_41ap8")
+
+[node name="Label" type="Label" parent="Sectors/rebootButton/Marker2D" unique_id=813228928]
+z_index = 30
+offset_left = -149.0
+offset_top = -12.0
+offset_right = -47.0
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("8_lmjdv")
+text = "RESET GRID"
 
 [node name="VanityTerrain" type="Node2D" parent="." unique_id=1841911281]
 

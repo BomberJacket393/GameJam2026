@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	#if Input.is_action_just_pressed("cycle_left"):
 		#reactorHealth = -1
 	
-	if reactorHealth < 0 and not gameOver:
+	if reactorHealth <= 0 and not gameOver:
 		gameOver = true
 		var gameOverInstance = gameOverErrorCascade.instantiate() as Node2D
 		gameOverInstance.global_position = Vector2.ZERO

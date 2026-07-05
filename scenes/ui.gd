@@ -44,5 +44,6 @@ func game_over_stage_1():
 	inGameUI.hide()
 
 func game_over_stage_2():
+	Engine.time_scale = 0.0
 	SoundManager.playSfx(preload("res://erro.mp3"))
 	gameOverUI.show()

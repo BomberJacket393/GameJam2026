@@ -59,9 +59,9 @@ rightTurret = NodePath("Marker2D/AnimatedSprite2D2")
 TURRET_PRICE = 150
 pivot = NodePath("..")
 actionDelay = 3.0
-damagePerHit = 100
-idlePowerDrain = 3
-powerPerShot = 2
+damagePerHit = 5
+idlePowerDrain = 2
+powerPerShot = 6
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/gunTurretWeapon" unique_id=71197828]
 stream = ExtResource("2_f6a5g")

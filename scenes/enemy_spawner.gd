@@ -8,10 +8,20 @@ var enemySpeed : float
 @export var isIntermission : bool
 var rng = RandomNumberGenerator.new()
 var active = false
+var enemySpawnDelay = 1
+var enemySpawnTimer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	timer.timeout.connect(spawnEnemy)
+	pass
+##	timer.timeout.connect(spawnEnemy)
+
+func _process(delta):
+	if not isIntermission and roundHandler.getEnemiesInRound()>0 and active:
+		enemySpawnTimer -= delta
+		if enemySpawnTimer < 0:
+			enemySpawnTimer = enemySpawnDelay
+			spawnEnemy()
 	
 func spawnEnemy():
 	if not isIntermission and roundHandler.getEnemiesInRound()>0 and active:
@@ -25,7 +35,8 @@ func spawnEnemy():
 func roundStart(_enemySpeed, spawnDelay):
 	active = true
 	enemySpeed = _enemySpeed
-	timer.wait_time = spawnDelay
+	enemySpawnDelay = spawnDelay
+	enemySpawnTimer = 0
 	isIntermission = false
 	
 func roundOver():

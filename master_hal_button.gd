@@ -7,6 +7,7 @@ var cursor : Area2D
 @export var poweredDownColor : Color
 @export var poweredOnColor : Color
 var isBeingHovered : bool
+@export var resetGridPrompt : Node2D
 
 @onready var hitbox: Area2D = $Area2D
 
@@ -19,12 +20,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if sectorManager.isGridCollapsed():
+		resetGridPrompt.show()
 		halLight.self_modulate = poweredOnColor
 		isBeingHovered = checkCursorContact()
 		if isBeingHovered:
 			if Input.is_action_just_pressed("lmb"):
 				resetPower()
 	else:
+		resetGridPrompt.hide()
 		halLight.self_modulate = poweredDownColor
 
 func checkCursorContact():

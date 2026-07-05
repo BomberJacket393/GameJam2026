@@ -21,7 +21,7 @@ signal fired(power)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	powerPerShot = 0
+	pass
 	
 func setAssociatedSector(sector):
 	associatedSector = sector

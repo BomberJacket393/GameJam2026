@@ -20,6 +20,7 @@ var nextLoc : Vector2 = Vector2.ZERO
 @export var animator : AnimatedSprite2D
 
 var isBeingPushed : bool
+var aboutToDie
 
 func _ready():
 	animator.animation_finished.connect(enemyDeath)
@@ -39,7 +40,7 @@ func _process(delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 		
-	if is_touching_reactor():
+	if is_touching_reactor() and not aboutToDie:
 		attackReactor()
 		
 	##Destroy when less than 0 health
@@ -59,6 +60,7 @@ func attackReactor():
 	remove_from_group("enemies")
 	animator.play("destroy")
 	target.takeDamage(10)
+	aboutToDie = true
 	
 func is_touching_reactor():
 	var areas = hitbox.get_overlapping_areas()
