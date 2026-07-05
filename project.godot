@@ -25,9 +25,7 @@ Economy="*uid://b4h24v3rq8ylj"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1040
-window/size/mode=3
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [dotnet]
 

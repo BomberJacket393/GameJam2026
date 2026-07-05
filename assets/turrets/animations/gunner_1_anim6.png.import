@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnwk8w0bii4j8"
-path="res://.godot/imported/missile_2.png-7ff61e6283e66bb8dcc46f52dd143e3b.ctex"
+uid="uid://wg6sfgexonl2"
+path="res://.godot/imported/gunner_1_anim6.png-97d9bc33b1bd20dc6f4ff11d45b5bdec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/turrets/missile_2.png"
-dest_files=["res://.godot/imported/missile_2.png-7ff61e6283e66bb8dcc46f52dd143e3b.ctex"]
+source_file="res://assets/turrets/animations/gunner_1_anim6.png"
+dest_files=["res://.godot/imported/gunner_1_anim6.png-97d9bc33b1bd20dc6f4ff11d45b5bdec.ctex"]
 
 [params]
 

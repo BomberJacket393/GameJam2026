@@ -25,13 +25,13 @@ range = 800
 
 [node name="rocketTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("pivot")]
 script = ExtResource("3_sucav")
-bulletsPerBurst = 8
-burstLengthTime = 2.0
+bulletsPerBurst = 4
+burstLengthTime = 1.0
 missile = ExtResource("4_po5b3")
 pivot = NodePath("..")
-actionDelay = 8.0
-damagePerHit = 4
-idlePowerDrain = 2
+actionDelay = 4.0
+damagePerHit = 10
+idlePowerDrain = 6
 powerPerShot = 10
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/rocketTurretWeapon" unique_id=71197828]

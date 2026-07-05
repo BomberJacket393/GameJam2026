@@ -5,6 +5,34 @@
 [ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_bxw35"]
 [ext_resource type="AudioStream" uid="uid://dw2usdeep6r8q" path="res://assets/dennish18-machine-gun-129928.mp3" id="2_f6a5g"]
 [ext_resource type="Texture2D" uid="uid://dmya4wxdcjhd6" path="res://assets/turrets/machine_1.png" id="5_pe7gp"]
+[ext_resource type="Texture2D" uid="uid://p0iwdpxkn5h0" path="res://assets/turrets/animations/machine_1_anim1.png" id="6_qx4nj"]
+[ext_resource type="Texture2D" uid="uid://b4p5jwwcuc765" path="res://assets/turrets/animations/machine_1_anim2.png" id="7_qhj7y"]
+[ext_resource type="Texture2D" uid="uid://c2xd0laak7a1e" path="res://assets/turrets/animations/machine_1_anim3.png" id="8_4a1ic"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pakj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pe7gp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.25,
+"texture": ExtResource("6_qx4nj")
+}, {
+"duration": 0.25,
+"texture": ExtResource("7_qhj7y")
+}, {
+"duration": 0.25,
+"texture": ExtResource("8_4a1ic")
+}],
+"loop": 0,
+"name": &"firing",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
 radius = 100.0
@@ -20,15 +48,19 @@ texture = ExtResource("1_pe7gp")
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_bxw35")
 rotationSpeed = 1.0
+range = 200
 
-[node name="gunTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("pivot")]
+[node name="gunTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("leftTurret", "rightTurret", "pivot")]
 script = ExtResource("1_brovr")
 bulletsPerBurst = 8
-burstLengthTime = 0.5
+burstLengthTime = 0.4
+leftTurret = NodePath("Marker2D/AnimatedSprite2D")
+rightTurret = NodePath("Marker2D/AnimatedSprite2D2")
+TURRET_PRICE = 150
 pivot = NodePath("..")
 actionDelay = 3.0
 damagePerHit = 100
-idlePowerDrain = 1
+idlePowerDrain = 3
 powerPerShot = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/gunTurretWeapon" unique_id=71197828]
@@ -38,19 +70,23 @@ volume_db = -15.563
 [node name="Marker2D" type="Marker2D" parent="Pivot/gunTurretWeapon" unique_id=1213077663]
 position = Vector2(-1, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pivot/gunTurretWeapon/Marker2D" unique_id=929694099]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot/gunTurretWeapon/Marker2D" unique_id=1495295824]
 z_index = 1
 position = Vector2(9, -9)
 rotation = 1.5707964
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("5_pe7gp")
+sprite_frames = SubResource("SpriteFrames_pakj4")
+animation = &"firing"
 
-[node name="Sprite2D2" type="Sprite2D" parent="Pivot/gunTurretWeapon/Marker2D" unique_id=561866724]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Pivot/gunTurretWeapon/Marker2D" unique_id=1770488382]
 z_index = 1
-position = Vector2(9.000001, 9)
-rotation = -1.5707963
-scale = Vector2(0.6, -0.6)
-texture = ExtResource("5_pe7gp")
+position = Vector2(9, 9)
+rotation = 1.5707964
+scale = Vector2(-0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_pakj4")
+animation = &"firing"
+frame = 1
+frame_progress = 0.02325704
 
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
 collision_layer = 2

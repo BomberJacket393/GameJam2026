@@ -29,7 +29,7 @@ mortarShell = ExtResource("4_rxqqj")
 pivot = NodePath("..")
 actionDelay = 5.0
 damagePerHit = 20
-idlePowerDrain = 2
+idlePowerDrain = 4
 powerPerShot = 4
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/mortarTurretWeapon" unique_id=71197828]

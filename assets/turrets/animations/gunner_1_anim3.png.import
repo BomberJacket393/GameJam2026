@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4enkocmoifpt"
-path="res://.godot/imported/gunner_2.png-b9e23e14db442ab105ec092c40573130.ctex"
+uid="uid://cqquolefabg1d"
+path="res://.godot/imported/gunner_1_anim3.png-5ae2e2867343c31d407c3bb0db908f71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/turrets/gunner_2.png"
-dest_files=["res://.godot/imported/gunner_2.png-b9e23e14db442ab105ec092c40573130.ctex"]
+source_file="res://assets/turrets/animations/gunner_1_anim3.png"
+dest_files=["res://.godot/imported/gunner_1_anim3.png-5ae2e2867343c31d407c3bb0db908f71.ctex"]
 
 [params]
 

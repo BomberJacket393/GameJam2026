@@ -5,6 +5,46 @@
 [ext_resource type="Script" uid="uid://130pwksne3sl" path="res://scenes/sniper_turrent_weapon.gd" id="3_285in"]
 [ext_resource type="AudioStream" uid="uid://q6gjtsgirxl" path="res://assets/SNIPER_SOUND.mp3" id="4_55c5c"]
 [ext_resource type="Texture2D" uid="uid://bnt7s0oluvihj" path="res://assets/turrets/gunner_1.png" id="5_285in"]
+[ext_resource type="Texture2D" uid="uid://c2y7ua2ccgyid" path="res://assets/turrets/animations/gunner_1_anim2.png" id="6_u3f17"]
+[ext_resource type="Texture2D" uid="uid://c38k42xoi8ogh" path="res://assets/turrets/animations/gunner_1_anim4.png" id="7_4gyd8"]
+[ext_resource type="Texture2D" uid="uid://cqquolefabg1d" path="res://assets/turrets/animations/gunner_1_anim3.png" id="8_hop5j"]
+[ext_resource type="Texture2D" uid="uid://dcu5udkxmhppu" path="res://assets/turrets/animations/gunner_1_anim1.png" id="9_tg6p2"]
+[ext_resource type="Texture2D" uid="uid://bl3wt3eia4x55" path="res://assets/turrets/animations/gunner_1_anim5.png" id="10_hop5j"]
+[ext_resource type="Texture2D" uid="uid://wg6sfgexonl2" path="res://assets/turrets/animations/gunner_1_anim6.png" id="11_tg6p2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pakj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_285in")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": ExtResource("9_tg6p2")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_u3f17")
+}, {
+"duration": 0.3,
+"texture": ExtResource("8_hop5j")
+}, {
+"duration": 0.3,
+"texture": ExtResource("7_4gyd8")
+}, {
+"duration": 0.3,
+"texture": ExtResource("10_hop5j")
+}, {
+"duration": 0.3,
+"texture": ExtResource("11_tg6p2")
+}],
+"loop": 0,
+"name": &"firing",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
 radius = 500.0
@@ -20,26 +60,27 @@ texture = ExtResource("1_285in")
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_55c5c")
 rotationSpeed = 0.05
-range = 500
+range = 650
 instantRotation = true
 
-[node name="sniperTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("pivot")]
+[node name="sniperTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("animator", "pivot")]
+position = Vector2(0, 0.5)
 script = ExtResource("3_285in")
+animator = NodePath("AnimatedSprite2D")
 pivot = NodePath("..")
-actionDelay = 2.0
+actionDelay = 1.8
 damagePerHit = 100
 idlePowerDrain = 1
 powerPerShot = 3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/sniperTurretWeapon" unique_id=71197828]
 stream = ExtResource("4_55c5c")
-volume_db = -7.391
+volume_db = -12.411
 
-[node name="Sprite2D" type="Sprite2D" parent="Pivot/sniperTurretWeapon" unique_id=929694099]
-z_index = 1
-position = Vector2(13, 0)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot/sniperTurretWeapon" unique_id=1667959424]
+position = Vector2(15, 0.49999997)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("5_285in")
+sprite_frames = SubResource("SpriteFrames_pakj4")
 
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
 collision_layer = 2

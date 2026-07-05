@@ -6,6 +6,9 @@ var bulletsLeftInBurst : int
 var burstDelay : float
 var burstTimer : float
 var inBurst : bool
+var doFireLeft : bool = true
+@export var leftTurret : AnimatedSprite2D
+@export var rightTurret : AnimatedSprite2D
 @export var TURRET_PRICE : int
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -25,6 +28,8 @@ func _process(delta: float) -> void:
 		print(bulletsLeftInBurst)
 	if bulletsLeftInBurst <= 0:
 		inBurst = false
+		leftTurret.stop()
+		rightTurret.stop()
 	burstTimer-=delta
 
 func doAction():
@@ -37,6 +42,13 @@ func doAction():
 	
 func fireGun():
 	#print(str(name).to_upper() + "FIRED_GUN")
+	if doFireLeft:
+		leftTurret.stop()
+		leftTurret.play("firing")
+	else:
+		rightTurret.stop()
+		rightTurret.play("firing")
+	doFireLeft = not doFireLeft
 	if _current_target != null:
 		_current_target.takeDamage(damagePerHit)
 	else:

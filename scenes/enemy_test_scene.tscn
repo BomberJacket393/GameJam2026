@@ -24,7 +24,7 @@ center_offset = Vector3(960, 540, 0)
 
 [node name="enemyTestScene" type="Node2D" unique_id=906758217]
 
-[node name="navigationLayer" parent="." unique_id=921165198 instance=ExtResource("1_e4l8o")]
+[node name="map" parent="." unique_id=921165198 instance=ExtResource("1_e4l8o")]
 
 [node name="target" type="Sprite2D" parent="." unique_id=759789441]
 position = Vector2(1.0000076, 185)
@@ -39,7 +39,7 @@ script = ExtResource("6_ifku7")
 CAMERA_SPEED = 250
 
 [node name="Camera2D" type="Camera2D" parent="Marker2D" unique_id=2072218267]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.75, 1.75)
 
 [node name="UI" parent="Marker2D/Camera2D" unique_id=968441483 instance=ExtResource("8_6oyhd")]
 
@@ -60,12 +60,14 @@ mesh = SubResource("QuadMesh_cog33")
 
 [node name="roundHandler" type="Node2D" parent="." unique_id=350209330 node_paths=PackedStringArray("enemyTarget")]
 script = ExtResource("7_1ij2e")
-enemiesPerRound = Array[int]([30, 90, 300])
+enemiesPerRound = Array[int]([10, 25, 60, 120, 250, 600])
 enemyTarget = NodePath("../target")
 timeBetweenBatchesFactor = 1.0
-intermissionTime = 5
-enemySpeedFactor = 1.0
+intermissionTime = 3
+enemySpeedFactor = 8.0
+flatEnemySpeed = 40.0
 batchReleaseDelayFactor = 1.0
+timeBeforeEndingRound = 3.0
 
 [node name="enemySpawner4" parent="roundHandler" unique_id=986775256 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
 position = Vector2(-242, 162)

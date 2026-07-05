@@ -15,6 +15,9 @@ var nextLoc : Vector2 = Vector2.ZERO
 @export var pushDragFactor : float
 @export var pushVelocity : Vector2
 
+@export var waterOnDeath : int = 10
+@export var deathBubble : PackedScene
+
 var isBeingPushed : bool
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +39,12 @@ func _process(delta: float) -> void:
 		enemyDeath()
 
 func enemyDeath():
-	SoundManager.playSfx(preload("res://assets/DEATH_PLACEHOLDER.mp3"),position,-10)
+	SoundManager.playSfx(preload("res://assets/DEATH_PLACEHOLDER.mp3"),position,-20)
+	Economy.addWater(waterOnDeath)
+	var deathBubbleInstance = deathBubble.instantiate() as Node2D
+	deathBubbleInstance.global_position = global_position
+	deathBubbleInstance.amount = waterOnDeath
+	get_tree().current_scene.add_child(deathBubbleInstance)
 	queue_free()
 
 func _physics_process(delta: float) -> void:

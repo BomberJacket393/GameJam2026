@@ -12,20 +12,36 @@ class_name round_handler
 @export var timeBetweenBatchesFactor : float
 @export var intermissionTime : int
 @export var enemySpeedFactor : float
+@export var flatEnemySpeed : float
 @export var batchReleaseDelayFactor : float
 var inIntermission : bool = false
 var intermissionTimer : float
 var timeBetweenBatches : float
+@export var activeSpawners : Array = []
 ##When there are no enemies, Wait a few seconds
 ##If still no enemies, persist to next round 
 @export var timeBeforeEndingRound : float
 var timeWithNoLivingEnemies : float
-var enemiesConfirmedDead : bool
+@export var enemiesConfirmedDead : bool = false
+var rng = RandomNumberGenerator.new()
+var hasEnemyDiesThisRound : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	collectSpawners()
-	startRound()
+	startRound(rollSpawners(1))
+
+func rollSpawners(spawnerCount):
+	if spawnerCount >= spawners.size():
+		return spawners
+	var spawnerPool = spawners
+	var chosenSpawners = []
+	for i in range(spawnerCount):
+		var numOfSpawners = spawnerPool.size()
+		var chosenSpawnerIndex = rng.randi_range(0,numOfSpawners-1)
+		chosenSpawners.append(spawnerPool[chosenSpawnerIndex])
+		spawnerPool.remove_at(chosenSpawnerIndex)
+	return chosenSpawners
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -37,18 +53,20 @@ func _process(delta: float) -> void:
 	else:
 		timeWithNoLivingEnemies = 0 
 		
-	if enemiesLeftToSpawn <= 0 and enemiesConfirmedDead and not inIntermission:
+	if enemiesLeftToSpawn <= 0 and enemiesConfirmedDead and not inIntermission and hasEnemyDiesThisRound:
 		roundOver()
 	if inIntermission:
 		intermissionTimer -= delta
 		if intermissionTimer <= 0:
-			startRound() 
+			activeSpawners = rollSpawners(currentRound+1)		
+			startRound(activeSpawners) 
 	
 func getEnemiesInRound():
 	return enemiesLeftToSpawn
 
 func decrementEnemy():
 	enemiesLeftToSpawn -= 1
+	hasEnemyDiesThisRound = true
 
 func roundOver():
 	collectSpawners()
@@ -58,16 +76,15 @@ func roundOver():
 	currentRound += 1
 	inIntermission = true
 	enemiesConfirmedDead = false
+	hasEnemyDiesThisRound = false
 	intermissionTimer = intermissionTime	
 	
-func startRound():
+func startRound(activeSpawners):
 	print("BEGINNING_ROUND_"+str(currentRound))
-	collectSpawners()
 	inIntermission = false
 	enemiesLeftToSpawn = enemiesPerRound[currentRound]
-
-	for spawner in spawners:
-		spawner.roundStart(enemiesLeftToSpawn * enemySpeedFactor, 1/(1+currentRound))
+	for spawner in activeSpawners:
+		spawner.roundStart(currentRound * enemySpeedFactor + flatEnemySpeed, 1/(currentRound+1))
 	
 func collectSpawners():
 	spawners = get_tree().get_nodes_in_group("spawners")

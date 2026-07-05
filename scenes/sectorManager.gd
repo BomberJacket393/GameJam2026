@@ -14,8 +14,8 @@ var gridCollapse : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	print("START_"+name+"_DIAGNOSTICS")
-	print(powerPerSecond)
+	##print("START_"+name+"_DIAGNOSTICS")
+	##print(powerPerSecond)
 	for child in get_tree().get_nodes_in_group("sector"):
 		if child is TileMapLayer:
 			sectors.append(child)
@@ -23,8 +23,8 @@ func _ready() -> void:
 	var nodes = get_tree().get_nodes_in_group("cursor")
 	if nodes.size() != 0:
 		cursor = nodes[0]
-	print(str(maxPower)+" "+str(availablePower))
-	print("START_"+name+"_DIAGNOSTICS")
+	##print(str(maxPower)+" "+str(availablePower))
+	##print("START_"+name+"_DIAGNOSTICS")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

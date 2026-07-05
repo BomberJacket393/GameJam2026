@@ -302,7 +302,7 @@ navigation_polygon = SubResource("NavigationPolygon_pakj4")
 
 [node name="SectorA5" type="TileMapLayer" parent="Sectors" unique_id=26330025 groups=["sector"]]
 z_index = -1
-position = Vector2(608, 348)
+position = Vector2(608, 320)
 tile_map_data = PackedByteArray("AADe//7/AABEAAIAAADe////AABEAAMAAADf//7/AABFAAIAAADf////AABFAAMAAADe/wAAAABEAAIAAADe/wEAAABEAAMAAADf/wAAAABFAAIAAADf/wEAAABFAAMAAADg//7/AABEAAIAAADg////AABEAAMAAADh//7/AABFAAIAAADh////AABFAAMAAADg/wAAAABEAAIAAADg/wEAAABEAAMAAADh/wAAAABFAAIAAADh/wEAAABFAAMAAAA=")
 tile_set = SubResource("TileSet_8742q")
 navigation_enabled = false
@@ -379,7 +379,7 @@ position = Vector2(-652, 4)
 
 [node name="SectorA4" type="TileMapLayer" parent="Sectors" unique_id=276390774 groups=["sector"]]
 z_index = -1
-position = Vector2(416, 343)
+position = Vector2(416, 320)
 tile_map_data = PackedByteArray("AADe//7/AABEAAIAAADe////AABEAAMAAADf//7/AABFAAIAAADf////AABFAAMAAADe/wAAAABEAAIAAADe/wEAAABEAAMAAADf/wAAAABFAAIAAADf/wEAAABFAAMAAADg//7/AABEAAIAAADg////AABEAAMAAADh//7/AABFAAIAAADh////AABFAAMAAADg/wAAAABEAAIAAADg/wEAAABEAAMAAADh/wAAAABFAAIAAADh/wEAAABFAAMAAAA=")
 tile_set = SubResource("TileSet_8742q")
 navigation_enabled = false

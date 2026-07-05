@@ -14,13 +14,14 @@ var selfCanFire : bool = false
 @export var idlePowerDrain : int
 @export var powerPerShot : int
 var associatedSector : Node2D
+var waterCost : int
 var POWER_OUTAGE_DIM_MODULATE = Color(0.3, 0.3, 0.3)
 
 signal fired(power)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	powerPerShot = 0
 	
 func setAssociatedSector(sector):
 	associatedSector = sector

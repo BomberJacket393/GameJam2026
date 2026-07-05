@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dux83md71msmr" path="res://scripts/enemy_navigation.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://7wbvve80vfhu" path="res://assets/enemy_run1.png" id="2_c4w8v"]
+[ext_resource type="PackedScene" uid="uid://cnurwwfeqnxi4" path="res://waterDeathPopup.tscn" id="2_xwavj"]
 [ext_resource type="Texture2D" uid="uid://iunkcfx67tfr" path="res://assets/enemy_run2.png" id="3_xwavj"]
 [ext_resource type="Texture2D" uid="uid://cpjum0siad441" path="res://assets/enemy_run3.png" id="4_nenq2"]
 [ext_resource type="Texture2D" uid="uid://cqhafinun0r5m" path="res://assets/enemy_run4.png" id="5_md484"]
@@ -32,6 +33,7 @@ animations = [{
 script = ExtResource("1_md0e3")
 hitbox = NodePath("Area2D")
 pushDragFactor = 10.0
+deathBubble = ExtResource("2_xwavj")
 
 [node name="navBrain" type="NavigationAgent2D" parent="." unique_id=483045622]
 simplify_path = true

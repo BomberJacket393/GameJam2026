@@ -58,12 +58,13 @@ func canPlaceTurret():
 	return _inSector and mousePos != Vector2.ZERO and not _touchingTurret
 
 func placeTurret():
-	var turretInstance = turrets[currentTurretIndex].instantiate()
-	turretInstance.position = mousePosGridSnap
-	get_tree().current_scene.add_child(turretInstance)
-	var sector = _getCurrentSector()
-	print(sector.name)
-	sector.assignTurret(turretInstance)
+	if Economy.tryTransaction(Economy.turretCosts[currentTurretIndex]):
+		var turretInstance = turrets[currentTurretIndex].instantiate()
+		turretInstance.position = mousePosGridSnap
+		get_tree().current_scene.add_child(turretInstance)
+		var sector = _getCurrentSector()
+		print(sector.name)
+		sector.assignTurret(turretInstance)
 	
 func _isTouchingTurret():
 	_touchingTurret = false
