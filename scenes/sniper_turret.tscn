@@ -65,18 +65,18 @@ instantRotation = true
 
 [node name="sniperTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("animator", "pivot")]
 z_index = 3
-position = Vector2(0, 0.5)
+position = Vector2(-1, 0)
 script = ExtResource("3_285in")
 animator = NodePath("AnimatedSprite2D")
 pivot = NodePath("..")
 actionDelay = 1.8
 damagePerHit = 100
 idlePowerDrain = 1
-powerPerShot = 3
+powerPerShot = 5
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/sniperTurretWeapon" unique_id=71197828]
 stream = ExtResource("4_55c5c")
-volume_db = -12.411
+volume_db = -21.914
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot/sniperTurretWeapon" unique_id=1667959424]
 position = Vector2(15, 0.49999997)

@@ -22,4 +22,5 @@ func _physics_process(delta: float) -> void:
 	if direction.length() > 1:
 		direction = direction.normalized()
 	velocity = direction * CAMERA_SPEED
-	position += velocity * delta
+	if not GameResetManager.isGameOver:
+		position += velocity * delta

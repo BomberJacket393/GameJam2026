@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	
 	if reactorHealth <= 0 and not gameOver:
 		gameOver = true
+		GameResetManager.isGameOver = true
 		var gameOverInstance = gameOverErrorCascade.instantiate() as Node2D
 		gameOverInstance.global_position = Vector2.ZERO
 		get_tree().current_scene.add_child(gameOverInstance)

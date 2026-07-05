@@ -36,7 +36,7 @@ powerPerShot = 10
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/rocketTurretWeapon" unique_id=71197828]
 stream = ExtResource("4_sucav")
-volume_db = -25.965
+volume_db = -24.381
 attenuation = 3.363586
 
 [node name="Marker2D" type="Marker2D" parent="Pivot/rocketTurretWeapon" unique_id=1213077663]

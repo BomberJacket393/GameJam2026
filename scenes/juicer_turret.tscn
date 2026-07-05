@@ -67,7 +67,7 @@ idlePowerDrain = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/juicerTurret" unique_id=71197828]
 stream = ExtResource("4_2cjd6")
-volume_db = -10.594
+volume_db = -15.873
 
 [node name="juicerWeapon" type="AnimatedSprite2D" parent="Pivot/juicerTurret" unique_id=198821407]
 sprite_frames = SubResource("SpriteFrames_pakj4")

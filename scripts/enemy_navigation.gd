@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 		enemyDeath()
 
 func enemyDeath():
-	SoundManager.playSfx(preload("res://assets/DEATH_PLACEHOLDER.mp3"),position,-20)
+	SoundManager.playSfx(preload("res://assets/DEATH_PLACEHOLDER.mp3"),position,-30)
 	Economy.addWater(waterOnDeath)
 	var deathBubbleInstance = deathBubble.instantiate() as Node2D
 	deathBubbleInstance.global_position = global_position
