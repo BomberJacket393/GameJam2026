@@ -44,4 +44,5 @@ texture = ExtResource("3_v5lst")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1482531654]
 stream = ExtResource("4_5ey2l")
+volume_db = -30.892
 autoplay = true

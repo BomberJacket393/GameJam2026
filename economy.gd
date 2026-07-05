@@ -1,6 +1,6 @@
 extends Node
 
-var water = 250
+var water = 150
 var cursor
 @export var gunTurretCost = 125
 @export var sniperTurretCost = 75
