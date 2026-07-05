@@ -71,7 +71,7 @@ volume_db = -15.563
 position = Vector2(-1, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot/gunTurretWeapon/Marker2D" unique_id=1495295824]
-z_index = 1
+z_index = 3
 position = Vector2(9, -9)
 rotation = 1.5707964
 scale = Vector2(0.6, 0.6)
@@ -79,7 +79,7 @@ sprite_frames = SubResource("SpriteFrames_pakj4")
 animation = &"firing"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Pivot/gunTurretWeapon/Marker2D" unique_id=1770488382]
-z_index = 1
+z_index = 3
 position = Vector2(9, 9)
 rotation = 1.5707964
 scale = Vector2(-0.6, 0.6)

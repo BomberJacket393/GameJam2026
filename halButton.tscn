@@ -8,6 +8,7 @@
 radius = 28.0
 
 [node name="halButton" type="Node2D" unique_id=407498746 node_paths=PackedStringArray("halLight")]
+z_index = 5
 script = ExtResource("1_1vlu3")
 halLight = NodePath("Sprite2D")
 gridCollapsePoweredOnColor = Color(0, 0.5764706, 0.58431375, 1)

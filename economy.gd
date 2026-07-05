@@ -6,7 +6,7 @@ var cursor
 @export var sniperTurretCost = 75
 @export var mortarTurretCost = 200
 @export var rocketTurretCost = 325
-@export var turretStartGameDelay = 1.0
+@export var turretStartGameDelay = 2.0
 var gameStarted
 
 var turretCosts : Array[int] = [gunTurretCost, sniperTurretCost, mortarTurretCost, rocketTurretCost]
@@ -21,7 +21,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Engine.time_scale != 0 and turretStartGameDelay > 0:
+	if Engine.time_scale == 1 and turretStartGameDelay > 0:
 		turretStartGameDelay -= delta
 	if turretStartGameDelay < 0:
 		gameStarted = true

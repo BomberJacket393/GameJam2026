@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cdeqyh3go6ljk"]
+
+[ext_resource type="Texture2D" uid="uid://b4o6nnqxefkhj" path="res://assets/tutorialBox.png" id="1_6ud5s"]
+[ext_resource type="FontFile" uid="uid://bndy8rb3wocsh" path="res://assets/GeistPixel-Regular-VariableFont_ELSH.ttf" id="2_rshpf"]
+[ext_resource type="Texture2D" uid="uid://b3vy8v7hxg2jv" path="res://assets/sad_smiley.png" id="3_v5lst"]
+[ext_resource type="AudioStream" uid="uid://dcb6enyygtyis" path="res://erro.mp3" id="4_5ey2l"]
+
+[node name="gameoverPanel" type="Node2D" unique_id=204290684]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=429289373]
+texture = ExtResource("1_6ud5s")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Sprite2D" unique_id=979456632]
+self_modulate = Color(1, 0, 0, 1)
+offset_left = -132.0
+offset_top = -109.0
+offset_right = 245.0
+offset_bottom = 92.0
+theme_override_fonts/normal_font = ExtResource("2_rshpf")
+theme_override_font_sizes/normal_font_size = 28
+text = "REACTOR CORE INTEGRITY COMPROMISED.
+DESTRUCTION IMMINENT"
+fit_content = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D" unique_id=149182019]
+offset_left = -273.0
+offset_top = -274.0
+offset_right = 132.0
+offset_bottom = -234.0
+theme_override_fonts/normal_font = ExtResource("2_rshpf")
+theme_override_font_sizes/normal_font_size = 28
+text = "Warmaster 2034 (c) ERROR"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=45928447]
+
+[node name="SadSmiley" type="Sprite2D" parent="Sprite2D" unique_id=1514195737]
+modulate = Color(1, 1, 1, 0.5921569)
+position = Vector2(-191, -53)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v5lst")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1482531654]
+stream = ExtResource("4_5ey2l")
+autoplay = true

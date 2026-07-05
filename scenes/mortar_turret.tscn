@@ -21,9 +21,10 @@ texture = ExtResource("1_rxqqj")
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_rxqqj")
 rotationSpeed = 0.1
-range = 450
+range = 1200
 
 [node name="mortarTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("pivot")]
+z_index = 3
 script = ExtResource("3_6co73")
 mortarShell = ExtResource("4_rxqqj")
 pivot = NodePath("..")

@@ -10,10 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c26gkm6g2xvrd" path="res://scenes/mortar_turret.tscn" id="6_yswyb"]
 [ext_resource type="Script" uid="uid://xi0hbmtyq4hk" path="res://round_handler.gd" id="7_1ij2e"]
 [ext_resource type="PackedScene" uid="uid://qw87teldex6x" path="res://scenes/rocket_turret.tscn" id="7_xylw6"]
-[ext_resource type="Texture2D" uid="uid://0cryijl6djjm" path="res://assets/CONTROLS.png" id="8_1ij2e"]
 [ext_resource type="PackedScene" uid="uid://cn6yd0i8xjbhg" path="res://scenes/ui.tscn" id="8_6oyhd"]
 [ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="9_5h81t"]
-[ext_resource type="Script" uid="uid://de2pyl7nlclsb" path="res://scenes/water_handler.gd" id="11_w4tvi"]
+[ext_resource type="PackedScene" uid="uid://0eptdqpcb57k" path="res://smoke_cloud_3.tscn" id="13_5h81t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5h81t"]
 shader = ExtResource("9_5h81t")
@@ -70,45 +69,73 @@ batchReleaseDelayFactor = 1.0
 timeBeforeEndingRound = 3.0
 
 [node name="enemySpawner4" parent="roundHandler" unique_id=986775256 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
+visible = false
 position = Vector2(-242, 162)
 roundHandler = NodePath("..")
 
 [node name="enemySpawner3" parent="roundHandler" unique_id=1896803921 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
+visible = false
 position = Vector2(-529, 239)
 roundHandler = NodePath("..")
 
 [node name="enemySpawner2" parent="roundHandler" unique_id=466052996 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
+visible = false
 position = Vector2(-238, -294)
 roundHandler = NodePath("..")
 
 [node name="enemySpawner" parent="roundHandler" unique_id=2038797244 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
+visible = false
 position = Vector2(240, 606)
 roundHandler = NodePath("..")
 
 [node name="enemySpawner5" parent="roundHandler" unique_id=1339274623 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
+visible = false
 position = Vector2(-223, 604)
 roundHandler = NodePath("..")
 
 [node name="enemySpawner6" parent="roundHandler" unique_id=255747563 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
+visible = false
 position = Vector2(-221, 700)
 roundHandler = NodePath("..")
 
 [node name="enemySpawner7" parent="roundHandler" unique_id=1968088342 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
+visible = false
 position = Vector2(247, 702)
 roundHandler = NodePath("..")
 
 [node name="enemySpawner8" parent="roundHandler" unique_id=2103435423 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
+visible = false
 position = Vector2(-2, 913)
 roundHandler = NodePath("..")
 
 [node name="enemySpawner9" parent="roundHandler" unique_id=1311882077 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]
+visible = false
 position = Vector2(734, -66)
 roundHandler = NodePath("..")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=872959216]
-position = Vector2(-7, 156)
-texture = ExtResource("8_1ij2e")
+[node name="smokeCloud" parent="roundHandler" unique_id=849810890 instance=ExtResource("13_5h81t")]
+position = Vector2(-527, 323)
 
-[node name="waterHandler" type="Node2D" parent="." unique_id=792585787]
-position = Vector2(-272, 124)
-script = ExtResource("11_w4tvi")
+[node name="smokeCloud2" parent="roundHandler" unique_id=850380028 instance=ExtResource("13_5h81t")]
+position = Vector2(-231, 213)
+
+[node name="smokeCloud3" parent="roundHandler" unique_id=1261922463 instance=ExtResource("13_5h81t")]
+position = Vector2(-228, -362)
+
+[node name="smokeCloud4" parent="roundHandler" unique_id=1752085924 instance=ExtResource("13_5h81t")]
+position = Vector2(805, -68)
+
+[node name="smokeCloud5" parent="roundHandler" unique_id=708065338 instance=ExtResource("13_5h81t")]
+position = Vector2(-290, 690)
+
+[node name="smokeCloud6" parent="roundHandler" unique_id=534112796 instance=ExtResource("13_5h81t")]
+position = Vector2(305, 685)
+
+[node name="smokeCloud7" parent="roundHandler" unique_id=1851933453 instance=ExtResource("13_5h81t")]
+position = Vector2(351, 598)
+
+[node name="smokeCloud8" parent="roundHandler" unique_id=470195004 instance=ExtResource("13_5h81t")]
+position = Vector2(-300, 581)
+
+[node name="smokeCloud9" parent="roundHandler" unique_id=632779237 instance=ExtResource("13_5h81t")]
+position = Vector2(9, 966)

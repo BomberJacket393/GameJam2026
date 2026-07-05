@@ -8,7 +8,7 @@ var sectors = []
 var gridCollapseImminent = false
 var gridCollapse : bool = false
 
-@export var currentTurret = null
+@export var currentTurret : int
 @export var cursor : Node2D
 
 # Called when the node enters the scene tree for the first time.
@@ -30,6 +30,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if cursor != null:
 		currentTurret = cursor.currentTurretIndex
+	else:
+		var nodes = get_tree().get_nodes_in_group("cursor")
+		if nodes.size() != 0:
+			cursor = nodes[0]		
 	var idlePower = getIdlePowerDrain()
 	if not gridCollapse:
 		availablePower -= idlePower * delta

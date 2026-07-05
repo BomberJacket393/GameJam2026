@@ -14,7 +14,12 @@ func doAction():
 	super.doAction()
 	animator.play("firing")
 	audio_stream_player_2d.play()
-	_current_target.takeDamage(damagePerHit)
+	if _current_target != null:
+		_current_target.takeDamage(damagePerHit)
+	else:
+		var _new_target = pivot.get_target()
+		if _new_target != null:
+			_new_target.takeDamage(damagePerHit)
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2(cos(pivot.rotation), sin(pivot.rotation))

@@ -10,11 +10,27 @@ radius = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndevg"]
 size = Vector2(1, 1)
 
-[node name="cursor" type="Node2D" unique_id=1836918564 node_paths=PackedStringArray("cursorArea", "cursorGridArea") groups=["cursor_script"]]
+[sub_resource type="Gradient" id="Gradient_ndevg"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.71, 0.73)
+colors = PackedColorArray(0.5921569, 0, 0, 0.72156864, 1, 0, 0, 0.36078432, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 100
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ndevg"]
+gradient = SubResource("Gradient_ndevg")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[node name="cursor" type="Node2D" unique_id=1836918564 node_paths=PackedStringArray("cursorArea", "cursorGridArea", "rangeCircle") groups=["cursor_script"]]
 script = ExtResource("1_ndevg")
 gridSize = 32
 cursorArea = NodePath("Area2D")
 cursorGridArea = NodePath("GridSnapCollision")
+rangeCircle = NodePath("rangeCircle")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=572555043]
 visible = false
@@ -22,6 +38,7 @@ position = Vector2(9, 14)
 texture = ExtResource("3_ndevg")
 
 [node name="ghostTurretBox" type="Sprite2D" parent="." unique_id=259778363]
+visible = false
 modulate = Color(1, 1, 1, 0.27058825)
 self_modulate = Color(1, 0, 0, 0.88235295)
 texture = ExtResource("4_n5qf0")
@@ -35,3 +52,7 @@ shape = SubResource("CircleShape2D_pakj4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1697499222]
 shape = SubResource("RectangleShape2D_ndevg")
+
+[node name="rangeCircle" type="Sprite2D" parent="." unique_id=2082357150]
+self_modulate = Color(1, 1, 1, 0.49803922)
+texture = SubResource("GradientTexture2D_ndevg")

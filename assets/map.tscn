@@ -605,6 +605,7 @@ text = "A5
 "
 
 [node name="halButton2" parent="Sectors/SectorA5" unique_id=407498746 instance=ExtResource("5_klc8c")]
+z_index = 4
 position = Vector2(-502, 64)
 
 [node name="SectorA1" type="TileMapLayer" parent="Sectors" unique_id=1477827720 groups=["sector"]]
@@ -703,6 +704,7 @@ text = "A3"
 position = Vector2(-502, 64)
 
 [node name="rebootButton" parent="Sectors" unique_id=1874291674 instance=ExtResource("6_fqq1x")]
+z_index = 8
 position = Vector2(-150, 203)
 poweredOnColor = Color(0, 0.6862745, 0, 1)
 

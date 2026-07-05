@@ -12,6 +12,7 @@ extends Node2D
 @export var cursorArea : Area2D
 @export var currentTurret : PackedScene
 @export var cursorGridArea : Area2D
+@export var rangeCircle : Sprite2D
 var numberOfTurrets : int
 var _touchingTurret : bool
 var _inSector : bool
@@ -45,6 +46,16 @@ func _process(delta: float) -> void:
 		else:
 			currentTurretIndex += 1
 		
+	if canPlaceTurret():
+		rangeCircle.visible = true
+		var turretInstance = currentTurret.instantiate()
+		var turret_script = turretInstance.get_node("Pivot") as aim_at_enemy
+		rangeCircle.scale.x = turret_script.range/256.0
+		rangeCircle.scale.y = turret_script.range/256.0
+		rangeCircle.global_position = mousePosGridSnap
+	else:
+		rangeCircle.visible = false
+		
 	if Input.is_action_just_pressed("lmb") and canPlaceTurret():
 		placeTurret()	
 
@@ -55,7 +66,7 @@ func mouseHandling():
 	mousePosGridSnap.y = floor(mousePos.y/gridSize) * gridSize + gridSize/2
 
 func canPlaceTurret():
-	return _inSector and mousePos != Vector2.ZERO and not _touchingTurret
+	return _inSector and mousePos != Vector2.ZERO and not _touchingTurret and Engine.time_scale != 0
 
 func placeTurret():
 	if Economy.tryTransaction(Economy.turretCosts[currentTurretIndex]):

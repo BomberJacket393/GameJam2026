@@ -21,7 +21,7 @@ texture = ExtResource("1_sucav")
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_po5b3")
 rotationSpeed = 0.1
-range = 800
+range = 600
 
 [node name="rocketTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("pivot")]
 script = ExtResource("3_sucav")
@@ -43,14 +43,14 @@ attenuation = 3.363586
 position = Vector2(-1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/rocketTurretWeapon/Marker2D" unique_id=929694099]
-z_index = 1
+z_index = 3
 position = Vector2(2, 11)
 rotation = 1.5707964
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_sucav")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pivot/rocketTurretWeapon/Marker2D" unique_id=561866724]
-z_index = 1
+z_index = 3
 position = Vector2(2, -11)
 rotation = -1.5707963
 scale = Vector2(0.6, -0.6)

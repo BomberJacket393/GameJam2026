@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://4rccycac8sep"]
+
+[ext_resource type="Script" uid="uid://cjw6ukyokmls2" path="res://gameover.gd" id="1_4nh4k"]
+[ext_resource type="PackedScene" uid="uid://cpcwsvn10fqi6" path="res://panel_cascade.tscn" id="2_tpdqf"]
+
+[node name="gameover" type="Node2D" unique_id=1040048886]
+script = ExtResource("1_4nh4k")
+
+[node name="panelCascade" parent="." unique_id=178154994 instance=ExtResource("2_tpdqf")]
+position = Vector2(-1029, -644)
+
+[node name="panelCascade2" parent="." unique_id=272832514 instance=ExtResource("2_tpdqf")]
+position = Vector2(-302, -460)
+
+[node name="panelCascade3" parent="." unique_id=319709908 instance=ExtResource("2_tpdqf")]
+position = Vector2(698, -460)
+doSound = false
+
+[node name="panelCascade4" parent="." unique_id=1332931231 instance=ExtResource("2_tpdqf")]
+position = Vector2(-1186, -92)
+
+[node name="panelCascade5" parent="." unique_id=1304726473 instance=ExtResource("2_tpdqf")]
+position = Vector2(-737, -47)
+
+[node name="panelCascade6" parent="." unique_id=1640662763 instance=ExtResource("2_tpdqf")]
+position = Vector2(779, 177)
+
+[node name="panelCascade7" parent="." unique_id=1963948175 instance=ExtResource("2_tpdqf")]
+position = Vector2(-536, 356)
+sequentialPanelFactor = 0.7
+
+[node name="panelCascade8" parent="." unique_id=1876627933 instance=ExtResource("2_tpdqf")]
+position = Vector2(-1424, 181)
+sequentialPanelFactor = 0.7
+doSound = false
+
+[node name="panelCascade9" parent="." unique_id=2146984699 instance=ExtResource("2_tpdqf")]
+position = Vector2(-213, -1025)
+sequentialPanelFactor = 0.7
+
+[node name="panelCascade10" parent="." unique_id=1713352908 instance=ExtResource("2_tpdqf")]
+position = Vector2(810, -913)
+sequentialPanelFactor = 0.7
+
+[node name="panelCascade11" parent="." unique_id=913467357 instance=ExtResource("2_tpdqf")]
+position = Vector2(196, -935)
+sequentialPanelFactor = 0.7
+
+[node name="panelCascade12" parent="." unique_id=1477245692 instance=ExtResource("2_tpdqf")]
+position = Vector2(115, 348)
+sequentialPanelFactor = 0.7
+doSound = false
+
+[node name="panelCascade13" parent="." unique_id=1858822377 instance=ExtResource("2_tpdqf")]
+position = Vector2(-1908, -1060)
+sequentialPanelFactor = 0.7
+doSound = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1793473770]
+zoom = Vector2(0.75, 0.75)
+
+[node name="Timer" type="Timer" parent="." unique_id=711340186]
+wait_time = 2.5
+one_shot = true
+autostart = true
+ignore_time_scale = true

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cpcwsvn10fqi6"]
+
+[ext_resource type="Script" uid="uid://crnkhre5y8hw2" path="res://panel_cascade.gd" id="1_4mwla"]
+[ext_resource type="PackedScene" uid="uid://cdeqyh3go6ljk" path="res://gameover_panel.tscn" id="2_jqe31"]
+
+[node name="panelCascade" type="Node2D" unique_id=178154994]
+top_level = true
+z_index = 10
+script = ExtResource("1_4mwla")
+errorPanel = ExtResource("2_jqe31")
+yIncrement = 50
+xIncrement = 60
+panelsPerBatch = 20
+panelDelayMax = 0.8
+sequentialPanelFactor = 0.8
+doSound = true

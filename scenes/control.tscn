@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://d3caq4vm4nxgp" path="res://scenes/enemy_test_scene.tscn" id="2_lpubu"]
 [ext_resource type="Texture2D" uid="uid://b6b4ump6v5571" path="res://assets/background.webp" id="3_fj5cn"]
 [ext_resource type="Texture2D" uid="uid://cniunlmjcf1hc" path="res://assets/wave.svg" id="3_kbped"]
+[ext_resource type="FontFile" uid="uid://cnacn1turrp8x" path="res://assets/aseprite.ttf" id="5_1p5nq"]
 [ext_resource type="FontFile" uid="uid://dbxhtj8jig3au" path="res://assets/Jersey25-Regular.ttf" id="5_fj5cn"]
+[ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="8_hob4j"]
 
 [sub_resource type="Animation" id="Animation_kbped"]
 length = 0.001
@@ -44,6 +46,13 @@ _data = {
 &"RESET": SubResource("Animation_kbped"),
 &"float": SubResource("Animation_fj5cn")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_01bab"]
+shader = ExtResource("8_hob4j")
+
+[sub_resource type="QuadMesh" id="QuadMesh_exs80"]
+size = Vector2(1920, 1080)
+center_offset = Vector3(960, 540, 0)
 
 [node name="Menu" type="Control" unique_id=141449785]
 layout_mode = 3
@@ -104,15 +113,15 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -785.0
-offset_right = 142.0
+offset_right = 271.0
 offset_bottom = 113.99991
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("5_fj5cn")
+theme_override_fonts/font = ExtResource("5_1p5nq")
 theme_override_font_sizes/font_size = 74
-text = "Defend The Datacenter..."
+text = "Defend The Datacenter"
 horizontal_alignment = 1
 script = ExtResource("2_62e2m")
 
@@ -127,5 +136,11 @@ text = "Start Game"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=477698590]
 libraries/ = SubResource("AnimationLibrary_iy58a")
 autoplay = &"float"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=618610167]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer" unique_id=1514095717]
+material = SubResource("ShaderMaterial_01bab")
+mesh = SubResource("QuadMesh_exs80")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

@@ -64,6 +64,7 @@ range = 650
 instantRotation = true
 
 [node name="sniperTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("animator", "pivot")]
+z_index = 3
 position = Vector2(0, 0.5)
 script = ExtResource("3_285in")
 animator = NodePath("AnimatedSprite2D")

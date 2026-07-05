@@ -4,10 +4,18 @@
 [ext_resource type="Script" uid="uid://cxwr6l2fd1ktw" path="res://scenes/ui.gd" id="1_wm3ai"]
 [ext_resource type="FontFile" uid="uid://bndy8rb3wocsh" path="res://assets/GeistPixel-Regular-VariableFont_ELSH.ttf" id="2_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://dj11nmypkv4p8" path="res://assets/longUI.png" id="2_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://ds2hyg516sff7" path="res://assets/BIOS_BLUE.png" id="3_cgfq5"]
 [ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="3_yev5y"]
 [ext_resource type="Texture2D" uid="uid://b4o6nnqxefkhj" path="res://assets/tutorialBox.png" id="5_8dubc"]
 [ext_resource type="Texture2D" uid="uid://bke5x4ffcmqqw" path="res://assets/closeButton.png" id="6_p7vwb"]
 [ext_resource type="AudioStream" uid="uid://bbl4j2ry3oguq" path="res://assets/universfield-new-notification-09-352705.mp3" id="8_ktti3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_le3q8"]
+shader = ExtResource("3_yev5y")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3lwp1"]
+size = Vector2(1920, 1080)
+center_offset = Vector3(960, 540, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_le3q8"]
 bg_color = Color(1, 1, 1, 1)
@@ -21,13 +29,6 @@ bg_color = Color(0.042823717, 0.6234041, 0.99999994, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3k4nv"]
 bg_color = Color(0.9999998, 0.35260022, 0.16765049, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_le3q8"]
-shader = ExtResource("3_yev5y")
-
-[sub_resource type="QuadMesh" id="QuadMesh_3lwp1"]
-size = Vector2(1920, 1080)
-center_offset = Vector3(960, 540, 0)
-
 [node name="UI" type="Control" unique_id=968441483]
 layout_mode = 3
 anchors_preset = 15
@@ -39,30 +40,98 @@ script = ExtResource("1_wm3ai")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=555316495]
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1158115079]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer" unique_id=1982015874]
+z_index = 20
+material = SubResource("ShaderMaterial_le3q8")
+mesh = SubResource("QuadMesh_3lwp1")
+
+[node name="GameoverUI" type="Control" parent="CanvasLayer" unique_id=1843467206]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1004751130]
+[node name="Label" type="Label" parent="CanvasLayer/GameoverUI" unique_id=265444540]
+z_index = 5
+layout_mode = 0
+offset_left = 98.0
+offset_top = 438.0
+offset_right = 1660.0
+offset_bottom = 605.0
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 64
+text = "THANK YOU FOR PLAYING!"
+
+[node name="Label3" type="Label" parent="CanvasLayer/GameoverUI" unique_id=625971134]
+z_index = 5
+layout_mode = 0
+offset_left = 83.0
+offset_top = 43.0
+offset_right = 1649.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 128
+text = "DATACENTRE DESTROYED"
+
+[node name="Label4" type="Label" parent="CanvasLayer/GameoverUI" unique_id=466736601]
+z_index = 5
+layout_mode = 0
+offset_left = 94.0
+offset_top = 179.0
+offset_right = 1660.0
+offset_bottom = 346.0
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 16
+text = "(hooray)"
+
+[node name="Label2" type="Label" parent="CanvasLayer/GameoverUI" unique_id=1674792368]
+z_index = 5
+layout_mode = 0
+offset_left = 110.0
+offset_top = 559.0
+offset_right = 1672.0
+offset_bottom = 726.0
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 64
+text = "YOU REACHED ROUND : ERROR_ERROR"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameoverUI" unique_id=331923150]
+z_index = 3
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(47.96, 26.52)
+texture = ExtResource("3_cgfq5")
+expand_mode = 2
+
+[node name="GameUI" type="Control" parent="CanvasLayer" unique_id=1287080275]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="CanvasLayer/GameUI" unique_id=1158115079]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/Control" unique_id=1004751130]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Attention" type="Control" parent="CanvasLayer" unique_id=1097019297]
-layout_mode = 3
+[node name="Attention" type="Control" parent="CanvasLayer/GameUI" unique_id=1097019297]
 anchors_preset = 0
 offset_bottom = 1250.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Attention" unique_id=1185505094]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/Attention" unique_id=1185505094]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_nt7q6")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Attention/TextureRect" unique_id=506087987]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/GameUI/Attention/TextureRect" unique_id=506087987]
 custom_minimum_size = Vector2(345, 25)
 custom_maximum_size = Vector2(345, 25)
 layout_mode = 0
@@ -75,7 +144,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_6mrgi")
 value = 50.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="CanvasLayer/Attention/TextureRect" unique_id=1745862932]
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/Attention/TextureRect" unique_id=1745862932]
 layout_mode = 0
 offset_left = 22.857143
 offset_top = 25.714285
@@ -85,7 +154,7 @@ theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Attention"
 
-[node name="Label" type="Label" parent="CanvasLayer/Attention" unique_id=591653011]
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/Attention" unique_id=591653011]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 49.0
@@ -97,12 +166,11 @@ theme_override_font_sizes/font_size = 18
 text = "17 Threads available
 "
 
-[node name="Water" type="Control" parent="CanvasLayer" unique_id=1751339848]
-layout_mode = 3
+[node name="Water" type="Control" parent="CanvasLayer/GameUI" unique_id=1751339848]
 anchors_preset = 0
 offset_bottom = 1250.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Water" unique_id=1761881463]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/Water" unique_id=1761881463]
 layout_mode = 0
 offset_top = 130.0
 offset_right = 457.0
@@ -110,7 +178,7 @@ offset_bottom = 330.0
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_nt7q6")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Water/TextureRect" unique_id=1728056520]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/GameUI/Water/TextureRect" unique_id=1728056520]
 custom_minimum_size = Vector2(345, 25)
 custom_maximum_size = Vector2(345, 25)
 layout_mode = 0
@@ -123,7 +191,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_n6b4g")
 value = 50.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="CanvasLayer/Water/TextureRect" unique_id=332904773]
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/Water/TextureRect" unique_id=332904773]
 layout_mode = 0
 offset_left = 25.714287
 offset_top = 28.571428
@@ -133,7 +201,7 @@ theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Water"
 
-[node name="Label" type="Label" parent="CanvasLayer/Water" unique_id=1506488239]
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/Water" unique_id=1506488239]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 180.0
@@ -145,12 +213,11 @@ theme_override_font_sizes/font_size = 18
 text = "67 MegaGallons available
 "
 
-[node name="HP" type="Control" parent="CanvasLayer" unique_id=934881267]
-layout_mode = 3
+[node name="HP" type="Control" parent="CanvasLayer/GameUI" unique_id=934881267]
 anchors_preset = 0
 offset_bottom = 1250.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HP" unique_id=1657784659]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/HP" unique_id=1657784659]
 layout_mode = 0
 offset_left = 1365.0
 offset_right = 2165.0
@@ -158,7 +225,7 @@ offset_bottom = 200.0
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_x4jx1")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/HP/TextureRect" unique_id=1785013085]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/GameUI/HP/TextureRect" unique_id=1785013085]
 custom_minimum_size = Vector2(695, 25)
 custom_maximum_size = Vector2(695, 25)
 layout_mode = 0
@@ -171,7 +238,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_3k4nv")
 value = 50.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="CanvasLayer/HP/TextureRect" unique_id=680878693]
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/HP/TextureRect" unique_id=680878693]
 layout_mode = 0
 offset_left = 22.857143
 offset_top = 25.714285
@@ -181,12 +248,11 @@ theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Core Integrity"
 
-[node name="TutorialHint" type="Control" parent="CanvasLayer" unique_id=692402328]
-layout_mode = 3
+[node name="TutorialHint" type="Control" parent="CanvasLayer/GameUI" unique_id=692402328]
 anchors_preset = 0
 offset_bottom = 1250.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutorialHint" unique_id=623781447]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/TutorialHint" unique_id=623781447]
 layout_mode = 0
 offset_left = 669.0
 offset_top = 344.0
@@ -194,7 +260,7 @@ offset_right = 1269.0
 offset_bottom = 944.0
 texture = ExtResource("5_8dubc")
 
-[node name="Label" type="Label" parent="CanvasLayer/TutorialHint/TextureRect" unique_id=916757916]
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/TutorialHint/TextureRect" unique_id=916757916]
 layout_mode = 0
 offset_left = 22.857143
 offset_top = 25.714285
@@ -204,7 +270,7 @@ theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Initialisation Protocol"
 
-[node name="Label2" type="Label" parent="CanvasLayer/TutorialHint/TextureRect" unique_id=1112796485]
+[node name="Label2" type="Label" parent="CanvasLayer/GameUI/TutorialHint/TextureRect" unique_id=1112796485]
 layout_mode = 0
 offset_left = 43.000027
 offset_top = 97.99999
@@ -220,7 +286,7 @@ Artificial Management (AI) at levels
 beyond stated maximum.
 Objective: Protect Data Centre."
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/TutorialHint/TextureRect" unique_id=401547702]
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/GameUI/TutorialHint/TextureRect" unique_id=401547702]
 layout_mode = 0
 offset_left = 196.0
 offset_top = 393.0
@@ -228,15 +294,14 @@ offset_right = 396.0
 offset_bottom = 453.0
 texture_normal = ExtResource("6_p7vwb")
 
-[node name="TutorialHint2" type="Control" parent="CanvasLayer" unique_id=1285652500]
-layout_mode = 3
+[node name="TutorialHint2" type="Control" parent="CanvasLayer/GameUI" unique_id=1285652500]
 anchors_preset = 0
 offset_left = -266.0
 offset_top = -195.0
 offset_right = -266.0
 offset_bottom = 1055.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutorialHint2" unique_id=396149292]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/TutorialHint2" unique_id=396149292]
 layout_mode = 0
 offset_left = 669.0
 offset_top = 344.0
@@ -244,7 +309,7 @@ offset_right = 1269.0
 offset_bottom = 944.0
 texture = ExtResource("5_8dubc")
 
-[node name="Label" type="Label" parent="CanvasLayer/TutorialHint2/TextureRect" unique_id=1591021645]
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/TutorialHint2/TextureRect" unique_id=1591021645]
 layout_mode = 0
 offset_left = 22.857143
 offset_top = 25.714285
@@ -254,7 +319,7 @@ theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Instruction Protocol"
 
-[node name="Label2" type="Label" parent="CanvasLayer/TutorialHint2/TextureRect" unique_id=977583266]
+[node name="Label2" type="Label" parent="CanvasLayer/GameUI/TutorialHint2/TextureRect" unique_id=977583266]
 layout_mode = 0
 offset_left = 43.000027
 offset_top = 97.99999
@@ -268,7 +333,7 @@ Q/E - Swap Turret Type Placed
 WASD - Move Camera
 "
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/TutorialHint2/TextureRect" unique_id=1194019864]
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/GameUI/TutorialHint2/TextureRect" unique_id=1194019864]
 layout_mode = 0
 offset_left = 196.0
 offset_top = 393.0
@@ -276,15 +341,14 @@ offset_right = 396.0
 offset_bottom = 453.0
 texture_normal = ExtResource("6_p7vwb")
 
-[node name="TutorialHint3" type="Control" parent="CanvasLayer" unique_id=231611349]
-layout_mode = 3
+[node name="TutorialHint3" type="Control" parent="CanvasLayer/GameUI" unique_id=231611349]
 anchors_preset = 0
 offset_left = 218.0
 offset_top = -214.0
 offset_right = 218.0
 offset_bottom = 1036.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutorialHint3" unique_id=251204594]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/TutorialHint3" unique_id=251204594]
 layout_mode = 0
 offset_left = 669.0
 offset_top = 344.0
@@ -292,7 +356,7 @@ offset_right = 1269.0
 offset_bottom = 944.0
 texture = ExtResource("5_8dubc")
 
-[node name="Label" type="Label" parent="CanvasLayer/TutorialHint3/TextureRect" unique_id=182104120]
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/TutorialHint3/TextureRect" unique_id=182104120]
 layout_mode = 0
 offset_left = 22.857143
 offset_top = 25.714285
@@ -302,7 +366,7 @@ theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Econometrics and Sector Control"
 
-[node name="Label2" type="Label" parent="CanvasLayer/TutorialHint3/TextureRect" unique_id=856722379]
+[node name="Label2" type="Label" parent="CanvasLayer/GameUI/TutorialHint3/TextureRect" unique_id=856722379]
 layout_mode = 0
 offset_left = 43.000027
 offset_top = 97.99999
@@ -316,7 +380,7 @@ placed in sectors, and require
 attention when idling and extra to
 shoot."
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/TutorialHint3/TextureRect" unique_id=1060301263]
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/GameUI/TutorialHint3/TextureRect" unique_id=1060301263]
 layout_mode = 0
 offset_left = 196.0
 offset_top = 393.0
@@ -324,13 +388,9 @@ offset_right = 396.0
 offset_bottom = 453.0
 texture_normal = ExtResource("6_p7vwb")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer" unique_id=1982015874]
-material = SubResource("ShaderMaterial_le3q8")
-mesh = SubResource("QuadMesh_3lwp1")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=661384707]
 stream = ExtResource("8_ktti3")
 
-[connection signal="button_down" from="CanvasLayer/TutorialHint/TextureRect/TextureButton" to="." method="_on_texture_button_button_down"]
-[connection signal="button_down" from="CanvasLayer/TutorialHint2/TextureRect/TextureButton" to="." method="_on_texture2_button_button_down"]
-[connection signal="button_down" from="CanvasLayer/TutorialHint3/TextureRect/TextureButton" to="." method="_on_textur3e_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/GameUI/TutorialHint/TextureRect/TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/GameUI/TutorialHint2/TextureRect/TextureButton" to="." method="_on_texture2_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/GameUI/TutorialHint3/TextureRect/TextureButton" to="." method="_on_textur3e_button_button_down"]
