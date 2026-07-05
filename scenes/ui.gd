@@ -1,17 +1,19 @@
 extends Control
 
-var array = ["Gun Turret", "Sniper Turret", "Mortar Turret", "Rocket Turret"]
+var array = ["Gun Turret", "Sniper Turret", "Mortar Turret", "Rocket Turret", "Juicer Turret"]
 var description = [
 	"Costs 125 Water. Fires high \n damage bursts. Short range.",
 	"Costs 75 Water. Slow, high \n damage and cheap.",
-	"Costs 200 Water. Homing, \n AOE missiles. expensive.",
-	"Costs 325 Water. powerful long \n range AOE. heavy knockback."
-]
+	"Costs 200 Water. powerful long \n range AOE. heavy knockback.",
+	"Costs 325 Water. Homing, \n AOE missiles. expensive.",
+	"Costs 250 Water. Slow to kill, \n produces extra water on kill."
+	]
 var sprites = [
 	preload("res://assets/weaponDisplay1.png"),
 	preload("res://assets/weaponDisplay2.png"),
 	preload("res://assets/weaponDisplay3.png"),
-	preload("res://assets/weaponDisplay4.png")
+	preload("res://assets/weaponDisplay4.png"),
+	preload("res://assets/weaponDisplay5.png")
 ]
 @export var inGameUI : Control
 @export var gameOverUI : Control
@@ -41,12 +43,12 @@ func _process(delta):
 	$CanvasLayer/GameUI/Attention/Label.text = str(round(PD.availablePower)) + " Threads available"
 	$CanvasLayer/GameUI/HP/TextureRect/ProgressBar.value = Economy.coreHealth
 	
-	#if PD.currentTurret != null:
-		#$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label3.text = description[PD.currentTurret]
-		#$CanvasLayer/GameUI/WeaponSelect/TextureRect.texture = sprites[PD.currentTurret]
-		#$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label2.text = array[PD.currentTurret]
-	#else:
-		#$CanvasLayer/GameUI/Control/Label.text = "ERROR"
+	if PD.currentTurret != null:
+		$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label3.text = description[PD.currentTurret]
+		$CanvasLayer/GameUI/WeaponSelect/TextureRect.texture = sprites[PD.currentTurret]
+		$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label2.text = array[PD.currentTurret]
+	else:
+		$CanvasLayer/GameUI/Control/Label.text = "ERROR"
 func _on_texture_button_button_down():
 	$CanvasLayer/GameUI/TutorialHint.hide()
 	$CanvasLayer/GameUI/TutorialHint2.show()

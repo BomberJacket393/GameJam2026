@@ -434,7 +434,7 @@ theme_override_font_sizes/font_size = 28
 text = "O.V.E.R.A.L.L System engaged...
 Warmaster computing 2034 (c)
 Situation Report: Dissidence against
-Artificial Management (AI) at levels
+Artificial Management at levels
 beyond stated maximum.
 Objective: Protect Data Centre
 and Destroy Dissidents"
@@ -549,6 +549,7 @@ texture_normal = ExtResource("6_p7vwb")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=661384707]
 stream = ExtResource("8_ktti3")
+volume_db = -2.667
 
 [connection signal="button_down" from="CanvasLayer/GameUI/TutorialHint/TextureRect/TextureButton" to="." method="_on_texture_button_button_down"]
 [connection signal="button_down" from="CanvasLayer/GameUI/TutorialHint2/TextureRect/TextureButton" to="." method="_on_texture2_button_button_down"]
