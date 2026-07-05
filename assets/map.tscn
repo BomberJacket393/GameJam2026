@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c1d36r3iak6su" path="res://smoke_cloud_2.tscn" id="7_i0kr6"]
 [ext_resource type="FontFile" uid="uid://cnacn1turrp8x" path="res://assets/aseprite.ttf" id="8_lmjdv"]
 [ext_resource type="Texture2D" uid="uid://cn7kkaql6s0ds" path="res://assets/corner_piece.png" id="10_lmjdv"]
+[ext_resource type="PackedScene" uid="uid://bp5xmdnpvun7y" path="res://animated_reactor.tscn" id="14_qtssc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pakj4"]
 vertices = PackedVector2Array(418, -78, 750, -78, 750, -50, 446, -50, 418, 50, 446, 78, 366, 78, 270, 50, 366, 174, 350, 174, 306, 78, 350, 274, 366, 274, 366, 318, 306, 318, 306, 274, 322, 274, 322, 174, 306, 174, 14, 130, 94, 130, 94, 254, 14, 254, 14, 594, 254, 594, 254, 622, 14, 622, 14, 690, 254, 690, 254, 718, 14, 718, 14, 926, -14, 926, -14, 718, -14, 690, -238, 718, -238, 690, -14, 622, -14, 594, -238, 622, -238, 594, -14, 254, -14, 130, -94, 254, -94, 130, 14, -50, -14, -50, -226, -50, -226, 174, -254, 174, -254, -50, -514, -50, -514, 254, -542, 254, -542, -78, -254, -78, -226, -78, -254, -302, -226, -302, 270, -78, 242, -50, 242, 78)
@@ -3415,3 +3416,30 @@ position = Vector2(-2847, -2615)
 
 [node name="smokeCloud96" parent="smokeScreen" unique_id=1238380365 instance=ExtResource("7_i0kr6")]
 position = Vector2(92, 205)
+
+[node name="reactor" type="Node2D" parent="." unique_id=894286933]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1415128987]
+position = Vector2(107, 177)
+rotation = -1.5707964
+scale = Vector2(1, -1)
+
+[node name="animatedReactor4" parent="Marker2D" unique_id=375055952 instance=ExtResource("14_qtssc")]
+position = Vector2(24.400002, 183)
+rotation = -3.1415925
+scale = Vector2(0.8, 0.8)
+
+[node name="animatedReactor5" parent="Marker2D" unique_id=1092087989 instance=ExtResource("14_qtssc")]
+position = Vector2(-52, 183)
+rotation = -3.1415925
+scale = Vector2(0.8, 0.8)
+
+[node name="animatedReactor3" parent="." unique_id=321298624 instance=ExtResource("14_qtssc")]
+position = Vector2(78, 153)
+rotation = 1.5707964
+scale = Vector2(0.8, 0.8)
+
+[node name="animatedReactor2" parent="." unique_id=764203913 instance=ExtResource("14_qtssc")]
+position = Vector2(78, 231)
+rotation = 1.5707964
+scale = Vector2(0.8, 0.8)
