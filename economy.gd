@@ -7,6 +7,8 @@ var cursor
 @export var mortarTurretCost = 200
 @export var rocketTurretCost = 325
 @export var turretStartGameDelay = 2.0
+@export var coreHealth : int = 100
+
 var gameStarted
 
 var turretCosts : Array[int] = [gunTurretCost, sniperTurretCost, mortarTurretCost, rocketTurretCost]
@@ -17,7 +19,6 @@ func _ready() -> void:
 	if PD.cursor != null:
 		cursor = PD.cursor
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -35,6 +36,7 @@ func tryTransaction(waterCost):
 
 func roundReset():
 	water = 150
+	turretStartGameDelay = 2.0
 
 func addWater(_water):
 	water += _water
