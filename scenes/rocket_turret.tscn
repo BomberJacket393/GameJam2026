@@ -21,7 +21,7 @@ texture = ExtResource("1_sucav")
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_po5b3")
 rotationSpeed = 0.1
-range = 600
+range = 800
 
 [node name="rocketTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("pivot")]
 script = ExtResource("3_sucav")
@@ -57,9 +57,11 @@ scale = Vector2(0.6, -0.6)
 texture = ExtResource("5_sucav")
 
 [node name="Range" type="Area2D" parent="." unique_id=75107804]
+z_index = 20
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=438295061]
+z_index = 5
 shape = SubResource("CircleShape2D_3lwp1")
 
 [node name="TurretArea" type="Area2D" parent="." unique_id=1687569964 groups=["turret_base_group"]]

@@ -23,6 +23,7 @@ var showPlacementGhost : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(rangeCircle.texture.get_width(), " ", rangeCircle.texture.get_height())
 	numberOfTurrets = turrets.size()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,9 +51,10 @@ func _process(delta: float) -> void:
 		rangeCircle.visible = true
 		var turretInstance = currentTurret.instantiate()
 		var turret_script = turretInstance.get_node("Pivot") as aim_at_enemy
-		rangeCircle.scale.x = turret_script.range/256.0
-		rangeCircle.scale.y = turret_script.range/256.0
+		rangeCircle.scale.x = turret_script.range/128.0
+		rangeCircle.scale.y = turret_script.range/128.0
 		rangeCircle.global_position = mousePosGridSnap
+		turretInstance.queue_free()
 	else:
 		rangeCircle.visible = false
 		

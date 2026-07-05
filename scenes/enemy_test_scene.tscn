@@ -77,11 +77,9 @@ mesh = SubResource("QuadMesh_cog33")
 script = ExtResource("7_1ij2e")
 enemiesPerRound = Array[int]([10, 25, 60, 120, 250, 600])
 enemyTarget = NodePath("../reactor")
-timeBetweenBatchesFactor = 1.0
 intermissionTime = 3
 enemySpeedFactor = 8.0
 flatEnemySpeed = 40.0
-batchReleaseDelayFactor = 1.0
 timeBeforeEndingRound = 3.0
 
 [node name="enemySpawner4" parent="roundHandler" unique_id=986775256 node_paths=PackedStringArray("roundHandler") instance=ExtResource("4_a1sf3")]

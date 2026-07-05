@@ -60,7 +60,7 @@ texture = ExtResource("1_285in")
 [node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
 script = ExtResource("2_55c5c")
 rotationSpeed = 0.05
-range = 650
+range = 450
 instantRotation = true
 
 [node name="sniperTurretWeapon" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("animator", "pivot")]
