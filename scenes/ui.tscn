@@ -429,6 +429,7 @@ theme_override_font_sizes/font_size = 28
 text = "  Enemies"
 
 [node name="TutorialHint" type="Control" parent="CanvasLayer/GameUI" unique_id=692402328]
+visible = false
 anchors_preset = 0
 offset_bottom = 1250.0
 
@@ -476,6 +477,7 @@ offset_bottom = 453.0
 texture_normal = ExtResource("6_p7vwb")
 
 [node name="TutorialHint2" type="Control" parent="CanvasLayer/GameUI" unique_id=1285652500]
+visible = false
 anchors_preset = 0
 offset_left = -266.0
 offset_top = -195.0
@@ -526,6 +528,7 @@ offset_bottom = 453.0
 texture_normal = ExtResource("6_p7vwb")
 
 [node name="TutorialHint3" type="Control" parent="CanvasLayer/GameUI" unique_id=231611349]
+visible = false
 anchors_preset = 0
 offset_left = 503.0
 offset_top = 92.0
