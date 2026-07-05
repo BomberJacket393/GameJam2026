@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dq2eg6qho2vqb"]
+
+[ext_resource type="Script" uid="uid://4qkjdwehl2b6" path="res://smoke_unit.gd" id="1_amcav"]
+
+[node name="smokeUnit" type="Sprite2D" unique_id=113963613]
+script = ExtResource("1_amcav")

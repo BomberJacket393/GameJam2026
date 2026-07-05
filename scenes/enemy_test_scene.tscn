@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3caq4vm4nxgp"]
 
-[ext_resource type="PackedScene" uid="uid://ct4m34muogq1o" path="res://assets/navigation_layer.tscn" id="1_e4l8o"]
+[ext_resource type="PackedScene" uid="uid://ct4m34muogq1o" path="res://assets/map.tscn" id="1_e4l8o"]
 [ext_resource type="Texture2D" uid="uid://dlkib2jtnjvrv" path="res://assets/TARGET_PLACEHOLDER.png" id="2_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://bip7aobwn8sw6" path="res://scenes/gun_turret.tscn" id="4_1mwrl"]
 [ext_resource type="PackedScene" uid="uid://vdwq5jrhbn21" path="res://scenes/enemy_spawner.tscn" id="4_a1sf3"]
