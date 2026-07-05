@@ -31,7 +31,8 @@ func _process(delta):
 	$CanvasLayer/GameUI/Attention/TextureRect/ProgressBar.value = PD.availablePower
 	$CanvasLayer/GameUI/Attention/TextureRect/ProgressBar.max_value = PD.maxPower
 	$CanvasLayer/GameUI/Water/TextureRect/ProgressBar.value = Economy.water
-	
+	$CanvasLayer/GameUI/Attention/Label2.text = str(PD.powerPerSecond - PD.idlePower) + "/s Thread Generation"
+	$CanvasLayer/GameUI/Attention/Label3.text = PD.idlePower
 	if Economy.water < 300:
 		$CanvasLayer/GameUI/Water/TextureRect/ProgressBar.max_value = 300
 	elif Economy.water < 1000:
@@ -42,7 +43,7 @@ func _process(delta):
 	$CanvasLayer/GameUI/Water/Label.text = str(round(Economy.water)) + " Gallons available"
 	$CanvasLayer/GameUI/Attention/Label.text = str(round(PD.availablePower)) + " Threads available"
 	$CanvasLayer/GameUI/HP/TextureRect/ProgressBar.value = Economy.coreHealth
-	
+	$CanvasLayer/GameUI/Reactor/Label.text = "Current Reactor Level: " + str(round(Economy.currentReactorLevel)) + "\nCoolant to Upgrade: " + str(round(Economy.currentReactorUpgradePrice)) + " Gallons" 
 	if PD.currentTurret != null:
 		$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label3.text = description[PD.currentTurret]
 		$CanvasLayer/GameUI/WeaponSelect/TextureRect.texture = sprites[PD.currentTurret]
@@ -74,3 +75,7 @@ func game_over_stage_2():
 	Engine.time_scale = 0.0
 	SoundManager.playSfx(preload("res://erro.mp3"))
 	gameOverUI.show()
+
+
+func _on_goblin_button_button_down():
+	Economy.tryUpgradeReactor()

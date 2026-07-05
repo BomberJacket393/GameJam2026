@@ -10,12 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://b4o6nnqxefkhj" path="res://assets/tutorialBox.png" id="5_8dubc"]
 [ext_resource type="Texture2D" uid="uid://bm00gw7q4kysr" path="res://assets/weaponDisplay1.png" id="5_vsj0x"]
 [ext_resource type="Texture2D" uid="uid://bke5x4ffcmqqw" path="res://assets/closeButton.png" id="6_p7vwb"]
+[ext_resource type="Texture2D" uid="uid://dgnu7h6psybyp" path="res://assets/tallUI.png" id="7_f7tlh"]
 [ext_resource type="Script" uid="uid://bs7hpw0sx48bs" path="res://scenes/setTextToRound.gd" id="7_vsj0x"]
 [ext_resource type="AudioStream" uid="uid://bbl4j2ry3oguq" path="res://assets/universfield-new-notification-09-352705.mp3" id="8_ktti3"]
 [ext_resource type="Script" uid="uid://uxyj6xvkh8vj" path="res://scenes/setTextToEnemies.gd" id="9_6rmj2"]
 [ext_resource type="Texture2D" uid="uid://7q7oiqj35ipp" path="res://assets/shortUI.png" id="9_qsv74"]
-[ext_resource type="Script" uid="uid://wjglphu81f0p" path="res://scenes/getThreadsPerSecond.gd" id="11_cof4p"]
-[ext_resource type="Script" uid="uid://dcg1swwt71ow" path="res://scenes/showIdlePowerUsage.gd" id="11_h1mc3"]
+[ext_resource type="Texture2D" uid="uid://deb5ks62wnpfj" path="res://assets/blankStandardUI.png" id="16_8k7j3"]
+[ext_resource type="Texture2D" uid="uid://cbfvcwdmlun1f" path="res://assets/upgradeButton.png" id="17_jkdwc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_le3q8"]
 shader = ExtResource("3_yev5y")
@@ -191,7 +192,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_nt7q6")
+texture = ExtResource("7_f7tlh")
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/GameUI/Attention/TextureRect" unique_id=506087987]
 custom_minimum_size = Vector2(345, 25)
@@ -228,9 +229,34 @@ theme_override_font_sizes/font_size = 18
 text = "17 Threads available
 "
 
+[node name="Label2" type="Label" parent="CanvasLayer/GameUI/Attention" unique_id=834102408]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 102.0
+offset_right = 249.00002
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 18
+text = "X/s thread generation
+"
+
+[node name="Label3" type="Label" parent="CanvasLayer/GameUI/Attention" unique_id=1391902163]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 129.0
+offset_right = 249.00002
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 18
+text = "X/s active sector drain
+"
+
 [node name="Water" type="Control" parent="CanvasLayer/GameUI" unique_id=1751339848]
 anchors_preset = 0
-offset_bottom = 1250.0
+offset_top = 32.0
+offset_bottom = 1282.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/Water" unique_id=1761881463]
 layout_mode = 0
@@ -310,86 +336,6 @@ offset_bottom = 63.714287
 theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
 text = "Core Integrity"
-
-[node name="THREADS" type="Control" parent="CanvasLayer/GameUI" unique_id=2038938423]
-anchors_preset = 0
-offset_left = -1405.0
-offset_top = -122.0
-offset_right = -1405.0
-offset_bottom = 1128.0
-
-[node name="Round" type="Label" parent="CanvasLayer/GameUI/THREADS" unique_id=498729669]
-z_index = 1
-layout_mode = 0
-offset_left = 1767.0
-offset_top = 189.0
-offset_right = 1952.0
-offset_bottom = 227.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_gdt2y")
-theme_override_font_sizes/font_size = 28
-text = "null"
-script = ExtResource("11_cof4p")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/THREADS" unique_id=172726166]
-layout_mode = 0
-offset_left = 1700.9999
-offset_top = 123.0
-offset_right = 2000.9999
-offset_bottom = 323.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("9_qsv74")
-stretch_mode = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/GameUI/THREADS/TextureRect" unique_id=1455004471]
-layout_mode = 0
-offset_left = 42.857315
-offset_top = 25.714285
-offset_right = 163.85733
-offset_bottom = 63.714287
-theme_override_fonts/font = ExtResource("2_gdt2y")
-theme_override_font_sizes/font_size = 28
-text = "Threads/s"
-
-[node name="IDLEPOWER" type="Control" parent="CanvasLayer/GameUI" unique_id=63600772]
-anchors_preset = 0
-offset_left = -1224.0
-offset_top = -122.0
-offset_right = -1224.0
-offset_bottom = 1128.0
-
-[node name="Round" type="Label" parent="CanvasLayer/GameUI/IDLEPOWER" unique_id=320893731]
-z_index = 1
-layout_mode = 0
-offset_left = 1767.0
-offset_top = 189.0
-offset_right = 1952.0
-offset_bottom = 227.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_gdt2y")
-theme_override_font_sizes/font_size = 28
-text = "null"
-script = ExtResource("11_h1mc3")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/IDLEPOWER" unique_id=313436715]
-layout_mode = 0
-offset_left = 1700.9999
-offset_top = 123.0
-offset_right = 2000.9999
-offset_bottom = 323.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("9_qsv74")
-stretch_mode = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/GameUI/IDLEPOWER/TextureRect" unique_id=532763137]
-layout_mode = 0
-offset_left = 42.857315
-offset_top = 25.714285
-offset_right = 163.85733
-offset_bottom = 63.714287
-theme_override_fonts/font = ExtResource("2_gdt2y")
-theme_override_font_sizes/font_size = 28
-text = "Tur. Usage"
 
 [node name="ROUND" type="Control" parent="CanvasLayer/GameUI" unique_id=697939508]
 anchors_preset = 0
@@ -629,6 +575,51 @@ offset_right = 396.0
 offset_bottom = 453.0
 texture_normal = ExtResource("6_p7vwb")
 
+[node name="Reactor" type="Control" parent="CanvasLayer/GameUI" unique_id=803177980]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 152.0
+offset_right = 1.0
+offset_bottom = 1402.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/Reactor" unique_id=1138430491]
+layout_mode = 0
+offset_top = 130.0
+offset_right = 457.0
+offset_bottom = 330.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("16_8k7j3")
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/Reactor/TextureRect" unique_id=2117591212]
+layout_mode = 0
+offset_left = 25.714287
+offset_top = 28.571428
+offset_right = 146.7143
+offset_bottom = 66.57143
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 28
+text = "Reactor"
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/Reactor" unique_id=1719731295]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 180.0
+offset_right = 300.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdt2y")
+theme_override_font_sizes/font_size = 18
+text = "Current Reactor Level: 3
+Coolant to Upgrade: 300 Gallons"
+
+[node name="goblinButton" type="TextureButton" parent="CanvasLayer/GameUI/Reactor" unique_id=297191415]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 229.0
+offset_right = 259.0
+offset_bottom = 289.0
+texture_normal = ExtResource("17_jkdwc")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=661384707]
 stream = ExtResource("8_ktti3")
 volume_db = -2.667
@@ -636,3 +627,4 @@ volume_db = -2.667
 [connection signal="button_down" from="CanvasLayer/GameUI/TutorialHint/TextureRect/TextureButton" to="." method="_on_texture_button_button_down"]
 [connection signal="button_down" from="CanvasLayer/GameUI/TutorialHint2/TextureRect/TextureButton" to="." method="_on_texture2_button_button_down"]
 [connection signal="button_down" from="CanvasLayer/GameUI/TutorialHint3/TextureRect/TextureButton" to="." method="_on_textur3e_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/GameUI/Reactor/goblinButton" to="." method="_on_goblin_button_button_down"]
