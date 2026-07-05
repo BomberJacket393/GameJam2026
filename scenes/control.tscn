@@ -3,18 +3,19 @@
 [ext_resource type="Script" uid="uid://1qnyvre7pkri" path="res://scripts/control.gd" id="1_ee4bf"]
 [ext_resource type="Script" uid="uid://c7qju2aplm2s1" path="res://scripts/final_round.gd" id="2_62e2m"]
 [ext_resource type="PackedScene" uid="uid://d3caq4vm4nxgp" path="res://scenes/enemy_test_scene.tscn" id="2_lpubu"]
-[ext_resource type="Texture2D" uid="uid://b6b4ump6v5571" path="res://assets/background.webp" id="3_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://ds2hyg516sff7" path="res://assets/BIOS_BLUE.png" id="3_1p5nq"]
 [ext_resource type="Texture2D" uid="uid://cniunlmjcf1hc" path="res://assets/wave.svg" id="3_kbped"]
 [ext_resource type="FontFile" uid="uid://cnacn1turrp8x" path="res://assets/aseprite.ttf" id="5_1p5nq"]
 [ext_resource type="FontFile" uid="uid://dbxhtj8jig3au" path="res://assets/Jersey25-Regular.ttf" id="5_fj5cn"]
 [ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="8_hob4j"]
+[ext_resource type="Script" uid="uid://bta3wqdj0cl5k" path="res://scenes/descender.gd" id="9_hob4j"]
 
 [sub_resource type="Animation" id="Animation_kbped"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/VBoxContainer/Control/Title:position")
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Title:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -31,7 +32,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/VBoxContainer/Control/Title:position")
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Title:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -74,6 +75,151 @@ offset_right = 1150.0
 offset_bottom = 645.0
 color = Color(0.07250547, 0.105310716, 0.1407611, 1)
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2124124607]
+layout_mode = 0
+offset_left = -717.0
+offset_top = -421.0
+offset_right = 1179.0
+offset_bottom = 597.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_1p5nq")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=477698590]
+libraries/ = SubResource("AnimationLibrary_iy58a")
+autoplay = &"float"
+
+[node name="Title7" type="Label" parent="." unique_id=1316117423]
+layout_mode = 0
+offset_left = 1174.0
+offset_top = -388.0
+offset_right = 1227.0
+offset_bottom = -6.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.45490196)
+theme_override_fonts/font = ExtResource("5_1p5nq")
+theme_override_font_sizes/font_size = 74
+text = "1
+0
+1
+1
+0"
+horizontal_alignment = 1
+script = ExtResource("9_hob4j")
+
+[node name="Title" type="Label" parent="." unique_id=1786461695]
+layout_mode = 0
+offset_right = 53.0
+offset_bottom = 305.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.45490196)
+theme_override_fonts/font = ExtResource("5_1p5nq")
+theme_override_font_sizes/font_size = 74
+text = "1
+1
+0
+1
+0"
+horizontal_alignment = 1
+script = ExtResource("9_hob4j")
+
+[node name="Title2" type="Label" parent="." unique_id=777903611]
+layout_mode = 0
+offset_left = 372.0
+offset_top = -676.0
+offset_right = 425.0
+offset_bottom = -294.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.45490196)
+theme_override_fonts/font = ExtResource("5_1p5nq")
+theme_override_font_sizes/font_size = 74
+text = "1
+1
+1
+1
+0"
+horizontal_alignment = 1
+script = ExtResource("9_hob4j")
+
+[node name="Title4" type="Label" parent="." unique_id=366805656]
+layout_mode = 0
+offset_left = 1274.0
+offset_top = 238.0
+offset_right = 1327.0
+offset_bottom = 620.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.45490196)
+theme_override_fonts/font = ExtResource("5_1p5nq")
+theme_override_font_sizes/font_size = 74
+text = "1
+0
+1
+1
+0"
+horizontal_alignment = 1
+script = ExtResource("9_hob4j")
+
+[node name="Title5" type="Label" parent="." unique_id=502588034]
+layout_mode = 0
+offset_left = 677.0
+offset_top = -209.0
+offset_right = 730.0
+offset_bottom = 173.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.45490196)
+theme_override_fonts/font = ExtResource("5_1p5nq")
+theme_override_font_sizes/font_size = 74
+text = "1
+0
+1
+1
+0"
+horizontal_alignment = 1
+script = ExtResource("9_hob4j")
+
+[node name="Title6" type="Label" parent="." unique_id=1252535774]
+layout_mode = 0
+offset_left = 1094.0
+offset_top = -1036.0
+offset_right = 1147.0
+offset_bottom = -654.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.45490196)
+theme_override_fonts/font = ExtResource("5_1p5nq")
+theme_override_font_sizes/font_size = 74
+text = "1
+0
+1
+1
+0"
+horizontal_alignment = 1
+script = ExtResource("9_hob4j")
+
+[node name="Title3" type="Label" parent="." unique_id=546171207]
+layout_mode = 0
+offset_left = 1625.0
+offset_top = -522.0
+offset_right = 1678.0
+offset_bottom = -140.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.45490196)
+theme_override_fonts/font = ExtResource("5_1p5nq")
+theme_override_font_sizes/font_size = 74
+text = "1
+0
+1
+1
+0"
+horizontal_alignment = 1
+script = ExtResource("9_hob4j")
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=6570134]
 layout_mode = 1
 anchors_preset = 15
@@ -86,11 +232,6 @@ theme_override_constants/margin_top = 13
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=2124124607]
-layout_mode = 2
-texture = ExtResource("3_fj5cn")
-expand_mode = 1
-
 [node name="Waves" type="TextureRect" parent="MarginContainer" unique_id=495221916]
 visible = false
 custom_minimum_size = Vector2(0, 200)
@@ -100,22 +241,17 @@ texture = ExtResource("3_kbped")
 expand_mode = 2
 flip_v = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=290727745]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=402672226]
 layout_mode = 2
-theme_override_constants/separation = 300
+alignment = 1
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1639489961]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=290727745]
 layout_mode = 2
+theme_override_constants/separation = 56
+alignment = 1
 
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Control" unique_id=1963238457]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -785.0
-offset_right = 271.0
-offset_bottom = 113.99991
-grow_horizontal = 2
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1963238457]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -125,7 +261,7 @@ text = "Defend The Datacenter"
 horizontal_alignment = 1
 script = ExtResource("2_62e2m")
 
-[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2139003392]
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2139003392]
 layout_mode = 2
 size_flags_horizontal = 4
 offset_transform_position = Vector2(0, 100)
@@ -133,14 +269,10 @@ theme_override_fonts/font = ExtResource("5_fj5cn")
 theme_override_font_sizes/font_size = 50
 text = "Start Game"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=477698590]
-libraries/ = SubResource("AnimationLibrary_iy58a")
-autoplay = &"float"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=618610167]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer" unique_id=1514095717]
 material = SubResource("ShaderMaterial_01bab")
 mesh = SubResource("QuadMesh_exs80")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
