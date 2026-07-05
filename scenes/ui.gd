@@ -2,10 +2,10 @@ extends Control
 
 var array = ["Gun Turret", "Sniper Turret", "Mortar Turret", "Rocket Turret"]
 var description = [
-	"Costs 125 Water.",
-	"Costs 75 Water.",
-	"Costs 200 Water.",
-	"Costs 325 Water."
+	"Costs 125 Water. Fires high \n damage bursts. Short range.",
+	"Costs 75 Water. Slow, high \n damage and cheap.",
+	"Costs 200 Water. Homing, \n AOE missiles. expensive.",
+	"Costs 325 Water. powerful long \n range AOE. heavy knockback."
 ]
 var sprites = [
 	preload("res://assets/weaponDisplay1.png"),
@@ -29,10 +29,20 @@ func _process(delta):
 	$CanvasLayer/GameUI/Attention/TextureRect/ProgressBar.value = PD.availablePower
 	$CanvasLayer/GameUI/Attention/TextureRect/ProgressBar.max_value = PD.maxPower
 	$CanvasLayer/GameUI/Water/TextureRect/ProgressBar.value = Economy.water
-	$CanvasLayer/GameUI/Water/Label.text = str(round(Economy.water)) + "Gallons available"
+	
+	if Economy.water < 300:
+		$CanvasLayer/GameUI/Water/TextureRect/ProgressBar.max_value = 300
+	elif Economy.water < 1000:
+		$CanvasLayer/GameUI/Water/TextureRect/ProgressBar.max_value = 1000
+	else:
+		$CanvasLayer/GameUI/Water/TextureRect/ProgressBar.max_value = 3000
+		
+	$CanvasLayer/GameUI/Water/Label.text = str(round(Economy.water)) + " Gallons available"
 	$CanvasLayer/GameUI/Attention/Label.text = str(round(PD.availablePower)) + " Threads available"
 	$CanvasLayer/GameUI/HP/TextureRect/ProgressBar.value = Economy.coreHealth
+	
 	if PD.currentTurret != null:
+		$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label3.text = description[PD.currentTurret]
 		$CanvasLayer/GameUI/WeaponSelect/TextureRect.texture = sprites[PD.currentTurret]
 		$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label2.text = array[PD.currentTurret]
 	else:
