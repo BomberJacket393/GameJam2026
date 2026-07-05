@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://c7qju2aplm2s1" path="res://scripts/final_round.gd" id="2_62e2m"]
 [ext_resource type="PackedScene" uid="uid://d3caq4vm4nxgp" path="res://scenes/enemy_test_scene.tscn" id="2_lpubu"]
 [ext_resource type="Texture2D" uid="uid://ds2hyg516sff7" path="res://assets/BIOS_BLUE.png" id="3_1p5nq"]
-[ext_resource type="Texture2D" uid="uid://cniunlmjcf1hc" path="res://assets/wave.svg" id="3_kbped"]
 [ext_resource type="FontFile" uid="uid://cnacn1turrp8x" path="res://assets/aseprite.ttf" id="5_1p5nq"]
 [ext_resource type="FontFile" uid="uid://dbxhtj8jig3au" path="res://assets/Jersey25-Regular.ttf" id="5_fj5cn"]
 [ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="8_hob4j"]
@@ -231,15 +230,6 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 13
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
-
-[node name="Waves" type="TextureRect" parent="MarginContainer" unique_id=495221916]
-visible = false
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_vertical = 0
-texture = ExtResource("3_kbped")
-expand_mode = 2
-flip_v = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=402672226]
 layout_mode = 2
