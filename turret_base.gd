@@ -16,6 +16,7 @@ var selfCanFire : bool = false
 var associatedSector : Node2D
 var waterCost : int
 var POWER_OUTAGE_DIM_MODULATE = Color(0.3, 0.3, 0.3)
+var weaponSafety : bool = false
 
 signal fired(power)
 
@@ -43,7 +44,11 @@ func _process(delta: float) -> void:
 			
 func canDoAction():
 	var gunReady = _current_target != null and actionTimer <= 0
-	var sectorPerm = associatedSector.getAvailablePower() > powerPerShot and associatedSector.isPowered
+	var sectorPerm
+	if weaponSafety:
+		sectorPerm = associatedSector.getAvailablePower() > powerPerShot and associatedSector.isPowered
+	else:
+		sectorPerm = associatedSector.getAvailablePower() > 0 and associatedSector.isPowered
 	return gunReady and sectorPerm
 
 func setTarget():
