@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cmuihvin73qxx" path="res://assets/turrets/tower_base.png" id="1_ci7em"]
 [ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_bofwt"]
 [ext_resource type="Script" uid="uid://dq2ugl0ejvioe" path="res://scenes/juicer_turret.gd" id="3_2cjd6"]
-[ext_resource type="AudioStream" uid="uid://tjcxr25g5fqj" path="res://assets/MORTAR_SOUND_PLACEHOLDER.mp3" id="5_n0qx5"]
+[ext_resource type="AudioStream" uid="uid://5u5ocr0sga5m" path="res://assets/turrets/animations/CRUSH_SFX.mp3" id="4_2cjd6"]
 [ext_resource type="Texture2D" uid="uid://bxhmw8asjb7wm" path="res://assets/turrets/animations/juicer1.png" id="6_n0qx5"]
 [ext_resource type="Texture2D" uid="uid://jcask3mrh715" path="res://assets/turrets/animations/juicer2.png" id="7_fw0l2"]
 [ext_resource type="Texture2D" uid="uid://bfbtssxwfuk2b" path="res://assets/turrets/animations/juicer3.png" id="8_adapv"]
@@ -12,14 +12,6 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pakj4"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_n0qx5")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("7_fw0l2")
@@ -33,8 +25,16 @@ animations = [{
 "duration": 0.3,
 "texture": ExtResource("10_5uhl0")
 }],
+"loop": 0,
+"name": &"crush",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_n0qx5")
+}],
 "loop": 1,
-"name": &"new_animation",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -57,15 +57,17 @@ range = 250
 [node name="juicerTurret" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("animator", "pivot")]
 z_index = 3
 script = ExtResource("3_2cjd6")
+distanceBeforeCrush = 20.0
+distanceBeforeAnimation = 50.0
 animator = NodePath("juicerWeapon")
 pivot = NodePath("..")
-actionDelay = 15.0
+actionDelay = 8.0
 damagePerHit = 100
 idlePowerDrain = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/juicerTurret" unique_id=71197828]
-stream = ExtResource("5_n0qx5")
-volume_db = 5.807
+stream = ExtResource("4_2cjd6")
+volume_db = -10.594
 
 [node name="juicerWeapon" type="AnimatedSprite2D" parent="Pivot/juicerTurret" unique_id=198821407]
 sprite_frames = SubResource("SpriteFrames_pakj4")

@@ -76,11 +76,11 @@ func _physics_process(delta: float) -> void:
 	
 	if not isBeingPushed and not beingPulled:
 		position += velocity * delta
-	if beingPulled:
-		position += pullVelocity * delta
-		pullVelocity += pushVelocity.normalized() * 3
-	
-	if isBeingPushed:
+	elif beingPulled:
+		print("being pulled")
+		position += pullVelocity*0.03
+		##pullVelocity += pushVelocity.normalized()
+	elif isBeingPushed:
 		position += pushVelocity * delta
 		pushVelocity -= pushVelocity.normalized() * pushDragFactor
 		if pushVelocity.length() < 5:
