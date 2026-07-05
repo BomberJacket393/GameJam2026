@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://qw87teldex6x" path="res://scenes/rocket_turret.tscn" id="7_xylw6"]
 [ext_resource type="PackedScene" uid="uid://cn6yd0i8xjbhg" path="res://scenes/ui.tscn" id="8_6oyhd"]
 [ext_resource type="Shader" uid="uid://cmgot3pdicegq" path="res://scenes/screenEffect.gdshader" id="9_5h81t"]
+[ext_resource type="PackedScene" uid="uid://cijjaqt38hehi" path="res://scenes/juicer_turret.tscn" id="10_xylw6"]
 [ext_resource type="PackedScene" uid="uid://0eptdqpcb57k" path="res://smoke_cloud_3.tscn" id="13_5h81t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pakj4"]
@@ -47,7 +48,7 @@ position = Vector2(-2.0645332, 2.370369)
 shape = SubResource("RectangleShape2D_pakj4")
 
 [node name="cursor" parent="." unique_id=1836918564 groups=["cursor"] instance=ExtResource("5_326sm")]
-turrets = Array[PackedScene]([ExtResource("4_1mwrl"), ExtResource("5_2j4nw"), ExtResource("6_yswyb"), ExtResource("7_xylw6")])
+turrets = Array[PackedScene]([ExtResource("4_1mwrl"), ExtResource("5_2j4nw"), ExtResource("6_yswyb"), ExtResource("7_xylw6"), ExtResource("10_xylw6")])
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1197400698]
 script = ExtResource("6_ifku7")

@@ -1,17 +1,18 @@
 extends Node
 
-var water = 150
+var water = 250
 var cursor
 @export var gunTurretCost = 125
 @export var sniperTurretCost = 75
 @export var mortarTurretCost = 200
 @export var rocketTurretCost = 325
+@export var juicerTurretCost = 250
 @export var turretStartGameDelay = 2.0
 @export var coreHealth : int = 100
 
 var gameStarted
 
-var turretCosts : Array[int] = [gunTurretCost, sniperTurretCost, mortarTurretCost, rocketTurretCost]
+var turretCosts : Array[int] = [gunTurretCost, sniperTurretCost, mortarTurretCost, rocketTurretCost, juicerTurretCost]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

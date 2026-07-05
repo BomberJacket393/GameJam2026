@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cijjaqt38hehi"]
+
+[ext_resource type="Texture2D" uid="uid://cmuihvin73qxx" path="res://assets/turrets/tower_base.png" id="1_ci7em"]
+[ext_resource type="Script" uid="uid://72jadik8p8tm" path="res://scripts/aim_at_enemy.gd" id="2_bofwt"]
+[ext_resource type="Script" uid="uid://dq2ugl0ejvioe" path="res://scenes/juicer_turret.gd" id="3_2cjd6"]
+[ext_resource type="AudioStream" uid="uid://tjcxr25g5fqj" path="res://assets/MORTAR_SOUND_PLACEHOLDER.mp3" id="5_n0qx5"]
+[ext_resource type="Texture2D" uid="uid://bxhmw8asjb7wm" path="res://assets/turrets/animations/juicer1.png" id="6_n0qx5"]
+[ext_resource type="Texture2D" uid="uid://jcask3mrh715" path="res://assets/turrets/animations/juicer2.png" id="7_fw0l2"]
+[ext_resource type="Texture2D" uid="uid://bfbtssxwfuk2b" path="res://assets/turrets/animations/juicer3.png" id="8_adapv"]
+[ext_resource type="Texture2D" uid="uid://1m0gx48bb7f8" path="res://assets/turrets/animations/juicer4.png" id="9_0rjb2"]
+[ext_resource type="Texture2D" uid="uid://pye26f4tyxfd" path="res://assets/turrets/animations/juicer5.png" id="10_5uhl0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pakj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_n0qx5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_fw0l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_adapv")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_0rjb2")
+}, {
+"duration": 0.3,
+"texture": ExtResource("10_5uhl0")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3lwp1"]
+radius = 300.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pakj4"]
+size = Vector2(32, 32)
+
+[node name="juicerTurret" type="Node2D" unique_id=38451917]
+
+[node name="baseSprite" type="Sprite2D" parent="." unique_id=433948373]
+texture = ExtResource("1_ci7em")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=1011809619]
+script = ExtResource("2_bofwt")
+rotationSpeed = 0.1
+range = 250
+
+[node name="juicerTurret" type="Node2D" parent="Pivot" unique_id=1337379642 node_paths=PackedStringArray("animator", "pivot")]
+z_index = 3
+script = ExtResource("3_2cjd6")
+animator = NodePath("juicerWeapon")
+pivot = NodePath("..")
+actionDelay = 15.0
+damagePerHit = 100
+idlePowerDrain = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/juicerTurret" unique_id=71197828]
+stream = ExtResource("5_n0qx5")
+volume_db = 5.807
+
+[node name="juicerWeapon" type="AnimatedSprite2D" parent="Pivot/juicerTurret" unique_id=198821407]
+sprite_frames = SubResource("SpriteFrames_pakj4")
+speed_scale = 2.0
+
+[node name="Range" type="Area2D" parent="." unique_id=75107804]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=438295061]
+shape = SubResource("CircleShape2D_3lwp1")
+
+[node name="TurretArea" type="Area2D" parent="." unique_id=1687569964 groups=["turret_base_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurretArea" unique_id=137337132]
+shape = SubResource("RectangleShape2D_pakj4")
