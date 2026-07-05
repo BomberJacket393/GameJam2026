@@ -18,7 +18,6 @@ func _ready() -> void:
 		cursor = PD.cursor
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Engine.time_scale == 1 and turretStartGameDelay > 0:
@@ -35,6 +34,7 @@ func tryTransaction(waterCost):
 
 func roundReset():
 	water = 150
+	turretStartGameDelay = 2.0
 
 func addWater(_water):
 	water += _water
