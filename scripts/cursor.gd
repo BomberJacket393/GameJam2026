@@ -60,6 +60,9 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("lmb") and canPlaceTurret():
 		placeTurret()	
+		
+	if Input.is_action_just_pressed("rmb") and canDestroyTurret():
+		destroyTurret()
 
 func mouseHandling():
 	mousePos = get_global_mouse_position()
@@ -78,6 +81,22 @@ func placeTurret():
 		var sector = _getCurrentSector()
 		print(sector.name)
 		sector.assignTurret(turretInstance)
+		
+func canDestroyTurret():
+	return _inSector and _touchingTurret and Engine.time_scale != 0
+	
+func destroyTurret():
+	var touchedAreas = cursorArea.get_overlapping_areas()
+	var associatedTurret = null
+	touchedAreas.append_array(cursorGridArea.get_overlapping_areas())
+	for area in touchedAreas:
+		if area.is_in_group("turret_base_group"):
+			associatedTurret = area.get_parent() as Node2D
+			break
+	if associatedTurret != null:
+		var weaponId = associatedTurret.get_meta("weaponId")
+		Economy.addWater(round(Economy.turretCosts[weaponId]*0.3))
+		associatedTurret.queue_free()
 	
 func _isTouchingTurret():
 	_touchingTurret = false
@@ -89,6 +108,7 @@ func _isTouchingTurret():
 			##print("IS_TOUCHING_TURRET")
 			break
 	return _touchingTurret
+
 			
 func _isInSector():
 	_inSector = false

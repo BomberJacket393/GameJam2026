@@ -50,7 +50,10 @@ position = Vector2(-2.0645332, 2.370369)
 shape = SubResource("RectangleShape2D_pakj4")
 
 [node name="cursor" parent="." unique_id=1836918564 groups=["cursor"] instance=ExtResource("5_326sm")]
+mousePos = null
+mousePosGridSnap = null
 turrets = Array[PackedScene]([ExtResource("4_1mwrl"), ExtResource("5_2j4nw"), ExtResource("6_yswyb"), ExtResource("7_xylw6"), ExtResource("10_xylw6")])
+currentTurretIndex = null
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=329637344]
 stream = ExtResource("12_xylw6")

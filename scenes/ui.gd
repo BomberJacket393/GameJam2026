@@ -32,7 +32,7 @@ func _process(delta):
 	$CanvasLayer/GameUI/Attention/TextureRect/ProgressBar.max_value = PD.maxPower
 	$CanvasLayer/GameUI/Water/TextureRect/ProgressBar.value = Economy.water
 	$CanvasLayer/GameUI/Attention/Label2.text = str(PD.powerPerSecond - PD.idlePower) + "/s Thread Generation"
-	$CanvasLayer/GameUI/Attention/Label3.text = PD.idlePower
+	$CanvasLayer/GameUI/Attention/Label3.text = str(PD.idlePower) + "/s Active Sector Drain"
 	if Economy.water < 300:
 		$CanvasLayer/GameUI/Water/TextureRect/ProgressBar.max_value = 300
 	elif Economy.water < 1000:
