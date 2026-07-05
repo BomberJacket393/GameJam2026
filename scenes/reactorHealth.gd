@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 	
 	#if Input.is_action_just_pressed("cycle_left"):
 		#reactorHealth = -1
+	Economy.coreHealth = reactorHealth
 	
 	if reactorHealth <= 0 and not gameOver:
 		gameOver = true

@@ -7,6 +7,8 @@ var cursor
 @export var mortarTurretCost = 200
 @export var rocketTurretCost = 325
 @export var turretStartGameDelay = 2.0
+@export var coreHealth : int = 100
+
 var gameStarted
 
 var turretCosts : Array[int] = [gunTurretCost, sniperTurretCost, mortarTurretCost, rocketTurretCost]
