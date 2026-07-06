@@ -36,7 +36,7 @@ func explode():
 				enemy.push(pushForce, global_position)
 
 	direction = Vector2.ZERO
-	SoundManager.playSfx(preload("res://assets/EXPLOSION_SOUND_PLACEHOLDER.mp3"),position)
+	SoundManager.playSfx(preload("res://assets/EXPLOSION_SOUND_PLACEHOLDER.mp3"),position,-20)
 	queue_free()
 
 func setTargetPos(_targetPosition):

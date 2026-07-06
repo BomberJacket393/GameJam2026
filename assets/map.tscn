@@ -779,7 +779,7 @@ position = Vector2(-496, 48)
 
 [node name="rebootButton" parent="Sectors" unique_id=1874291674 node_paths=PackedStringArray("resetGridPrompt") instance=ExtResource("6_fqq1x")]
 z_index = 8
-position = Vector2(-150, 203)
+position = Vector2(-112, 224)
 poweredOnColor = Color(0, 0.6862745, 0, 1)
 resetGridPrompt = NodePath("Marker2D")
 

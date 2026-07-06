@@ -36,7 +36,7 @@ powerPerShot = 8
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pivot/mortarTurretWeapon" unique_id=71197828]
 stream = ExtResource("4_6co73")
-volume_db = -12.142
+volume_db = -16.772
 metadata/weaponId = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/mortarTurretWeapon" unique_id=929694099]
