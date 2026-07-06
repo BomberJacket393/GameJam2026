@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="GameJam2026"
+config/name="Defend the Data Centre"
 run/main_scene="uid://b4w281c0g3po"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cu4srrr0ik862"
 
 [autoload]
 
@@ -29,6 +29,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1040
 window/size/mode=4
 window/stretch/mode="viewport"
+<<<<<<<HEADwindow/size/viewport_width=1920
 
 [dotnet]
 

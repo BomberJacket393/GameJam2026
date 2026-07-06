@@ -17,7 +17,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/VBoxContainer/Title7:position")
+tracks/0/path = NodePath("Title7:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -34,7 +34,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/VBoxContainer/Title7:position")
+tracks/0/path = NodePath("Title7:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -862,8 +862,19 @@ layout_mode = 2
 theme_override_constants/separation = 56
 alignment = 1
 
-[node name="Title7" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1963238457]
+[node name="StartButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=2139003392]
 layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_position = Vector2(0, 100)
+theme_override_fonts/font = ExtResource("5_fj5cn")
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+
+[node name="Title7" type="Label" parent="." unique_id=1963238457]
+layout_mode = 0
+offset_left = 163.0
+offset_right = 1918.0
+offset_bottom = 491.0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_1p5nq")
@@ -872,13 +883,5 @@ text = "Defend The Datacenter"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_62e2m")
-
-[node name="StartButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=2139003392]
-layout_mode = 2
-size_flags_horizontal = 4
-offset_transform_position = Vector2(0, 100)
-theme_override_fonts/font = ExtResource("5_fj5cn")
-theme_override_font_sizes/font_size = 50
-text = "Start Game"
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
