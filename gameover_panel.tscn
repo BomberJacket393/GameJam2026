@@ -14,13 +14,13 @@ texture = ExtResource("1_6ud5s")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Sprite2D" unique_id=979456632]
 self_modulate = Color(1, 0, 0, 1)
-offset_left = -132.0
-offset_top = -109.0
-offset_right = 245.0
-offset_bottom = 92.0
+offset_left = -131.42857
+offset_top = -108.571434
+offset_right = 245.57143
+offset_bottom = 92.428566
 theme_override_fonts/normal_font = ExtResource("2_rshpf")
 theme_override_font_sizes/normal_font_size = 28
-text = "REACTOR CORE INTEGRITY COMPROMISED.
+text = "CENTRAL SERVER INTEGRITY COMPROMISED.
 DESTRUCTION IMMINENT"
 fit_content = true
 
