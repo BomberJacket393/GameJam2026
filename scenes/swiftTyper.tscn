@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dtv83hdx0ognv"]
+
+[ext_resource type="FontFile" uid="uid://cnacn1turrp8x" path="res://assets/aseprite.ttf" id="1_dbmum"]
+[ext_resource type="Script" uid="uid://b6na4n0kp002d" path="res://swift_typer.gd" id="2_sd1l8"]
+
+[node name="Title8" type="Label" unique_id=1146571485]
+offset_left = 481.0
+offset_top = -504.0
+offset_right = 534.0
+offset_bottom = -122.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.45490196)
+theme_override_fonts/font = ExtResource("1_dbmum")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+script = ExtResource("2_sd1l8")
+letterDelay = 0.03
