@@ -867,6 +867,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_1p5nq")
 theme_override_font_sizes/font_size = 74
 text = "Defend The Datacenter"
+horizontal_alignment = 1
 script = ExtResource("2_62e2m")
 
 [node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2139003392]

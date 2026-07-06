@@ -601,7 +601,7 @@ offset_right = 146.7143
 offset_bottom = 66.57143
 theme_override_fonts/font = ExtResource("2_gdt2y")
 theme_override_font_sizes/font_size = 28
-text = "Reactor"
+text = "Server Status"
 
 [node name="Label" type="Label" parent="CanvasLayer/GameUI/Reactor" unique_id=1719731295]
 layout_mode = 0
