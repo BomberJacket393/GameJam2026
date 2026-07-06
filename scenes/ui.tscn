@@ -515,9 +515,9 @@ text = "Left Click - Place Turrets
 Q/E - Swap Turret Type Placed
 WASD - Move Camera
 esc - Quit Game
+rmb - Refund Turret
 Sectors Can Be Toggled On and
-Off By Clicking The 
-Associated Button"
+Off By With Their Nearby Button"
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/GameUI/TutorialHint2/TextureRect" unique_id=1194019864]
 layout_mode = 0

@@ -12,5 +12,6 @@ pushForce = 2.5
 SPEED = 400.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626920583]
+z_index = 13
 rotation = 1.5707964
 texture = ExtResource("2_d0nnr")
