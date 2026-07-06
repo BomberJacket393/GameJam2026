@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dwrqho55a0m42"]
 
 [ext_resource type="Script" uid="uid://cnbmhflpo5di5" path="res://master_hal_button.gd" id="1_53oln"]
-[ext_resource type="Texture2D" uid="uid://dn5qq3f5dydcy" path="res://assets/HAL_EYE.png" id="2_307x2"]
-[ext_resource type="Texture2D" uid="uid://hhawsul6ygn7" path="res://assets/HAL_FRAME.png" id="3_ujnd7"]
+[ext_resource type="Texture2D" uid="uid://b0vmabu2aueey" path="res://assets/offButton.png" id="2_43sk5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pakj4"]
 radius = 28.0
@@ -10,7 +9,8 @@ radius = 28.0
 [node name="halButton" type="Node2D" unique_id=407498746 node_paths=PackedStringArray("halLight")]
 script = ExtResource("1_53oln")
 halLight = NodePath("Sprite2D")
-poweredDownColor = Color(0, 0, 3.2065647, 1)
+poweredDownColor = Color(0.011013075, 0.014824677, 0.005474285, 1)
+poweredOnColor = Color(1, 1, 1, 1)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1925369031]
 
@@ -18,7 +18,4 @@ poweredDownColor = Color(0, 0, 3.2065647, 1)
 shape = SubResource("CircleShape2D_pakj4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1188605535]
-texture = ExtResource("2_307x2")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1054929415]
-texture = ExtResource("3_ujnd7")
+texture = ExtResource("2_43sk5")

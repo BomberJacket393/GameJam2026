@@ -19,5 +19,6 @@ SPEED = 350.0
 shape = SubResource("CircleShape2D_pakj4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=791025507]
-scale = Vector2(2, 2)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_7xgxh")
