@@ -863,7 +863,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 offset_transform_enabled = true
-offset_transform_position = Vector2(-50, 0)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_1p5nq")
 theme_override_font_sizes/font_size = 74
@@ -883,5 +882,10 @@ text = "Start Game"
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer" unique_id=1514095717]
 material = SubResource("ShaderMaterial_01bab")
 mesh = SubResource("QuadMesh_exs80")
+
+[node name="Control" type="Control" parent="." unique_id=1529883251]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
