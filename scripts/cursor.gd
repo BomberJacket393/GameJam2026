@@ -95,7 +95,7 @@ func destroyTurret():
 			break
 	if associatedTurret != null:
 		var weaponId = associatedTurret.get_meta("weaponId")
-		Economy.addWater(round(Economy.turretCosts[weaponId]*0.3))
+		Economy.addWater(round(Economy.turretCosts[weaponId]*0.5))
 		associatedTurret.queue_free()
 	
 func _isTouchingTurret():
