@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bl6f1675vmx43"]
 
 [ext_resource type="Script" uid="uid://opav75rnuoia" path="res://mortarShell.gd" id="1_l3xtx"]
-[ext_resource type="Texture2D" uid="uid://cfrs7ookohal1" path="res://assets/SHELL_PLACEHOLDER.png" id="2_7xgxh"]
+[ext_resource type="Texture2D" uid="uid://drpi5tpdxiy6m" path="res://assets/turrets/bullet.png" id="2_7xgxh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pakj4"]
 
@@ -19,4 +19,5 @@ SPEED = 350.0
 shape = SubResource("CircleShape2D_pakj4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=791025507]
+scale = Vector2(2, 2)
 texture = ExtResource("2_7xgxh")

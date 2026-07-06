@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		if nodes.size() != 0:
 			cursor = nodes[0]		
 	idlePower = getIdlePowerDrain()
-	print(idlePower)
+	#print(idlePower)
 	if not gridCollapse:
 		availablePower -= idlePower * delta
 		if availablePower<0:

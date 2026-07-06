@@ -43,7 +43,7 @@ func _process(delta):
 	$CanvasLayer/GameUI/Water/Label.text = str(round(Economy.water)) + " Gallons available"
 	$CanvasLayer/GameUI/Attention/Label.text = str(round(PD.availablePower)) + " Threads available"
 	$CanvasLayer/GameUI/HP/TextureRect/ProgressBar.value = Economy.coreHealth
-	$CanvasLayer/GameUI/Reactor/Label.text = "Current Reactor Level: " + str(round(Economy.currentReactorLevel)) + "\nCoolant to Upgrade: " + str(round(Economy.currentReactorUpgradePrice)) + " Gallons" 
+	$CanvasLayer/GameUI/Reactor/Label.text = "Current Server Level: " + str(round(Economy.currentReactorLevel)) + "\nCoolant to Upgrade: " + str(round(Economy.currentReactorUpgradePrice)) + " Gallons" 
 	if PD.currentTurret != null:
 		$CanvasLayer/GameUI/WeaponSelect/TextureRect/Label3.text = description[PD.currentTurret]
 		$CanvasLayer/GameUI/WeaponSelect/TextureRect.texture = sprites[PD.currentTurret]

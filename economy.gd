@@ -31,8 +31,8 @@ func _process(delta: float) -> void:
 		turretStartGameDelay -= delta
 	if turretStartGameDelay < 0:
 		gameStarted = true
-	if Input.is_action_just_pressed("cycle_left"):
-		tryUpgradeReactor()
+	#if Input.is_action_just_pressed("cycle_left"):
+		#tryUpgradeReactor()
 	
 func tryTransaction(waterCost):
 	if waterCost > water or Engine.time_scale == 0 or not gameStarted:
