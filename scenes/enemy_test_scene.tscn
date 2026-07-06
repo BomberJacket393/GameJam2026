@@ -50,10 +50,7 @@ position = Vector2(-2.0645332, 2.370369)
 shape = SubResource("RectangleShape2D_pakj4")
 
 [node name="cursor" parent="." unique_id=1836918564 groups=["cursor"] instance=ExtResource("5_326sm")]
-mousePos = null
-mousePosGridSnap = null
 turrets = Array[PackedScene]([ExtResource("4_1mwrl"), ExtResource("5_2j4nw"), ExtResource("6_yswyb"), ExtResource("7_xylw6"), ExtResource("10_xylw6")])
-currentTurretIndex = null
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=329637344]
 stream = ExtResource("12_xylw6")
@@ -88,7 +85,7 @@ mesh = SubResource("QuadMesh_cog33")
 
 [node name="roundHandler" type="Node2D" parent="." unique_id=350209330 node_paths=PackedStringArray("enemyTarget")]
 script = ExtResource("7_1ij2e")
-enemiesPerRound = Array[int]([10, 25, 60, 120, 250, 600])
+enemiesPerRound = Array[int]([10, 25, 60, 120, 250, 600, 800, 1200, 1500, 1500, 1500, 2000, 2500, 3000, 5000, 10000, 10000, 10000])
 enemyTarget = NodePath("../reactor")
 intermissionTime = 3
 enemySpeedFactor = 8.0
