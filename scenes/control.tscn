@@ -838,18 +838,6 @@ text = "1
 horizontal_alignment = 1
 script = ExtResource("9_hob4j")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=6570134]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 13
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=618610167]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer" unique_id=1514095717]
